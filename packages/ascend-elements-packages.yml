@@ -1,0 +1,30 @@
+generated: '2026-08-02'
+method: searched
+source: public package registry searches + GitHub organization search
+packages: []
+result: none
+registries_probed:
+- {registry: npm, package: ascend-elements, http_status: 404}
+- {registry: npm, package: ascendelements, http_status: 404}
+- {registry: pypi, package: ascend-elements, http_status: 404}
+- {registry: rubygems, hits: 0}
+- {registry: packagist, hits: 0}
+- {registry: crates.io, hits: 0}
+- {registry: nuget, hits: 0}
+- {registry: maven-central, hits: 0}
+- {registry: pkg.go.dev, hits: 0}
+github_org:
+  url: null
+  probed:
+  - {url: 'https://github.com/ascendelements', http_status: 404}
+  - {url: 'https://github.com/ascend-elements', http_status: 404}
+  - {source: GitHub org search API for "ascend elements", hits: 0}
+  note: Ascend Elements has no GitHub organization. No GitHubOrganization pointer is emitted.
+x-notes: >-
+  Ascend Elements ships no SDK because it publishes no developer API — it is a battery
+  materials manufacturer, not a software vendor. An empty result is the correct, honest
+  outcome. No SDKs pointer is emitted in apis.yml; emitting one would fire the sdk_count
+  ergonomics checks for client libraries that do not exist. Note that the naming collision
+  space here is crowded (Ascend.io, Ascend Software, Ascend RMS, Ascend.sh and
+  developers.useascend.com are all unrelated companies that DO publish developer APIs) —
+  none of their packages belong to this provider and none were recorded.

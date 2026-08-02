@@ -1,0 +1,201 @@
+generated: '2026-08-02'
+method: derived
+source: openapi/ascend-elements-wordpress-rest-openapi.yml (schemas harvested from live HTTP
+  OPTIONS on ascendelements.com/wp-json)
+api: Ascend Elements WordPress REST API
+scope: >-
+  Entity-relationship graph of the anonymously readable content core. Derived from the JSON
+  Schemas the host returns on HTTP OPTIONS and from the id-reference fields in those schemas.
+  The company-specific entities are MediaCoverage, SourcingEvent and Job — those are the three
+  custom post types Ascend Elements added to the stock WordPress model.
+entities:
+- name: Post
+  collection: /wp/v2/posts
+  id_field: id
+  id_type: integer
+  count_observed: 66
+  description: Company news and press releases.
+  key_fields: [id, date, modified, slug, status, link, title, content, excerpt, author,
+    featured_media, categories, tags, meta, format, sticky]
+- name: Page
+  collection: /wp/v2/pages
+  id_field: id
+  id_type: integer
+  count_observed: 10
+  description: Static site pages (Home, About Us, Innovation, Products, Services, Recycling,
+    Become a Supplier, Corporate Policies, Employee Engagement, Opt-out preferences).
+  key_fields: [id, date, modified, slug, status, link, title, content, author, parent,
+    featured_media, menu_order, template]
+- name: MediaCoverage
+  collection: /wp/v2/media_coverage
+  id_field: id
+  id_type: integer
+  count_observed: 61
+  custom_post_type: true
+  description: Third-party press coverage of Ascend Elements — a company-specific custom post
+    type, not a WordPress core collection.
+  key_fields: [id, date, modified, slug, status, link, title, content, featured_media, meta]
+- name: SourcingEvent
+  collection: /wp/v2/sourcing-events
+  id_field: id
+  id_type: integer
+  count_observed: 4
+  custom_post_type: true
+  description: >-
+    Open supplier bid packages — a company-specific custom post type used to run procurement
+    for the Apex 1 plant. The four live items are the Apex 1 CSA, Mechanical, Piping and
+    Electrical packages.
+  key_fields: [id, date, modified, slug, status, link, title, content, featured_media, meta]
+- name: Job
+  collection: /wp/v2/job
+  id_field: id
+  id_type: integer
+  count_observed: 0
+  custom_post_type: true
+  description: Careers board custom post type. Registered and readable, but currently empty.
+  key_fields: [id, date, modified, slug, status, link, title, content, job_category,
+    job_location, meta]
+- name: JobCategory
+  collection: /wp/v2/job_category
+  id_field: id
+  id_type: integer
+  taxonomy: true
+  description: >-
+    Job function taxonomy. Observed terms: Corporate Positions, Engineering,
+    Finance & Accounting, Plant Operations, Business Development & Marketing,
+    Global Supply Chain, Science & Technology, All Positions.
+  key_fields: [id, count, description, link, name, slug, taxonomy, parent]
+- name: JobLocation
+  collection: /wp/v2/job_location
+  id_field: id
+  id_type: integer
+  taxonomy: true
+  description: >-
+    Facility taxonomy — this doubles as Ascend Elements' published site list. Observed terms:
+    Covington GA (Base 1), Hopkinsville KY (Apex 1), Novi MI, Westborough MA (HQ/R&D), Global.
+  key_fields: [id, count, description, link, name, slug, taxonomy, parent]
+- name: MediaItem
+  collection: /wp/v2/media
+  id_field: id
+  id_type: integer
+  description: Uploaded files — images, PDFs, documents.
+  key_fields: [id, date, slug, link, title, author, media_type, mime_type, media_details,
+    source_url, post, alt_text, caption]
+- name: Category
+  collection: /wp/v2/categories
+  id_field: id
+  id_type: integer
+  taxonomy: true
+  description: 'Post taxonomy. Observed terms: Awards, Company, Coverage, Customers, News,
+    Products, Uncategorized.'
+  key_fields: [id, count, description, link, name, slug, taxonomy, parent, meta]
+- name: Tag
+  collection: /wp/v2/tags
+  id_field: id
+  id_type: integer
+  taxonomy: true
+  description: 'Free-form post taxonomy. Observed term: Featured.'
+  key_fields: [id, count, description, link, name, slug, taxonomy, meta]
+- name: User
+  collection: /wp/v2/users
+  id_field: id
+  id_type: integer
+  description: Post authors exposed publicly by the site.
+  key_fields: [id, name, url, description, link, slug, avatar_urls]
+- name: Comment
+  collection: /wp/v2/comments
+  id_field: id
+  id_type: integer
+  count_observed: 0
+  description: Comment collection; registered and readable but empty (comments are not used).
+  key_fields: [id, post, parent, author, author_name, date, content, link, status, type]
+relationships:
+- from: Post
+  to: User
+  type: belongs_to
+  via: author
+  cardinality: many-to-one
+- from: Post
+  to: MediaItem
+  type: has_one
+  via: featured_media
+  cardinality: many-to-one
+- from: Post
+  to: Category
+  type: has_many
+  via: categories
+  cardinality: many-to-many
+- from: Post
+  to: Tag
+  type: has_many
+  via: tags
+  cardinality: many-to-many
+- from: Page
+  to: User
+  type: belongs_to
+  via: author
+  cardinality: many-to-one
+- from: Page
+  to: Page
+  type: belongs_to
+  via: parent
+  cardinality: self-referential hierarchy
+- from: Page
+  to: MediaItem
+  type: has_one
+  via: featured_media
+  cardinality: many-to-one
+- from: MediaCoverage
+  to: MediaItem
+  type: has_one
+  via: featured_media
+  cardinality: many-to-one
+- from: SourcingEvent
+  to: MediaItem
+  type: has_one
+  via: featured_media
+  cardinality: many-to-one
+- from: Job
+  to: JobCategory
+  type: has_many
+  via: job_category
+  cardinality: many-to-many
+- from: Job
+  to: JobLocation
+  type: has_many
+  via: job_location
+  cardinality: many-to-many
+- from: MediaItem
+  to: Post
+  type: belongs_to
+  via: post
+  cardinality: many-to-one
+- from: MediaItem
+  to: User
+  type: belongs_to
+  via: author
+  cardinality: many-to-one
+- from: Comment
+  to: Post
+  type: belongs_to
+  via: post
+  cardinality: many-to-one
+- from: Comment
+  to: Comment
+  type: belongs_to
+  via: parent
+  cardinality: self-referential thread
+- from: Category
+  to: Category
+  type: belongs_to
+  via: parent
+  cardinality: self-referential hierarchy
+traversal:
+  mechanism: HAL-style _links on every resource
+  embed_param: _embed
+  note: >-
+    ?_embed=1 inlines author, featured media and terms under _embedded, so the relationships
+    above are resolvable in a single request.
+x-notes: >-
+  No id-prefix scheme exists — WordPress uses bare auto-increment integers, and ids are only
+  unique within the site, not globally. There is no subway/ render in this repo.

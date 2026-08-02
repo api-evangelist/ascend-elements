@@ -1,23 +1,128 @@
 aid: ascend-elements
 name: Ascend Elements
-description: 'Ascend Elements is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Ascend Elements is a Westborough, Massachusetts battery materials company that
+  manufactures engineered lithium-ion battery materials from valuable elements reclaimed from
+  spent lithium-ion batteries and gigafactory manufacturing scrap. Founded in 2015 as Battery
+  Resourcers out of MIT-affiliated research by Eric Gratz and Professor Yan Wang, it recovers up
+  to 98% of the critical battery metals in end-of-life cells and uses its patented
+  Hydro-to-Cathode direct cathode precursor (pCAM) synthesis process to produce cathode precursor
+  and battery-grade lithium carbonate, reducing the carbon footprint of new EV battery cathode
+  material by up to 90%. Its Base 1 facility in Covington, Georgia is North America''s largest
+  electric-vehicle battery recycling plant, and Apex 1 in Hopkinsville, Kentucky is its
+  commercial pCAM plant. Ascend Elements publishes no public developer API for its materials,
+  recycling or logistics business; the only machine-readable surface observed on its own hosts is
+  the WordPress REST API at ascendelements.com/wp-json, which serves the corporate website''s
+  content, media-coverage, jobs and supplier sourcing-event collections.'
 url: https://raw.githubusercontent.com/api-evangelist/ascend-elements/refs/heads/main/apis.yml
+image: https://ascendelements.com/wp-content/uploads/2022/01/cropped-AE_favicon.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
 specificationVersion: '0.20'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
 - Company
-apis: []
+- Battery Materials
+- Battery Recycling
+- Lithium-Ion
+- Critical Minerals
+- Cathode Precursor
+- Electric Vehicles
+- Circular Economy
+- Advanced Manufacturing
+- Sustainability
+- Supply Chain
+- Content Management
+apis:
+- name: Ascend Elements WordPress REST API
+  description: 'The WordPress REST API surface published by Ascend Elements at
+    ascendelements.com/wp-json — 362 routes across 20 namespaces. The anonymously readable core is
+    the wp/v2 content surface (posts, pages, media, categories, tags, users, comments, search,
+    types, taxonomies, statuses) plus three company-specific custom post types: media_coverage
+    (61 items of press coverage), sourcing-events (open supplier bid packages for the Apex 1
+    plant) and job (the careers board, currently empty) with its job_category and job_location
+    taxonomies. This is the corporate website''s content/CMS surface, not a product API for
+    Ascend Elements'' battery materials, recycling or logistics business — the company ships no
+    public developer API for those. The OpenAPI in this repo was derived mechanically from the
+    live route index and from JSON Schemas returned by HTTP OPTIONS on the readable collections.'
+  humanURL: https://ascendelements.com/wp-json/
+  baseURL: https://ascendelements.com/wp-json
+  tags:
+  - Content Management
+  - WordPress
+  - REST
+  properties:
+  - type: OpenAPI
+    url: openapi/ascend-elements-wordpress-rest-openapi.yml
+  - type: Overlay
+    url: overlays/ascend-elements-wordpress-rest-overlay.yaml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: AgenticAccess
+  url: agentic-access/ascend-elements-agentic-access.yml
+- type: DomainSecurity
+  url: security/ascend-elements-domain-security.yml
 - type: Website
+  url: https://ascendelements.com/
+- type: About
+  url: https://ascendelements.com/about-us/
+- type: Products
+  url: https://ascendelements.com/products/
+- type: Services
+  url: https://ascendelements.com/services/
+- type: Blog
+  url: https://ascendelements.com/category/news/
+- type: Press
+  url: https://ascendelements.com/category/coverage/
+- type: Careers
+  url: https://ascendelements.com/careers/
+- type: Policies
+  url: https://ascendelements.com/corporate-policies/
+- type: Privacy
+  name: Opt-out preferences / US cookie and data-sharing statement
+  url: https://ascendelements.com/opt-out-preferences/
+- type: ContactUs
+  url: mailto:info@ascendelements.com
+- type: LinkedIn
+  url: https://www.linkedin.com/company/battery-resourcers
+- type: Twitter
+  url: https://x.com/ascendelements
+- type: Youtube
+  url: https://www.youtube.com/@AscendElements
+- type: SecondaryMarket
   url: https://forgeglobal.com/ascend-elements_stock/
+- type: WellKnown
+  url: well-known/ascend-elements-well-known.yml
+- type: Authentication
+  url: authentication/ascend-elements-authentication.yml
+- type: Conventions
+  url: conventions/ascend-elements-conventions.yml
+- type: ErrorCatalog
+  url: errors/ascend-elements-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/ascend-elements-lifecycle.yml
+- type: Conformance
+  url: conformance/ascend-elements-conformance.yml
+- type: DataModel
+  url: data-model/ascend-elements-data-model.yml
+- type: Packages
+  url: packages/ascend-elements-packages.yml
+- type: MCPServer
+  url: mcp/ascend-elements-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/ascend-elements-tool-crosswalk.yml
+- type: LLMsTxt
+  url: llms/ascend-elements-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-08-02'
+  status: enriched
+  artifacts_added: 19
+  pass: local-v1

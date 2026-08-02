@@ -1,0 +1,38 @@
+generated: '2026-08-02'
+method: generated
+source: openapi/ascend-elements-wordpress-rest-openapi.yml +
+  conventions/ascend-elements-conventions.yml + errors/ascend-elements-problem-types.yml
+api: Ascend Elements WordPress REST API
+scope: >-
+  Packaged operating instructions for the three flows on this API that have genuine third-party
+  utility. All are read-only: writes on this host require an administrator Application Password
+  and are not available to an agent. Every operationId referenced below was grepped out of the
+  derived OpenAPI and appears there verbatim.
+skills:
+- file: ascend-elements-track-sourcing-events.md
+  name: Track Ascend Elements supplier sourcing events
+  description: >-
+    Poll the open supplier bid packages for the Apex 1 plant and pull the full scope and
+    attached documents for any one of them. The highest-utility flow on this API.
+  api: openapi/ascend-elements-wordpress-rest-openapi.yml
+  operations: [getWpV2SourcingEvents, getWpV2SourcingEventsId, getWpV2Media]
+- file: ascend-elements-monitor-news-and-coverage.md
+  name: Monitor Ascend Elements news and press coverage
+  description: >-
+    Pull company announcements and the separately-curated third-party media coverage stream,
+    filtered by category and date, with correct incremental sync.
+  api: openapi/ascend-elements-wordpress-rest-openapi.yml
+  operations: [getWpV2Posts, getWpV2PostsId, getWpV2MediaCoverage, getWpV2MediaCoverageId,
+    getWpV2Categories, getWpV2Search]
+- file: ascend-elements-browse-careers-and-facilities.md
+  name: Browse Ascend Elements careers and facilities
+  description: >-
+    Read the careers board and its function/location taxonomies; the location taxonomy doubles
+    as the published facility list with plant capacity descriptions.
+  api: openapi/ascend-elements-wordpress-rest-openapi.yml
+  operations: [getWpV2Job, getWpV2JobId, getWpV2JobCategory, getWpV2JobLocation, getWpV2Pages]
+x-notes: >-
+  Ascend Elements publishes no AGENTS.md or provider-authored skill files — these are generated
+  by the API Evangelist enrichment pipeline. Each skill carries the host's real access posture:
+  anonymous read works, writes do not, and the HTML front end returns 503 to non-browser
+  clients so agents must use /wp-json/ rather than scraping pages.

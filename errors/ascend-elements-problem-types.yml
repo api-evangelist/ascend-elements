@@ -1,0 +1,67 @@
+generated: '2026-08-02'
+method: derived
+source: openapi/ascend-elements-wordpress-rest-openapi.yml + live 401 responses observed on
+  https://ascendelements.com/wp-json/
+format: proprietary
+format_note: >-
+  NOT RFC 9457. The WordPress REST API returns application/json with a proprietary
+  {code, message, data:{status}} envelope rather than application/problem+json. Recorded here
+  so an agent knows to parse `code`, not `type`/`title`/`detail`.
+envelope:
+  content_type: application/json
+  fields:
+    code: machine-readable error slug
+    message: human-readable message
+    data.status: HTTP status repeated in the body
+    data.params: map of parameter name to validation message (validation failures only)
+problems:
+- code: rest_forbidden
+  status: 401
+  title: Sorry, you are not allowed to do that.
+  observed: true
+  source_url: https://ascendelements.com/wp-json/wp-abilities/v1/abilities
+  remediation: >-
+    Authenticate with a WordPress Application Password (HTTP Basic) belonging to a user whose
+    role carries the required capability. The wp-abilities/v1 namespace is administrative.
+- code: rest_cannot_view
+  status: 401
+  title: Sorry, you are not allowed to view menus.
+  observed: true
+  source_url: https://ascendelements.com/wp-json/wp/v2/menus
+  remediation: >-
+    Menus and menu-items require an authenticated editor/administrator session; there is no
+    anonymous read for site navigation on this host.
+- code: rest_no_route
+  status: 404
+  title: No route was found matching the URL and request method.
+  observed: false
+  note: standard WordPress core response for an unregistered route on this host
+  remediation: Check the path against the route index at https://ascendelements.com/wp-json/.
+- code: rest_invalid_param
+  status: 400
+  title: Invalid parameter(s).
+  observed: false
+  note: >-
+    standard WordPress core validation failure; returns data.params with a per-parameter
+    message. Raised by the enum/minimum/maximum constraints that the derived OpenAPI carries
+    on query parameters (e.g. per_page maximum 100, order enum [asc, desc]).
+  remediation: Correct the offending parameter named in data.params.
+- code: rest_post_invalid_page_number
+  status: 400
+  title: The page number requested is larger than the number of pages available.
+  observed: false
+  note: raised when `page` exceeds X-WP-TotalPages
+  remediation: Read X-WP-TotalPages from the collection response before paging.
+- code: rest_cannot_create
+  status: 401
+  title: Sorry, you are not allowed to create posts as this user.
+  observed: false
+  note: >-
+    all write methods on this host are unavailable anonymously — the `Allow` header on
+    wp/v2/posts is `GET` for an unauthenticated caller
+  remediation: Authenticate with an Application Password for a user with the author capability.
+x-notes: >-
+  Ascend Elements publishes no developer documentation and therefore no error reference to
+  search; the catalog above is derived from the WordPress core error contract plus the four
+  error responses actually observed live on this host. Codes marked `observed: false` are
+  standard WordPress core codes reachable on this route set, not invented ones.

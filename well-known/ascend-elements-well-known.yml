@@ -1,0 +1,68 @@
+generated: '2026-08-02'
+method: searched
+source: live probes of every host in apis.yml and every OpenAPI servers[] host
+hosts_probed:
+- ascendelements.com
+documents:
+- host: ascendelements.com
+  path: /.well-known/security.txt
+  spec: RFC 9116
+  status: 404
+  content_type: text/html
+- host: ascendelements.com
+  path: /.well-known/openid-configuration
+  spec: OpenID Connect Discovery
+  status: 503
+  content_type: text/html; charset=utf-8
+- host: ascendelements.com
+  path: /.well-known/oauth-authorization-server
+  spec: RFC 8414 OAuth 2.0 Authorization Server Metadata
+  status: 503
+  content_type: text/html; charset=utf-8
+- host: ascendelements.com
+  path: /.well-known/oauth-protected-resource
+  spec: RFC 9728 OAuth 2.0 Protected Resource Metadata
+  status: 503
+  content_type: text/html; charset=utf-8
+- host: ascendelements.com
+  path: /.well-known/api-catalog
+  spec: RFC 9727
+  status: 503
+  content_type: text/html; charset=utf-8
+- host: ascendelements.com
+  path: /.well-known/ai-plugin.json
+  status: 503
+  content_type: text/html; charset=utf-8
+- host: ascendelements.com
+  path: /.well-known/agent-card.json
+  spec: A2A 1.0.0
+  status: 503
+  content_type: text/html; charset=utf-8
+- host: ascendelements.com
+  path: /.well-known/agent.json
+  spec: A2A pre-0.3 legacy
+  status: 503
+  content_type: text/html; charset=utf-8
+result: none
+x-evidence:
+  fetched: '2026-08-02'
+  probe_method: >-
+    curl with a desktop browser User-Agent, following redirects, 4s apart to stay under the
+    host's rate limit. Each path was probed twice (once in an initial sweep and once in a
+    spaced re-probe) and returned the same status both times.
+  notes: >-
+    ascendelements.com sits behind Cloudflare in front of WP Engine and answers EVERY
+    front-end HTML route with HTTP 503 and `Retry-After: 600` to non-browser clients — this
+    was confirmed against paths that certainly exist (/about-us/, /careers/) and paths that
+    certainly do not (/openapi.json, /this-does-not-exist/), which return the same 503. The
+    503s above are therefore that bot-protection/maintenance shell, not evidence of a
+    document. Two facts make the negative result trustworthy anyway: (1) every 503 body is
+    `text/html`, so none of them is a well-known JSON document; and (2) /.well-known/security.txt
+    and /llms.txt are served from the edge and return a clean 404, showing the /.well-known/
+    namespace itself is not populated. The WordPress REST API at /wp-json/ is exempt from the
+    block and answered every request with HTTP 200.
+  a2a: >-
+    No A2A agent card was found on any Ascend Elements host — neither the canonical
+    /.well-known/agent-card.json nor the legacy /.well-known/agent.json returned a JSON object.
+    Per the enrichment contract no a2a/ artifact was authored and no AgentCard pointer is
+    emitted; an agent card may only ever be recorded from an observed 200 JSON body.

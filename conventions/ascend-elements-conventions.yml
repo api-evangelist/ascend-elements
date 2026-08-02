@@ -1,0 +1,143 @@
+generated: '2026-08-02'
+method: derived
+source: openapi/ascend-elements-wordpress-rest-openapi.yml + live probes of
+  https://ascendelements.com/wp-json/wp/v2/posts
+api: Ascend Elements WordPress REST API
+scope: >-
+  Cross-cutting request/response semantics observed on the WordPress REST API published at
+  ascendelements.com/wp-json. Everything below was either read out of the live route index or
+  observed on a live request/response against this host on 2026-08-02.
+authentication:
+  anonymous_read: true
+  note: >-
+    Published content collections (wp/v2 posts, pages, media, categories, tags, users,
+    comments, search, plus the site's job, job_category, job_location, media_coverage and
+    sourcing-events custom types) read anonymously. The wp-abilities/v1 namespace and the
+    menus/menu-items routes return 401 rest_forbidden / rest_cannot_view without credentials,
+    and the `Allow` header on wp/v2/posts is `GET` only for an unauthenticated caller.
+  schemes:
+  - Application Passwords (HTTP Basic) — advertised in the route index at
+    authentication.application-passwords; authorize at
+    https://ascendelements.com/wp-admin/authorize-application.php
+  - Cookie + X-WP-Nonce header — same-origin first-party callers only
+  cross_reference: authentication/ascend-elements-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    No idempotency key header or parameter is documented or present in the route index. Writes
+    are plain REST semantics (POST creates, PUT/PATCH update, DELETE removes), and writes are
+    not available anonymously in any case. No Idempotency pointer is emitted for this provider
+    — emitting one would claim an idempotency contract that does not exist.
+pagination:
+  style: page-number
+  request_params:
+  - name: page
+    default: 1
+  - name: per_page
+    default: 10
+    max: 100
+  - name: offset
+  - name: order
+    enum: [asc, desc]
+  - name: orderby
+  response_headers:
+  - X-WP-Total
+  - X-WP-TotalPages
+  link_header: 'RFC 8288 Link header with rel="next" / rel="prev", e.g.
+    <https://ascendelements.com/wp-json/wp/v2/posts?per_page=2&page=2>; rel="next"'
+  observed:
+    url: https://ascendelements.com/wp-json/wp/v2/posts?per_page=2&page=1
+    x_wp_total: 66
+    x_wp_totalpages: 33
+  collection_totals_observed:
+    posts: 66
+    pages: 10
+    media_coverage: 61
+    sourcing-events: 4
+    job: 0
+sparse_fieldsets:
+  supported: true
+  param: _fields
+  note: 'comma-separated property list, e.g. ?_fields=id,slug,link,title — verified live'
+expansion:
+  supported: true
+  param: _embed
+  note: >-
+    HAL-style _links on every resource (self, collection, about, author, replies,
+    wp:featuredmedia, wp:term, curies); ?_embed=1 inlines the linked resources under _embedded.
+context_shaping:
+  param: context
+  enum: [view, embed, edit]
+  note: controls which schema properties are returned; edit requires authentication
+metadata:
+  supported: true
+  field: meta
+  note: wp/v2 content types expose a `meta` object on create/update requests
+request_tracing:
+  request_id_header: null
+  note: >-
+    No request-id or correlation-id header is returned. The Cloudflare edge does return a
+    `cf-ray` identifier, which is an edge trace token rather than an application request id.
+versioning:
+  scheme: uri-path namespace
+  current: wp/v2
+  namespace_count: 21
+  namespaces:
+  - wp/v2
+  - wp-abilities/v1
+  - wp-site-health/v1
+  - wp-block-editor/v1
+  - oembed/1.0
+  - batch/v1
+  - yoast/v1
+  - complianz/v1
+  - cptui/v1
+  - facetwp/v1
+  - elementor/v1
+  - elementor-pro/v1
+  - elementor-one/v1
+  - elementor-ai/v1
+  - elementor/v1/documents
+  - elementor/v1/feedback
+  - ea11y/v1
+  - image-optimizer/v1
+  - site-mailer/v1
+  - wpe/cache-plugin/v1
+  - wpe_sign_on_plugin/v1
+  cross_reference: lifecycle/ascend-elements-lifecycle.yml
+error_envelope:
+  format: proprietary JSON (not RFC 9457 application/problem+json)
+  content_type: application/json
+  shape:
+    code: machine-readable string, e.g. rest_forbidden, rest_cannot_view, rest_no_route
+    message: human-readable string
+    data.status: HTTP status code repeated in the body
+    data.params: per-parameter validation messages (validation errors only)
+  cross_reference: errors/ascend-elements-problem-types.yml
+rate_limiting:
+  signaled: false
+  api_surface_note: >-
+    No X-RateLimit-* or Retry-After headers were observed on any /wp-json/ response.
+  front_end_note: >-
+    The HTML front end is a different story and is worth recording: every non-/wp-json/ path
+    on ascendelements.com returns HTTP 503 with `Retry-After: 600` to non-browser clients.
+    That is bot protection on the website, not a documented API rate limit, and it does not
+    apply to the REST API.
+caching:
+  cache_control: 'max-age=600, must-revalidate (observed on wp/v2 collections)'
+  headers_observed: [x-cacheable, x-cache, x-cache-group, cf-cache-status]
+  note: 'x-cacheable: SHORT; edge is Cloudflare in front of WP Engine'
+cors:
+  access_control_allow_headers: [Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type]
+  access_control_expose_headers: [X-WP-Total, X-WP-TotalPages, Link]
+method_override:
+  supported: true
+  header: X-HTTP-Method-Override
+  note: standard WordPress REST behaviour for clients that cannot send PUT/PATCH/DELETE
+batching:
+  endpoint: /batch/v1
+  operationId: createBatchV1
+  note: WordPress core batch endpoint present in the route index
+robots:
+  x_robots_tag: noindex
+  note: the REST API responses are marked noindex by the host

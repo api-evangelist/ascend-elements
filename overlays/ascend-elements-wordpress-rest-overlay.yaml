@@ -1,0 +1,85 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Ascend Elements WordPress REST API
+  version: 1.0.0
+extends: openapi/ascend-elements-wordpress-rest-openapi.yml
+x-generated: '2026-08-02'
+x-method: generated
+x-source: openapi/ascend-elements-wordpress-rest-openapi.yml
+actions:
+- target: $.info
+  description: Provenance and rating context for the derived contract.
+  update:
+    x-apievangelist-provider: ascend-elements
+    x-apievangelist-surface: corporate-website-cms
+    x-apievangelist-product-api: false
+    x-apievangelist-note: >-
+      Ascend Elements is a lithium-ion battery materials manufacturer. This contract describes
+      its WordPress corporate website, which is the only machine-readable surface the company
+      publishes. It is not a product API and should not be read as one.
+- target: $.info
+  description: Record that this contract is derived by API Evangelist, not published by the provider.
+  update:
+    x-apievangelist-contract-origin: derived
+    x-apievangelist-derived-from: https://ascendelements.com/wp-json/
+    x-apievangelist-derivation: >-
+      Paths and methods from the live WordPress route index; component schemas from live HTTP
+      OPTIONS responses on the anonymously readable wp/v2 collections; security schemes from
+      the authentication block advertised by the route index root and the
+      access-control-allow-headers response header.
+- target: $.servers[0]
+  description: Note the access posture of the single server.
+  update:
+    x-apievangelist-anonymous-read: true
+    x-apievangelist-anonymous-write: false
+    x-apievangelist-edge: Cloudflare in front of WP Engine
+- target: $.tags[?(@.name=='wp/v2')]
+  description: Mark the core content namespace as the only anonymously usable surface.
+  update:
+    description: >-
+      WordPress core content collections plus this site's three custom post types
+      (media_coverage, sourcing-events, job). The only namespace usable without credentials.
+    x-apievangelist-anonymous: true
+- target: $.tags[?(@.name=='wp-abilities/v1')]
+  description: Flag the Abilities API as the latent agent surface.
+  update:
+    description: >-
+      WordPress Abilities API — the substrate a WordPress MCP adapter would expose as tools.
+      Installed on this host but returns 401 rest_forbidden anonymously.
+    x-apievangelist-agent-surface: latent
+    x-apievangelist-gated: true
+- target: $.paths['/wp/v2/media_coverage'].get
+  description: Annotate the company-specific press-coverage collection.
+  update:
+    x-apievangelist-entity: MediaCoverage
+    x-apievangelist-custom-post-type: true
+    x-apievangelist-observed-count: 61
+- target: $.paths['/wp/v2/sourcing-events'].get
+  description: Annotate the procurement collection, the most business-relevant surface here.
+  update:
+    x-apievangelist-entity: SourcingEvent
+    x-apievangelist-custom-post-type: true
+    x-apievangelist-observed-count: 4
+    x-apievangelist-note: >-
+      Open supplier bid packages for the Apex 1 plant. This is the one collection on the host
+      with genuine third-party utility — suppliers can poll it for open procurement.
+- target: $.paths['/wp/v2/job'].get
+  description: Annotate the careers collection.
+  update:
+    x-apievangelist-entity: Job
+    x-apievangelist-custom-post-type: true
+    x-apievangelist-observed-count: 0
+- target: $.paths['/wp/v2/posts'].get
+  description: Record pagination signalling verified live on this operation.
+  update:
+    x-apievangelist-pagination:
+      style: page-number
+      params: [page, per_page, offset]
+      response_headers: [X-WP-Total, X-WP-TotalPages]
+      link_header: RFC 8288
+    x-apievangelist-observed-count: 66
+- target: $.components.schemas.RestError
+  description: Cross-link the error catalog.
+  update:
+    x-apievangelist-error-catalog: errors/ascend-elements-problem-types.yml
+    x-apievangelist-rfc9457: false

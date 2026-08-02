@@ -1,0 +1,146 @@
+generated: '2026-08-02'
+method: derived
+source: mcp/ascend-elements-mcp.yml + openapi/ascend-elements-wordpress-rest-openapi.yml
+api: Ascend Elements WordPress REST API
+surfaces:
+  openapi:
+    file: openapi/ascend-elements-wordpress-rest-openapi.yml
+    operations: 601
+    paths: 361
+    gated: false
+    note: >-
+      Derived from the live route index. 247 operations are reads; the remaining 354 are writes
+      that require an authenticated administrator and are unavailable anonymously.
+  graphql:
+    endpoint: null
+    note: no GraphQL surface — /graphql returns the host's 503 HTML shell and no WPGraphQL
+      namespace is registered in the route index
+  mcp:
+    url: null
+    status: candidate
+    gated: n/a
+    note: >-
+      No MCP server exists, so tools/list could not be called. The crosswalk below binds the
+      derived candidate tools to their backing REST operations, which is where each tool's real
+      inputSchema would come from.
+  abilities:
+    endpoint: https://ascendelements.com/wp-json/wp-abilities/v1/abilities
+    gated: true
+    http_status: 401
+    note: >-
+      WordPress Abilities API is installed but returns rest_forbidden anonymously. If Ascend
+      Elements ever registers a WordPress MCP adapter, the published tool set would come from
+      here, and this crosswalk should be re-derived against the authenticated ability list
+      rather than against the REST index.
+crosswalk:
+- tool: search_site
+  category: discovery
+  rest: [getWpV2Search]
+  binding: rest
+  confidence: high
+- tool: list_news
+  category: news
+  rest: [getWpV2Posts]
+  binding: rest
+  confidence: high
+- tool: get_news_item
+  category: news
+  rest: [getWpV2PostsId]
+  binding: rest
+  confidence: high
+- tool: list_media_coverage
+  category: press
+  rest: [getWpV2MediaCoverage]
+  binding: rest
+  confidence: high
+  note: company-specific custom post type, 61 items observed
+- tool: get_media_coverage_item
+  category: press
+  rest: [getWpV2MediaCoverageId]
+  binding: rest
+  confidence: high
+- tool: list_sourcing_events
+  category: procurement
+  rest: [getWpV2SourcingEvents]
+  binding: rest
+  confidence: high
+  note: company-specific custom post type, 4 open Apex 1 bid packages observed
+- tool: get_sourcing_event
+  category: procurement
+  rest: [getWpV2SourcingEventsId]
+  binding: rest
+  confidence: high
+- tool: list_jobs
+  category: careers
+  rest: [getWpV2Job]
+  binding: rest
+  confidence: high
+  note: collection is registered and readable but currently returns zero items
+- tool: list_job_locations
+  category: careers
+  rest: [getWpV2JobLocation]
+  binding: rest
+  confidence: high
+- tool: list_job_categories
+  category: careers
+  rest: [getWpV2JobCategory]
+  binding: rest
+  confidence: high
+- tool: list_pages
+  category: content
+  rest: [getWpV2Pages]
+  binding: rest
+  confidence: high
+- tool: get_page
+  category: content
+  rest: [getWpV2PagesId]
+  binding: rest
+  confidence: high
+- tool: list_categories
+  category: content
+  rest: [getWpV2Categories]
+  binding: rest
+  confidence: high
+mcp_only: []
+mcp_only_note: >-
+  None. Because the tool set is derived from the REST surface rather than published by a live
+  server, every tool binds to a REST operation by construction. If Ascend Elements later
+  publishes a real MCP server, re-derive this file — Abilities-backed tools are a common source
+  of genuine MCP-only capability and would belong here.
+rest_only:
+- capability: content write operations
+  operations: 354
+  reason: >-
+    POST/PUT/PATCH/DELETE across posts, pages, media, comments, users, terms, templates and all
+    custom post types. Excluded from the tool set deliberately: they require an administrator
+    Application Password, and exposing site-mutating tools for a third party's corporate
+    website would be inappropriate.
+- capability: site administration namespaces
+  operations: 21
+  namespaces_examples: [elementor/v1, elementor-pro/v1, elementor-one/v1, elementor-ai/v1,
+    yoast/v1, site-mailer/v1, image-optimizer/v1, ea11y/v1, facetwp/v1, cptui/v1,
+    wpe/cache-plugin/v1, wpe_sign_on_plugin/v1, wp-site-health/v1, wp-block-editor/v1]
+  reason: page-builder, SEO, mailer, image optimization, accessibility and host-management
+    plugin routes; all administrative and 401 anonymously
+- capability: WordPress Abilities API
+  operations: 4
+  rest: [getWpAbilitiesV1Abilities]
+  reason: 401 rest_forbidden anonymously; cannot be enumerated without credentials
+- capability: navigation structure
+  reason: wp/v2/menus and wp/v2/menu-items return 401 rest_cannot_view anonymously
+- capability: batch envelope
+  rest: [createBatchV1]
+  reason: transport-level batching primitive, not a domain capability
+coverage:
+  tools_named: 13
+  tools_bound: 13
+  tools_unbound: 0
+  mcp_only: 0
+  rest_operations_total: 601
+  rest_operations_readable_anonymously: 247
+  rest_operations_with_a_tool: 13
+x-notes: >-
+  NO FABRICATION: every operationId above was grepped out of
+  openapi/ascend-elements-wordpress-rest-openapi.yml and appears there verbatim. Confidence is
+  `high` throughout because each binding is a derived one-to-one mapping to a known operation,
+  not a semantic guess against an opaque published tool list.

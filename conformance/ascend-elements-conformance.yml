@@ -1,0 +1,91 @@
+generated: '2026-08-02'
+method: derived
+source: openapi/ascend-elements-wordpress-rest-openapi.yml + live probes of ascendelements.com
+  + https://ascendelements.com/corporate-policies/
+api: Ascend Elements WordPress REST API
+standards:
+- id: openapi-3.1
+  conforms: true
+  evidence: >-
+    openapi/ascend-elements-wordpress-rest-openapi.yml is an OpenAPI 3.1.0 document derived by
+    this pipeline from the live route index. Ascend Elements does not itself publish an
+    OpenAPI — this conformance is ours, not theirs.
+  authored_by: api-evangelist
+- id: rest
+  conforms: true
+  evidence: resource collections, HTTP verb semantics, JSON representations, HAL-style _links
+- id: rfc8288-web-linking
+  conforms: true
+  evidence: >-
+    Link header with rel="next" observed live on
+    https://ascendelements.com/wp-json/wp/v2/posts?per_page=2&page=1
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: >-
+    errors are application/json with a proprietary {code, message, data.status} envelope, not
+    application/problem+json. See errors/ascend-elements-problem-types.yml.
+- id: json-schema
+  conforms: true
+  evidence: >-
+    HTTP OPTIONS on the wp/v2 collections returns a JSON Schema per resource; 13 such schemas
+    were harvested into the derived OpenAPI components.
+- id: http-basic-auth
+  conforms: true
+  evidence: WordPress Application Passwords, advertised at authentication.application-passwords
+- id: oauth2
+  conforms: false
+  evidence: >-
+    no OAuth namespace in the route index; /.well-known/oauth-authorization-server returns the
+    host's 503 HTML shell, not RFC 8414 metadata
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns no metadata document
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: 'https://ascendelements.com/.well-known/security.txt returns HTTP 404'
+- id: rfc9727-api-catalog
+  conforms: false
+  evidence: no /.well-known/api-catalog document
+- id: a2a
+  conforms: false
+  evidence: >-
+    neither /.well-known/agent-card.json nor the legacy /.well-known/agent.json returns a JSON
+    agent card
+- id: mcp
+  conforms: false
+  evidence: >-
+    no `mcp` namespace is registered in the route index. The WordPress Abilities API
+    (wp-abilities/v1), which is the substrate a WordPress MCP adapter exposes, IS installed but
+    returns 401 rest_forbidden anonymously. See mcp/ascend-elements-mcp.yml.
+- id: hsts
+  conforms: true
+  evidence: >-
+    strict-transport-security max-age=63072000; includeSubDomains observed on
+    https://ascendelements.com/wp-json/wp/v2/posts
+- id: dnssec
+  conforms: false
+  evidence: security/ascend-elements-domain-security.yml — dnssec false
+- id: dmarc
+  conforms: true
+  partial: true
+  evidence: >-
+    DMARC record present but policy is `p=none` (monitor only, no enforcement). See
+    security/ascend-elements-domain-security.yml.
+- id: caa
+  conforms: false
+  evidence: no CAA records published for ascendelements.com
+compliance_program:
+  published: false
+  certifications: []
+  note: >-
+    Ascend Elements publishes a corporate governance page at
+    https://ascendelements.com/corporate-policies/ listing an Anti-Corruption and Bribery
+    Policy, Antitrust Policy, Code of Conduct, Human Rights Policy, a U.S. Department of Energy
+    Conflict of Interest Policy, a Responsible Sourcing Policy, a Supplier Code of Conduct and
+    a Whistleblower Policy. These are ESG / business-conduct policies. They are NOT an
+    information-security or data-protection certification program — no SOC 2, ISO 27001, PCI
+    DSS, HIPAA or FedRAMP claim appears anywhere on the site, and no trust center exists
+    (trust.ascendelements.com does not resolve; probe-security-programs.py returned
+    vdp=none trust=none). Because there is no published security/compliance program, NO
+    `Compliance` and NO `TrustCenter` pointer is emitted — the corporate-policies page is
+    wired as `Policies` instead, which is what it actually is.
