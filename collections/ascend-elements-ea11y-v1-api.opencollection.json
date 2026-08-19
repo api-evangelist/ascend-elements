@@ -1,0 +1,375 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Ea11y/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ea11y/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /ea11y/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /ea11y/v1/analytics/statistic",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/analytics/statistic"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/analytics/statistic` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/connect/authorize",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/connect/authorize",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/connect/authorize` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/connect/deactivate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/connect/deactivate"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/connect/deactivate` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/connect/disconnect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/connect/disconnect"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/connect/disconnect` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/connect/switch-domain",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/connect/switch-domain"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/connect/switch-domain` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /ea11y/v1/remediation/clear-cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/clear-cache"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/clear-cache` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/remediation/dismiss-heading-issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/dismiss-heading-issue"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/dismiss-heading-issue` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/remediation/global-item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/global-item"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-item` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /ea11y/v1/remediation/global-item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/global-item"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-item` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /ea11y/v1/remediation/global-item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/global-item"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-item` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /ea11y/v1/remediation/global-item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/global-item"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-item` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /ea11y/v1/remediation/global-items",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/global-items"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /ea11y/v1/remediation/global-items",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/global-items"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /ea11y/v1/remediation/global-items",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/global-items"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /ea11y/v1/remediation/global-items-group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/global-items-group"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items-group` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /ea11y/v1/remediation/global-items-group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/global-items-group"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items-group` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/remediation/heading-level",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/heading-level"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/heading-level` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/remediation/item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/item"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/item` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /ea11y/v1/remediation/item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/item"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/item` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /ea11y/v1/remediation/item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/item"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/item` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /ea11y/v1/remediation/item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/item"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/item` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /ea11y/v1/remediation/items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/items"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/items` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /ea11y/v1/remediation/items",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/items"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/items` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /ea11y/v1/remediation/items",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/items"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/items` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/remediation/register",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/register"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/register` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/remediation/set-alt-text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/set-alt-text"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/set-alt-text` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/remediation/trigger-save",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/remediation/trigger-save"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/trigger-save` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/reviews/review",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/reviews/review"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/reviews/review` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /ea11y/v1/settings/get-media",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/settings/get-media"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/settings/get-media` in the `ea11y/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /ea11y/v1/settings/get-settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/ea11y/v1/settings/get-settings"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/settings/get-settings` in the `ea11y/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

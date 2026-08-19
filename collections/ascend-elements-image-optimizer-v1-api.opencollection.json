@@ -1,0 +1,218 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Image Optimizer/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "image-optimizer/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /image-optimizer/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /image-optimizer/v1/backups",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/backups"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/backups` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/backups/restore",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/backups/restore"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/backups/restore` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/backups/restore/{image_id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/backups/restore/:image_id",
+            "params": [
+              {
+                "name": "image_id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `image_id` from the WordPress route pattern `/image-optimizer/v1/backups/restore/(?P<image_id>\\d+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/backups/restore/(?P<image_id>\\d+)` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/connect/authorize",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/connect/authorize",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/connect/authorize` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/connect/deactivate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/connect/deactivate"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/connect/deactivate` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/connect/disconnect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/connect/disconnect"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/connect/disconnect` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/connect/switch-domain",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/connect/switch-domain"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/connect/switch-domain` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/optimize/bulk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/optimize/bulk"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/bulk` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/optimize/bulk/cancel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/optimize/bulk/cancel"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/bulk/cancel` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /image-optimizer/v1/optimize/bulk/images",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/optimize/bulk/images"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/bulk/images` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/optimize/image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/optimize/image"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/image` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/optimize/status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/optimize/status"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/status` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /image-optimizer/v1/reviews/review",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/reviews/review"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/reviews/review` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /image-optimizer/v1/stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/stats"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/stats` in the `image-optimizer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /image-optimizer/v1/stats/optimization-details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/image-optimizer/v1/stats/optimization-details"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/stats/optimization-details` in the `image-optimizer/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

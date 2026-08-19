@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Elementor Pro/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "elementor-pro/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /elementor-pro/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor-pro/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-pro/v1` in the `elementor-pro/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor-pro/v1/get-post-type-taxonomies",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor-pro/v1/get-post-type-taxonomies",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-pro/v1/get-post-type-taxonomies` in the `elementor-pro/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor-pro/v1/license/get-license-status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor-pro/v1/license/get-license-status"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-pro/v1/license/get-license-status` in the `elementor-pro/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor-pro/v1/license/tier-features",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor-pro/v1/license/tier-features"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-pro/v1/license/tier-features` in the `elementor-pro/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor-pro/v1/posts-widget",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor-pro/v1/posts-widget"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-pro/v1/posts-widget` in the `elementor-pro/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor-pro/v1/refresh-loop",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor-pro/v1/refresh-loop",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-pro/v1/refresh-loop` in the `elementor-pro/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor-pro/v1/refresh-search",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor-pro/v1/refresh-search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-pro/v1/refresh-search` in the `elementor-pro/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

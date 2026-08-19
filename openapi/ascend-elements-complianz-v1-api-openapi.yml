@@ -1,0 +1,427 @@
+openapi: 3.2.0
+info:
+  title: Ascend Elements WordPress REST Complianz/v1 API
+  version: wp/v2
+  summary: The machine-readable REST surface published at ascendelements.com/wp-json.
+  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  contact:
+    email: info@ascendelements.com
+    url: https://ascendelements.com/
+  x-derived-from: https://ascendelements.com/wp-json/
+  x-derived-on: '2026-08-02'
+  x-derived-by: API Evangelist enrichment pipeline (local-v1)
+servers:
+- url: https://ascendelements.com/wp-json
+  description: Ascend Elements WordPress REST API
+security:
+- {}
+- applicationPassword: []
+- cookieNonce: []
+tags:
+- name: complianz/v1
+paths:
+  /complianz/v1:
+    get:
+      operationId: getComplianzV1
+      summary: GET /complianz/v1
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      parameters:
+      - name: namespace
+        in: query
+        schema:
+          default: complianz/v1
+      - name: context
+        in: query
+        schema:
+          default: view
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/banner:
+    get:
+      operationId: getComplianzV1Banner
+      summary: GET /complianz/v1/banner
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/banner` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/consent-area/{post_id}/{block_id}:
+    parameters:
+    - name: post_id
+      in: path
+      required: true
+      description: Path segment `post_id` from the WordPress route pattern `/complianz/v1/consent-area/(?P<post_id>([0-9]+))/(?P<block_id>([a-z0-9-_]+))`.
+      schema:
+        type: string
+    - name: block_id
+      in: path
+      required: true
+      description: Path segment `block_id` from the WordPress route pattern `/complianz/v1/consent-area/(?P<post_id>([0-9]+))/(?P<block_id>([a-z0-9-_]+))`.
+      schema:
+        type: string
+    get:
+      operationId: getComplianzV1ConsentAreaPostIdBlockId
+      summary: GET /complianz/v1/consent-area/{post_id}/{block_id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/consent-area/(?P<post_id>([0-9]+))/(?P<block_id>([a-z0-9-_]+))` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/cookie_data:
+    get:
+      operationId: getComplianzV1CookieData
+      summary: GET /complianz/v1/cookie_data
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/cookie_data` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/datarequests:
+    post:
+      operationId: createComplianzV1Datarequests
+      summary: POST /complianz/v1/datarequests
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/datarequests` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/documents:
+    get:
+      operationId: getComplianzV1Documents
+      summary: GET /complianz/v1/documents
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/documents` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/manage_consent_html:
+    get:
+      operationId: getComplianzV1ManageConsentHtml
+      summary: GET /complianz/v1/manage_consent_html
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/manage_consent_html` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/store_cookies:
+    post:
+      operationId: createComplianzV1StoreCookies
+      summary: POST /complianz/v1/store_cookies
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/store_cookies` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/track:
+    post:
+      operationId: createComplianzV1Track
+      summary: POST /complianz/v1/track
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/track` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/wsc-checks:
+    post:
+      operationId: createComplianzV1WscChecks
+      summary: POST /complianz/v1/wsc-checks
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/wsc-checks` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /complianz/v1/wsc-scan:
+    post:
+      operationId: createComplianzV1WscScan
+      summary: POST /complianz/v1/wsc-scan
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/wsc-scan` in the `complianz/v1` namespace.
+      tags:
+      - complianz/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+components:
+  schemas:
+    RestError:
+      type: object
+      description: The WordPress REST API error envelope, observed live on this host (GET /wp-json/wp-abilities/v1/abilities returns rest_forbidden with status 401; GET /wp-json/wp/v2/menus returns rest_cannot_view with status 401).
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden, rest_cannot_view, rest_no_route.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: HTTP status code.
+      required:
+      - code
+      - message
+  securitySchemes:
+    applicationPassword:
+      type: http
+      scheme: basic
+      description: WordPress Application Passwords, advertised by the live route index at https://ascendelements.com/wp-json/ under authentication.application-passwords. Username + application password presented as HTTP Basic on the Authorization header. Issued at https://ascendelements.com/wp-admin/authorize-application.php.
+    cookieNonce:
+      type: apiKey
+      in: header
+      name: X-WP-Nonce
+      description: WordPress cookie authentication paired with a nonce on the X-WP-Nonce header, for same-origin first-party callers. Advertised via the access-control-allow-headers response header observed live on this host.

@@ -1,0 +1,591 @@
+openapi: 3.2.0
+info:
+  title: Ascend Elements WordPress REST Image Optimizer/v1 API
+  version: wp/v2
+  summary: The machine-readable REST surface published at ascendelements.com/wp-json.
+  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  contact:
+    email: info@ascendelements.com
+    url: https://ascendelements.com/
+  x-derived-from: https://ascendelements.com/wp-json/
+  x-derived-on: '2026-08-02'
+  x-derived-by: API Evangelist enrichment pipeline (local-v1)
+servers:
+- url: https://ascendelements.com/wp-json
+  description: Ascend Elements WordPress REST API
+security:
+- {}
+- applicationPassword: []
+- cookieNonce: []
+tags:
+- name: image-optimizer/v1
+paths:
+  /image-optimizer/v1:
+    get:
+      operationId: getImageOptimizerV1
+      summary: GET /image-optimizer/v1
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      parameters:
+      - name: namespace
+        in: query
+        schema:
+          default: image-optimizer/v1
+      - name: context
+        in: query
+        schema:
+          default: view
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/backups:
+    delete:
+      operationId: deleteImageOptimizerV1Backups
+      summary: DELETE /image-optimizer/v1/backups
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/backups` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/backups/restore:
+    post:
+      operationId: createImageOptimizerV1BackupsRestore
+      summary: POST /image-optimizer/v1/backups/restore
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/backups/restore` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/backups/restore/{image_id}:
+    parameters:
+    - name: image_id
+      in: path
+      required: true
+      description: Path segment `image_id` from the WordPress route pattern `/image-optimizer/v1/backups/restore/(?P<image_id>\d+)`.
+      schema:
+        type: string
+    post:
+      operationId: createImageOptimizerV1BackupsRestoreImageId
+      summary: POST /image-optimizer/v1/backups/restore/{image_id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/backups/restore/(?P<image_id>\d+)` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/connect/authorize:
+    post:
+      operationId: createImageOptimizerV1ConnectAuthorize
+      summary: POST /image-optimizer/v1/connect/authorize
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/connect/authorize` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clearSession:
+                  type: boolean
+                  default: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/connect/deactivate:
+    post:
+      operationId: createImageOptimizerV1ConnectDeactivate
+      summary: POST /image-optimizer/v1/connect/deactivate
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/connect/deactivate` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/connect/disconnect:
+    post:
+      operationId: createImageOptimizerV1ConnectDisconnect
+      summary: POST /image-optimizer/v1/connect/disconnect
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/connect/disconnect` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/connect/switch-domain:
+    post:
+      operationId: createImageOptimizerV1ConnectSwitchDomain
+      summary: POST /image-optimizer/v1/connect/switch-domain
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/connect/switch-domain` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/optimize/bulk:
+    post:
+      operationId: createImageOptimizerV1OptimizeBulk
+      summary: POST /image-optimizer/v1/optimize/bulk
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/bulk` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/optimize/bulk/cancel:
+    post:
+      operationId: createImageOptimizerV1OptimizeBulkCancel
+      summary: POST /image-optimizer/v1/optimize/bulk/cancel
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/bulk/cancel` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/optimize/bulk/images:
+    get:
+      operationId: getImageOptimizerV1OptimizeBulkImages
+      summary: GET /image-optimizer/v1/optimize/bulk/images
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/bulk/images` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/optimize/image:
+    post:
+      operationId: createImageOptimizerV1OptimizeImage
+      summary: POST /image-optimizer/v1/optimize/image
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/image` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/optimize/status:
+    post:
+      operationId: createImageOptimizerV1OptimizeStatus
+      summary: POST /image-optimizer/v1/optimize/status
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/optimize/status` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/reviews/review:
+    post:
+      operationId: createImageOptimizerV1ReviewsReview
+      summary: POST /image-optimizer/v1/reviews/review
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/reviews/review` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/stats:
+    get:
+      operationId: getImageOptimizerV1Stats
+      summary: GET /image-optimizer/v1/stats
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/stats` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /image-optimizer/v1/stats/optimization-details:
+    get:
+      operationId: getImageOptimizerV1StatsOptimizationDetails
+      summary: GET /image-optimizer/v1/stats/optimization-details
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/image-optimizer/v1/stats/optimization-details` in the `image-optimizer/v1` namespace.
+      tags:
+      - image-optimizer/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+components:
+  schemas:
+    RestError:
+      type: object
+      description: The WordPress REST API error envelope, observed live on this host (GET /wp-json/wp-abilities/v1/abilities returns rest_forbidden with status 401; GET /wp-json/wp/v2/menus returns rest_cannot_view with status 401).
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden, rest_cannot_view, rest_no_route.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: HTTP status code.
+      required:
+      - code
+      - message
+  securitySchemes:
+    applicationPassword:
+      type: http
+      scheme: basic
+      description: WordPress Application Passwords, advertised by the live route index at https://ascendelements.com/wp-json/ under authentication.application-passwords. Username + application password presented as HTTP Basic on the Authorization header. Issued at https://ascendelements.com/wp-admin/authorize-application.php.
+    cookieNonce:
+      type: apiKey
+      in: header
+      name: X-WP-Nonce
+      description: WordPress cookie authentication paired with a nonce on the X-WP-Nonce header, for same-origin first-party callers. Advertised via the access-control-allow-headers response header observed live on this host.

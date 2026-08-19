@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Wp Block Editor/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wp-block-editor/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /wp-block-editor/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-block-editor/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-block-editor/v1` in the `wp-block-editor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-block-editor/v1/export",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-block-editor/v1/export"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-block-editor/v1/export` in the `wp-block-editor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-block-editor/v1/navigation-fallback",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-block-editor/v1/navigation-fallback"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-block-editor/v1/navigation-fallback` in the `wp-block-editor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-block-editor/v1/url-details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-block-editor/v1/url-details",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL to process."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-block-editor/v1/url-details` in the `wp-block-editor/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Cptui/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "cptui/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /cptui/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/cptui/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/cptui/v1` in the `cptui/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /cptui/v1/dismiss-pro-upsell",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/cptui/v1/dismiss-pro-upsell"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/cptui/v1/dismiss-pro-upsell` in the `cptui/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

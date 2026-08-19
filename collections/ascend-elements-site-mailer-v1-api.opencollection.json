@@ -1,0 +1,292 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Site Mailer/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "site-mailer/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /site-mailer/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/connect/authorize",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/connect/authorize",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/connect/authorize` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/connect/deactivate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/connect/deactivate"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/connect/deactivate` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/connect/disconnect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/connect/disconnect"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/connect/disconnect` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/connect/switch-domain",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/connect/switch-domain"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/connect/switch-domain` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/domain/delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/domain/delete"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/domain/delete` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/domain/register",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/domain/register"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/domain/register` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/domain/verify",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/domain/verify"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/domain/verify` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /site-mailer/v1/logs/delete-logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/logs/delete-logs"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/logs/delete-logs` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /site-mailer/v1/logs/get-logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/logs/get-logs"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/logs/get-logs` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /site-mailer/v1/logs/refresh-statuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/logs/refresh-statuses"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/logs/refresh-statuses` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/mailer/resend-mails",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/mailer/resend-mails"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/mailer/resend-mails` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/mailer/send-test-mail",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/mailer/send-test-mail"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/mailer/send-test-mail` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/reviews/review",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/reviews/review"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/reviews/review` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /site-mailer/v1/settings/get-settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/settings/get-settings"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/settings/get-settings` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /site-mailer/v1/statuses/get-stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/statuses/get-stats"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/statuses/get-stats` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /site-mailer/v1/statuses/get-statuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/statuses/get-statuses"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/statuses/get-statuses` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/suppressions/add-suppression",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/suppressions/add-suppression"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/suppressions/add-suppression` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /site-mailer/v1/suppressions/delete-suppressions",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/suppressions/delete-suppressions"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/suppressions/delete-suppressions` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /site-mailer/v1/suppressions/get-suppressions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/suppressions/get-suppressions"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/suppressions/get-suppressions` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /site-mailer/v1/suppressions/unsubscribe/{email}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/suppressions/unsubscribe/:email",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `email` from the WordPress route pattern `/site-mailer/v1/suppressions/unsubscribe/(?P<email>[a-zA-Z0-9=_-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/suppressions/unsubscribe/(?P<email>[a-zA-Z0-9=_-]+)` in the `site-mailer/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /site-mailer/v1/suppressions/unsubscribe/{email}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/site-mailer/v1/suppressions/unsubscribe/:email",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `email` from the WordPress route pattern `/site-mailer/v1/suppressions/unsubscribe/(?P<email>[a-zA-Z0-9=_-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/site-mailer/v1/suppressions/unsubscribe/(?P<email>[a-zA-Z0-9=_-]+)` in the `site-mailer/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

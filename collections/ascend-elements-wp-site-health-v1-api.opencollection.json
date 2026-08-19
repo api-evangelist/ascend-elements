@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Wp Site Health/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wp-site-health/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /wp-site-health/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-site-health/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-site-health/v1` in the `wp-site-health/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-site-health/v1/directory-sizes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-site-health/v1/directory-sizes"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-site-health/v1/directory-sizes` in the `wp-site-health/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-site-health/v1/tests/authorization-header",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-site-health/v1/tests/authorization-header"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-site-health/v1/tests/authorization-header` in the `wp-site-health/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-site-health/v1/tests/background-updates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-site-health/v1/tests/background-updates"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-site-health/v1/tests/background-updates` in the `wp-site-health/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-site-health/v1/tests/dotorg-communication",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-site-health/v1/tests/dotorg-communication"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-site-health/v1/tests/dotorg-communication` in the `wp-site-health/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-site-health/v1/tests/https-status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-site-health/v1/tests/https-status"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-site-health/v1/tests/https-status` in the `wp-site-health/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-site-health/v1/tests/loopback-requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-site-health/v1/tests/loopback-requests"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-site-health/v1/tests/loopback-requests` in the `wp-site-health/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wp-site-health/v1/tests/page-cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wp-site-health/v1/tests/page-cache"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-site-health/v1/tests/page-cache` in the `wp-site-health/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

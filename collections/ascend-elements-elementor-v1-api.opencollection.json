@@ -1,0 +1,2227 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Elementor/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "elementor/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /elementor/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/cache"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/cache` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/checklist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Current page of the collection."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to be returned in result set."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Limit results to those matching a string."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/checklist/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/checklist/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/checklist/steps",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/steps"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/checklist/steps/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/steps/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/checklist/steps/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/checklist/steps/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/steps/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/checklist/steps/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\\w\\-\\_]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/checklist/steps/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/steps/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/checklist/steps/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\\w\\-\\_]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/checklist/steps/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/steps/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/checklist/steps/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\\w\\-\\_]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/checklist/user-progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/user-progress"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/user-progress` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/checklist/user-progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/user-progress"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/user-progress` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/checklist/user-progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/user-progress"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/user-progress` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/checklist/user-progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/checklist/user-progress"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/user-progress` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/design-system-sync/stylesheet",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/design-system-sync/stylesheet"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/design-system-sync/stylesheet` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/favorites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/favorites",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Current page of the collection."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to be returned in result set."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Limit results to those matching a string."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/favorites/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/favorites/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/favorites/(?P<id>[\\w]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/favorites/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/favorites/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/favorites/(?P<id>[\\w]+)`."
+              },
+              {
+                "name": "favorite",
+                "value": "",
+                "type": "query",
+                "description": "The favorite slug to delete."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/form-submissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Current page of the collection."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to be returned in result set."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Limit results to those matching a string."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Order sort attribute ascending or descending."
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "Sort collection by object attribute."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Limit result set to submissions assigned one or more statuses."
+              },
+              {
+                "name": "form",
+                "value": "",
+                "type": "query",
+                "description": "Limit result set to submissions assigned to specific forms. The form id should follow this pattern {post_id}_{element_id} e.g: 10_476d0ce"
+              },
+              {
+                "name": "referer",
+                "value": "",
+                "type": "query",
+                "description": "Limit result set to submissions assigned to specific referer."
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "Limit response to submissions sent after a given ISO8601 compliant date."
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "Limit response to submissions sent before a given ISO8601 compliant date."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/form-submissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/form-submissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/form-submissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/form-submissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifiers for the objects."
+              },
+              {
+                "name": "force",
+                "value": "",
+                "type": "query",
+                "description": "Delete the object permanently."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/form-submissions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/form-submissions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/(?P<id>[\\d]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/form-submissions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/(?P<id>[\\d]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/form-submissions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/(?P<id>[\\d]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/form-submissions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/(?P<id>[\\d]+)`."
+              },
+              {
+                "name": "force",
+                "value": "",
+                "type": "query",
+                "description": "Delete the object permanently."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/form-submissions/export",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/export",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Current page of the collection."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to be returned in result set."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Limit results to those matching a string."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Order sort attribute ascending or descending."
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "Sort collection by object attribute."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Limit result set to submissions assigned one or more statuses."
+              },
+              {
+                "name": "form",
+                "value": "",
+                "type": "query",
+                "description": "Limit result set to submissions assigned to specific forms. The form id should follow this pattern {post_id}_{element_id} e.g: 10_476d0ce"
+              },
+              {
+                "name": "referer",
+                "value": "",
+                "type": "query",
+                "description": "Limit result set to submissions assigned to specific referer."
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "Limit response to submissions sent after a given ISO8601 compliant date."
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "Limit response to submissions sent before a given ISO8601 compliant date."
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifiers for the objects."
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "The format of the export (for now only csv)."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/export` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/form-submissions/referer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/referer",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made, determines fields present in response. (only \"options\" available for now)"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Limit results to those matching a string."
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query",
+                "description": "Limit results specific referer."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/referer` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/form-submissions/restore",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/restore",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/form-submissions/restore",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/restore",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/form-submissions/restore",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/restore",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/form-submissions/restore/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/restore/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/restore/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/form-submissions/restore/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/restore/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/restore/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/form-submissions/restore/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/form-submissions/restore/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/restore/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/forms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/forms",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made, determines fields present in response. (only \"options\" available for now)"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/forms` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/global-widget/templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/global-widget/templates"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/global-widget/templates` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/globals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/globals"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/globals/colors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/globals/colors"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/globals/colors/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/globals/colors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/globals/colors/(?P<id>[\\w-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P<id>[\\w-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/globals/colors/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/globals/colors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/globals/colors/(?P<id>[\\w-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P<id>[\\w-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/globals/colors/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/globals/colors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/globals/colors/(?P<id>[\\w-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P<id>[\\w-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/globals/typography",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/globals/typography"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/globals/typography/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/globals/typography/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/globals/typography/(?P<id>[\\w-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P<id>[\\w-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/globals/typography/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/globals/typography/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/globals/typography/(?P<id>[\\w-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P<id>[\\w-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/globals/typography/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/globals/typography/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/globals/typography/(?P<id>[\\w-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P<id>[\\w-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/kit-elements-defaults",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/kit-elements-defaults"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/kit-elements-defaults/{type}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/kit-elements-defaults/:type",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `type` from the WordPress route pattern `/elementor/v1/kit-elements-defaults/(?P<type>[\\w\\-\\_]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\\w\\-\\_]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/kit-elements-defaults/{type}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/kit-elements-defaults/:type",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `type` from the WordPress route pattern `/elementor/v1/kit-elements-defaults/(?P<type>[\\w\\-\\_]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\\w\\-\\_]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/kit-elements-defaults/{type}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/kit-elements-defaults/:type",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `type` from the WordPress route pattern `/elementor/v1/kit-elements-defaults/(?P<type>[\\w\\-\\_]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\\w\\-\\_]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/kit-elements-defaults/{type}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/kit-elements-defaults/:type",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `type` from the WordPress route pattern `/elementor/v1/kit-elements-defaults/(?P<type>[\\w\\-\\_]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\\w\\-\\_]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/library/connect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/library/connect",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/library/connect` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/library/connect",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/library/connect"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/library/connect` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes",
+            "params": [
+              {
+                "name": "route_url",
+                "value": "",
+                "type": "query",
+                "description": "The URL of the route where the note was created at."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "The note status (e.g. \"publish\", \"draft\")."
+              },
+              {
+                "name": "is_resolved",
+                "value": "",
+                "type": "query",
+                "description": "Whether the note is resolved or not."
+              },
+              {
+                "name": "parent_id",
+                "value": "",
+                "type": "query",
+                "description": "The note's parent id (use 0 for top-level)."
+              },
+              {
+                "name": "post_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the post that the note is attached to."
+              },
+              {
+                "name": "only_unread",
+                "value": "",
+                "type": "query",
+                "description": "Show only unread notes (represents an unread thread if one of its replies is unread)."
+              },
+              {
+                "name": "only_relevant",
+                "value": "",
+                "type": "query",
+                "description": "Show only notes that are relevant to the current user."
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "A column to order the results by."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Results order direction."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/notes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/notes/(?P<id>[\\d]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/notes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/notes/(?P<id>[\\d]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/notes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/notes/(?P<id>[\\d]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/notes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/notes/(?P<id>[\\d]+)`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/notes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/notes/(?P<id>[\\d]+)`."
+              },
+              {
+                "name": "force",
+                "value": "",
+                "type": "query",
+                "description": "Determine if it should be deleted permanently or change the status to trash."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\\d]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/notes/read-status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes/read-status",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/read-status` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/notes/read-status",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes/read-status",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "The id's of the notes."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/read-status` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/notes/summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes/summary",
+            "params": [
+              {
+                "name": "route_url",
+                "value": "",
+                "type": "query",
+                "description": "The URL of the route where the note was created at."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "The note status (e.g. \"publish\", \"draft\")."
+              },
+              {
+                "name": "is_resolved",
+                "value": "",
+                "type": "query",
+                "description": "Whether the note is resolved or not."
+              },
+              {
+                "name": "parent_id",
+                "value": "",
+                "type": "query",
+                "description": "The note's parent id (use 0 for top-level)."
+              },
+              {
+                "name": "post_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the post that the note is attached to."
+              },
+              {
+                "name": "only_unread",
+                "value": "",
+                "type": "query",
+                "description": "Show only unread notes (represents an unread thread if one of its replies is unread)."
+              },
+              {
+                "name": "only_relevant",
+                "value": "",
+                "type": "query",
+                "description": "Show only notes that are relevant to the current user."
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "A column to order the results by."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Results order direction."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/summary` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/notes/users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/notes/users",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit the results."
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "A column to order the results by."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Results order direction."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Filter users by a search term."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/users` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/onboarding",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Current page of the collection."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to be returned in result set."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Limit results to those matching a string."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/onboarding/install-pro",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/install-pro"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/install-pro` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/onboarding/install-pro",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/install-pro"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/install-pro` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/onboarding/install-theme",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/install-theme"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/install-theme` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/onboarding/install-theme",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/install-theme"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/install-theme` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/onboarding/pro-install-screen",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/pro-install-screen"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/pro-install-screen` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/onboarding/user-choices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/user-choices"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-choices` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/onboarding/user-choices",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/user-choices"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-choices` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/onboarding/user-choices",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/user-choices"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-choices` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/onboarding/user-choices",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/user-choices"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-choices` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/onboarding/user-progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/user-progress"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-progress` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/onboarding/user-progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/user-progress"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-progress` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/onboarding/user-progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/user-progress"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-progress` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/onboarding/user-progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/onboarding/user-progress"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-progress` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/operations/opt-in-v4",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/operations/opt-in-v4"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/operations/opt-in-v4` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/post",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/post",
+            "params": [
+              {
+                "name": "included_types",
+                "value": "",
+                "type": "query",
+                "description": "Included post types"
+              },
+              {
+                "name": "excluded_types",
+                "value": "",
+                "type": "query",
+                "description": "Post type to exclude"
+              },
+              {
+                "name": "term",
+                "value": "",
+                "type": "query",
+                "description": "Posts to search"
+              },
+              {
+                "name": "keys_conversion_map",
+                "value": "",
+                "type": "query",
+                "description": "Specify keys to extract and convert, i.e. [\"key_1\" => \"new_key_1\"]."
+              },
+              {
+                "name": "items_count",
+                "value": "",
+                "type": "query",
+                "description": "Posts per page"
+              },
+              {
+                "name": "is_public",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include only public post types"
+              },
+              {
+                "name": "meta_query",
+                "value": "",
+                "type": "query",
+                "description": "WP_Query meta_query array"
+              },
+              {
+                "name": "tax_query",
+                "value": "",
+                "type": "query",
+                "description": "WP_Query tax_query array"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/post` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/send-event",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/send-event",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Current page of the collection."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to be returned in result set."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Limit results to those matching a string."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/send-event` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/send-event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/send-event",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/send-event` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/settings/{key}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/settings/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `key` from the WordPress route pattern `/elementor/v1/settings/(?P<key>[\\w_-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\\w_-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/settings/{key}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/settings/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `key` from the WordPress route pattern `/elementor/v1/settings/(?P<key>[\\w_-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\\w_-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/settings/{key}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/settings/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `key` from the WordPress route pattern `/elementor/v1/settings/(?P<key>[\\w_-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\\w_-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/settings/{key}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/settings/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `key` from the WordPress route pattern `/elementor/v1/settings/(?P<key>[\\w_-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\\w_-]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/site-editor",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/site-editor/conditions-config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/conditions-config"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/conditions-config` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/site-editor/templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/site-editor/templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/site-editor/templates-conditions-conflicts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates-conditions-conflicts"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions-conflicts` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/site-editor/templates-conditions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates-conditions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates-conditions/(?P<id>[\\w]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/site-editor/templates-conditions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates-conditions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates-conditions/(?P<id>[\\w]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/site-editor/templates-conditions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates-conditions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates-conditions/(?P<id>[\\w]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/site-editor/templates-conditions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates-conditions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates-conditions/(?P<id>[\\w]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/site-editor/templates/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates/(?P<id>[\\w]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PUT /elementor/v1/site-editor/templates/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates/(?P<id>[\\w]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/site-editor/templates/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates/(?P<id>[\\w]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /elementor/v1/site-editor/templates/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-editor/templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates/(?P<id>[\\w]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\\w]+)` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/site-navigation/add-new-post",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-navigation/add-new-post",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-navigation/add-new-post` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/site-navigation/recent-posts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/site-navigation/recent-posts",
+            "params": [
+              {
+                "name": "posts_per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of posts to return"
+              },
+              {
+                "name": "post_type",
+                "value": "",
+                "type": "query",
+                "description": "Post types to retrieve"
+              },
+              {
+                "name": "post__not_in",
+                "value": "",
+                "type": "query",
+                "description": "Post id`s to exclude"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-navigation/recent-posts` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/template-library/templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/template-library/templates"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/template-library/templates` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/template-library/templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/template-library/templates",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/template-library/templates` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/term",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/term",
+            "params": [
+              {
+                "name": "included_types",
+                "value": "",
+                "type": "query",
+                "description": "Included taxonomy containing terms (categories, tags, etc...)"
+              },
+              {
+                "name": "excluded_types",
+                "value": "",
+                "type": "query",
+                "description": "Excluded taxonomy containing terms (categories, tags, etc...)"
+              },
+              {
+                "name": "term",
+                "value": "",
+                "type": "query",
+                "description": "Terms to search"
+              },
+              {
+                "name": "keys_conversion_map",
+                "value": "",
+                "type": "query",
+                "description": "Specify keys to extract and convert, i.e. [\"key_1\" => \"new_key_1\"]."
+              },
+              {
+                "name": "items_count",
+                "value": "",
+                "type": "query",
+                "description": "Terms per request"
+              },
+              {
+                "name": "hide_empty",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include only public terms"
+              },
+              {
+                "name": "meta_query",
+                "value": "",
+                "type": "query",
+                "description": "WP_Query meta_query array"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/term` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/user",
+            "params": [
+              {
+                "name": "term",
+                "value": "",
+                "type": "query",
+                "description": "Users to search"
+              },
+              {
+                "name": "keys_conversion_map",
+                "value": "",
+                "type": "query",
+                "description": "Specify keys to extract and convert, i.e. [\"key_1\" => \"new_key_1\"]."
+              },
+              {
+                "name": "items_count",
+                "value": "",
+                "type": "query",
+                "description": "Number of users to return"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/user` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /elementor/v1/user-data/current-user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/user-data/current-user"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/user-data/current-user` in the `elementor/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "PATCH /elementor/v1/user-data/current-user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/user-data/current-user",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/user-data/current-user` in the `elementor/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

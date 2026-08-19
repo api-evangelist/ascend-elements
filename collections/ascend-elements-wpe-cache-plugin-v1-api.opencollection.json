@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Wpe/cache Plugin/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wpe/cache-plugin/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /wpe/cache-plugin/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wpe/cache-plugin/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wpe/cache-plugin/v1` in the `wpe/cache-plugin/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /wpe/cache-plugin/v1/clear_all_caches",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/wpe/cache-plugin/v1/clear_all_caches"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wpe/cache-plugin/v1/clear_all_caches` in the `wpe/cache-plugin/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /wpe/cache-plugin/v1/rate_limit_status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/wpe/cache-plugin/v1/rate_limit_status"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wpe/cache-plugin/v1/rate_limit_status` in the `wpe/cache-plugin/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

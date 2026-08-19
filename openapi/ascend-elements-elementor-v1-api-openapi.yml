@@ -1,0 +1,4567 @@
+openapi: 3.2.0
+info:
+  title: Ascend Elements WordPress REST Elementor/v1 API
+  version: wp/v2
+  summary: The machine-readable REST surface published at ascendelements.com/wp-json.
+  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  contact:
+    email: info@ascendelements.com
+    url: https://ascendelements.com/
+  x-derived-from: https://ascendelements.com/wp-json/
+  x-derived-on: '2026-08-02'
+  x-derived-by: API Evangelist enrichment pipeline (local-v1)
+servers:
+- url: https://ascendelements.com/wp-json
+  description: Ascend Elements WordPress REST API
+security:
+- {}
+- applicationPassword: []
+- cookieNonce: []
+tags:
+- name: elementor/v1
+paths:
+  /elementor/v1:
+    get:
+      operationId: getElementorV1
+      summary: GET /elementor/v1
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: namespace
+        in: query
+        schema:
+          default: elementor/v1
+      - name: context
+        in: query
+        schema:
+          default: view
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/cache:
+    delete:
+      operationId: deleteElementorV1Cache
+      summary: DELETE /elementor/v1/cache
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/cache` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/checklist:
+    get:
+      operationId: getElementorV1Checklist
+      summary: GET /elementor/v1/checklist
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 10
+          minimum: 1
+          maximum: 100
+        description: Maximum number of items to be returned in result set.
+      - name: search
+        in: query
+        schema:
+          type: string
+        description: Limit results to those matching a string.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/checklist/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/checklist/(?P<id>[\d]+)`.
+      schema:
+        type: string
+    get:
+      operationId: getElementorV1ChecklistId
+      summary: GET /elementor/v1/checklist/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/checklist/steps:
+    get:
+      operationId: getElementorV1ChecklistSteps
+      summary: GET /elementor/v1/checklist/steps
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/checklist/steps/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/checklist/steps/(?P<id>[\d]+)`.
+      schema:
+        type: string
+    get:
+      operationId: getElementorV1ChecklistStepsId
+      summary: GET /elementor/v1/checklist/steps/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1ChecklistStepsId
+      summary: POST /elementor/v1/checklist/steps/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\w\-\_]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1ChecklistStepsId
+      summary: PUT /elementor/v1/checklist/steps/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\w\-\_]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1ChecklistStepsId
+      summary: PATCH /elementor/v1/checklist/steps/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\w\-\_]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/checklist/user-progress:
+    get:
+      operationId: getElementorV1ChecklistUserProgress
+      summary: GET /elementor/v1/checklist/user-progress
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/user-progress` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1ChecklistUserProgress
+      summary: POST /elementor/v1/checklist/user-progress
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/user-progress` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1ChecklistUserProgress
+      summary: PUT /elementor/v1/checklist/user-progress
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/user-progress` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1ChecklistUserProgress
+      summary: PATCH /elementor/v1/checklist/user-progress
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/user-progress` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/design-system-sync/stylesheet:
+    post:
+      operationId: createElementorV1DesignSystemSyncStylesheet
+      summary: POST /elementor/v1/design-system-sync/stylesheet
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/design-system-sync/stylesheet` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/favorites:
+    get:
+      operationId: getElementorV1Favorites
+      summary: GET /elementor/v1/favorites
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 10
+          minimum: 1
+          maximum: 100
+        description: Maximum number of items to be returned in result set.
+      - name: search
+        in: query
+        schema:
+          type: string
+        description: Limit results to those matching a string.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/favorites/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/favorites/(?P<id>[\w]+)`.
+      schema:
+        type: string
+    post:
+      operationId: createElementorV1FavoritesId
+      summary: POST /elementor/v1/favorites/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                favorite:
+                  type: string
+                  description: The favorite slug to create.
+              required:
+              - favorite
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteElementorV1FavoritesId
+      summary: DELETE /elementor/v1/favorites/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: favorite
+        in: query
+        schema:
+          type: string
+        description: The favorite slug to delete.
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/form-submissions:
+    get:
+      operationId: getElementorV1FormSubmissions
+      summary: GET /elementor/v1/form-submissions
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 50
+          minimum: 1
+          maximum: 100
+        description: Maximum number of items to be returned in result set.
+      - name: search
+        in: query
+        schema:
+          type: string
+        description: Limit results to those matching a string.
+      - name: order
+        in: query
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          default: desc
+        description: Order sort attribute ascending or descending.
+      - name: order_by
+        in: query
+        schema:
+          type: string
+          enum:
+          - created_at
+          - id
+          - main_meta_id
+          default: created_at
+        description: Sort collection by object attribute.
+      - name: status
+        in: query
+        schema:
+          type: string
+          enum:
+          - all
+          - unread
+          - read
+          - trash
+          default: all
+        description: Limit result set to submissions assigned one or more statuses.
+      - name: form
+        in: query
+        schema:
+          type: string
+        description: 'Limit result set to submissions assigned to specific forms. The form id should follow this pattern {post_id}_{element_id} e.g: 10_476d0ce'
+      - name: referer
+        in: query
+        schema:
+          type: string
+        description: Limit result set to submissions assigned to specific referer.
+      - name: after
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Limit response to submissions sent after a given ISO8601 compliant date.
+      - name: before
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Limit response to submissions sent before a given ISO8601 compliant date.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteElementorV1FormSubmissions
+      summary: DELETE /elementor/v1/form-submissions
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Unique identifiers for the objects.
+        required: true
+      - name: force
+        in: query
+        schema:
+          type: boolean
+        description: Delete the object permanently.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1FormSubmissions
+      summary: POST /elementor/v1/form-submissions
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: Unique identifiers for the objects.
+                is_read:
+                  type: boolean
+                  description: mark whether the submission was read or not
+              required:
+              - ids
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1FormSubmissions
+      summary: PUT /elementor/v1/form-submissions
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: Unique identifiers for the objects.
+                is_read:
+                  type: boolean
+                  description: mark whether the submission was read or not
+              required:
+              - ids
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1FormSubmissions
+      summary: PATCH /elementor/v1/form-submissions
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: Unique identifiers for the objects.
+                is_read:
+                  type: boolean
+                  description: mark whether the submission was read or not
+              required:
+              - ids
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/form-submissions/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/(?P<id>[\d]+)`.
+      schema:
+        type: string
+    get:
+      operationId: getElementorV1FormSubmissionsId
+      summary: GET /elementor/v1/form-submissions/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteElementorV1FormSubmissionsId
+      summary: DELETE /elementor/v1/form-submissions/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: force
+        in: query
+        schema:
+          type: boolean
+        description: Delete the object permanently.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1FormSubmissionsId
+      summary: POST /elementor/v1/form-submissions/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_read:
+                  type: boolean
+                  description: mark whether the submission was read or not
+                values:
+                  type: object
+                  description: Form field values, receive an array, the key should be the form field id and the value should be the value.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1FormSubmissionsId
+      summary: PUT /elementor/v1/form-submissions/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_read:
+                  type: boolean
+                  description: mark whether the submission was read or not
+                values:
+                  type: object
+                  description: Form field values, receive an array, the key should be the form field id and the value should be the value.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1FormSubmissionsId
+      summary: PATCH /elementor/v1/form-submissions/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_read:
+                  type: boolean
+                  description: mark whether the submission was read or not
+                values:
+                  type: object
+                  description: Form field values, receive an array, the key should be the form field id and the value should be the value.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/form-submissions/export:
+    get:
+      operationId: getElementorV1FormSubmissionsExport
+      summary: GET /elementor/v1/form-submissions/export
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/export` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 10
+          minimum: 1
+          maximum: 10000
+        description: Maximum number of items to be returned in result set.
+      - name: search
+        in: query
+        schema:
+          type: string
+        description: Limit results to those matching a string.
+      - name: order
+        in: query
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          default: desc
+        description: Order sort attribute ascending or descending.
+      - name: order_by
+        in: query
+        schema:
+          type: string
+          enum:
+          - created_at
+          - id
+          - main_meta_id
+          default: created_at
+        description: Sort collection by object attribute.
+      - name: status
+        in: query
+        schema:
+          type: string
+          enum:
+          - all
+          - unread
+          - read
+          - trash
+          default: all
+        description: Limit result set to submissions assigned one or more statuses.
+      - name: form
+        in: query
+        schema:
+          type: string
+        description: 'Limit result set to submissions assigned to specific forms. The form id should follow this pattern {post_id}_{element_id} e.g: 10_476d0ce'
+      - name: referer
+        in: query
+        schema:
+          type: string
+        description: Limit result set to submissions assigned to specific referer.
+      - name: after
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Limit response to submissions sent after a given ISO8601 compliant date.
+      - name: before
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Limit response to submissions sent before a given ISO8601 compliant date.
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Unique identifiers for the objects.
+      - name: format
+        in: query
+        schema:
+          enum:
+          - csv
+          default: csv
+        description: The format of the export (for now only csv).
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/form-submissions/referer:
+    get:
+      operationId: getElementorV1FormSubmissionsReferer
+      summary: GET /elementor/v1/form-submissions/referer
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/referer` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+          enum:
+          - options
+          default: options
+        description: Scope under which the request is made, determines fields present in response. (only "options" available for now)
+      - name: search
+        in: query
+        schema:
+          type: string
+        description: Limit results to those matching a string.
+      - name: value
+        in: query
+        schema:
+          type: string
+        description: Limit results specific referer.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/form-submissions/restore:
+    post:
+      operationId: createElementorV1FormSubmissionsRestore
+      summary: POST /elementor/v1/form-submissions/restore
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: Unique identifiers for the objects.
+              required:
+              - ids
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1FormSubmissionsRestore
+      summary: PUT /elementor/v1/form-submissions/restore
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: Unique identifiers for the objects.
+              required:
+              - ids
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1FormSubmissionsRestore
+      summary: PATCH /elementor/v1/form-submissions/restore
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: Unique identifiers for the objects.
+              required:
+              - ids
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/form-submissions/restore/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/form-submissions/restore/(?P<id>[\d]+)`.
+      schema:
+        type: string
+    post:
+      operationId: createElementorV1FormSubmissionsRestoreId
+      summary: POST /elementor/v1/form-submissions/restore/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1FormSubmissionsRestoreId
+      summary: PUT /elementor/v1/form-submissions/restore/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1FormSubmissionsRestoreId
+      summary: PATCH /elementor/v1/form-submissions/restore/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/forms:
+    get:
+      operationId: getElementorV1Forms
+      summary: GET /elementor/v1/forms
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/forms` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+          enum:
+          - options
+          default: options
+        description: Scope under which the request is made, determines fields present in response. (only "options" available for now)
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/global-widget/templates:
+    get:
+      operationId: getElementorV1GlobalWidgetTemplates
+      summary: GET /elementor/v1/global-widget/templates
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/global-widget/templates` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/globals:
+    get:
+      operationId: getElementorV1Globals
+      summary: GET /elementor/v1/globals
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/globals/colors:
+    get:
+      operationId: getElementorV1GlobalsColors
+      summary: GET /elementor/v1/globals/colors
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/globals/colors/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/globals/colors/(?P<id>[\w-]+)`.
+      schema:
+        type: string
+    get:
+      operationId: getElementorV1GlobalsColorsId
+      summary: GET /elementor/v1/globals/colors/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1GlobalsColorsId
+      summary: POST /elementor/v1/globals/colors/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteElementorV1GlobalsColorsId
+      summary: DELETE /elementor/v1/globals/colors/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/globals/typography:
+    get:
+      operationId: getElementorV1GlobalsTypography
+      summary: GET /elementor/v1/globals/typography
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/globals/typography/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/globals/typography/(?P<id>[\w-]+)`.
+      schema:
+        type: string
+    get:
+      operationId: getElementorV1GlobalsTypographyId
+      summary: GET /elementor/v1/globals/typography/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1GlobalsTypographyId
+      summary: POST /elementor/v1/globals/typography/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteElementorV1GlobalsTypographyId
+      summary: DELETE /elementor/v1/globals/typography/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/kit-elements-defaults:
+    get:
+      operationId: getElementorV1KitElementsDefaults
+      summary: GET /elementor/v1/kit-elements-defaults
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/kit-elements-defaults/{type}:
+    parameters:
+    - name: type
+      in: path
+      required: true
+      description: Path segment `type` from the WordPress route pattern `/elementor/v1/kit-elements-defaults/(?P<type>[\w\-\_]+)`.
+      schema:
+        type: string
+    post:
+      operationId: createElementorV1KitElementsDefaultsType
+      summary: POST /elementor/v1/kit-elements-defaults/{type}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\w\-\_]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                settings:
+                  type: object
+                  description: All the default values for the requested type
+              required:
+              - settings
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1KitElementsDefaultsType
+      summary: PUT /elementor/v1/kit-elements-defaults/{type}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\w\-\_]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                settings:
+                  type: object
+                  description: All the default values for the requested type
+              required:
+              - settings
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1KitElementsDefaultsType
+      summary: PATCH /elementor/v1/kit-elements-defaults/{type}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\w\-\_]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                settings:
+                  type: object
+                  description: All the default values for the requested type
+              required:
+              - settings
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteElementorV1KitElementsDefaultsType
+      summary: DELETE /elementor/v1/kit-elements-defaults/{type}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\w\-\_]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/library/connect:
+    post:
+      operationId: createElementorV1LibraryConnect
+      summary: POST /elementor/v1/library/connect
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/library/connect` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: Connect CLI token
+              required:
+              - token
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteElementorV1LibraryConnect
+      summary: DELETE /elementor/v1/library/connect
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/library/connect` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/notes:
+    get:
+      operationId: getElementorV1Notes
+      summary: GET /elementor/v1/notes
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: route_url
+        in: query
+        schema:
+          type: string
+        description: The URL of the route where the note was created at.
+      - name: status
+        in: query
+        schema:
+          type: string
+          enum:
+          - publish
+          - draft
+          default: publish
+        description: The note status (e.g. "publish", "draft").
+      - name: is_resolved
+        in: query
+        schema:
+          type: boolean
+        description: Whether the note is resolved or not.
+      - name: parent_id
+        in: query
+        schema:
+          type: integer
+        description: The note's parent id (use 0 for top-level).
+      - name: post_id
+        in: query
+        schema:
+          type: integer
+        description: The ID of the post that the note is attached to.
+      - name: only_unread
+        in: query
+        schema:
+          type: boolean
+        description: Show only unread notes (represents an unread thread if one of its replies is unread).
+      - name: only_relevant
+        in: query
+        schema:
+          type: boolean
+        description: Show only notes that are relevant to the current user.
+      - name: order_by
+        in: query
+        schema:
+          type: string
+          enum:
+          - last_activity_at
+          - created_at
+          default: last_activity_at
+        description: A column to order the results by.
+      - name: order
+        in: query
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          default: desc
+        description: Results order direction.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1Notes
+      summary: POST /elementor/v1/notes
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                post_id:
+                  type: integer
+                  description: The id of the post where the note was created at (can be template, post, page, etc.).
+                element_id:
+                  type: string
+                  description: Each note must be attached to an elementor element.
+                content:
+                  type: string
+                  description: The content of the note.
+                position:
+                  type: object
+                  properties:
+                    x:
+                      type: number
+                    y:
+                      type: number
+                  description: The position of the note.
+                mentioned_usernames:
+                  type: array
+                  default: []
+                  items:
+                    type: string
+                  description: List of user names that have been mentioned in the note's content.
+                route_post_id:
+                  type: string
+                  description: 'The ID of the post that''s associated with the route (doesn''t always exist, e.g: home page, archive)'
+                route_url:
+                  type: string
+                  description: The URL of the route where the note was created at.
+                route_title:
+                  type: string
+                  description: The title of the route where the note was created at.
+                parent_id:
+                  type: integer
+                  default: 0
+                  description: If the new note is a reply to another note, the parent_id should be the thread's id.
+                is_public:
+                  type: boolean
+                  description: Should this note be visible for everyone or just for its author.
+              required:
+              - post_id
+              - element_id
+              - content
+              - position
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/notes/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/notes/(?P<id>[\d]+)`.
+      schema:
+        type: string
+    get:
+      operationId: getElementorV1NotesId
+      summary: GET /elementor/v1/notes/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1NotesId
+      summary: POST /elementor/v1/notes/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  description: The content of the note.
+                mentioned_usernames:
+                  type: array
+                  items:
+                    type: string
+                  description: List of user names that have been mentioned in the note's content.
+                status:
+                  type: string
+                  enum:
+                  - publish
+                  - draft
+                  description: Note status can be draft or publish.
+                is_public:
+                  type: boolean
+                  description: Should this note be visible for everyone or just for its author.
+                is_resolved:
+                  type: boolean
+                  description: Is this note resolved and should be hidden.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1NotesId
+      summary: PUT /elementor/v1/notes/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  description: The content of the note.
+                mentioned_usernames:
+                  type: array
+                  items:
+                    type: string
+                  description: List of user names that have been mentioned in the note's content.
+                status:
+                  type: string
+                  enum:
+                  - publish
+                  - draft
+                  description: Note status can be draft or publish.
+                is_public:
+                  type: boolean
+                  description: Should this note be visible for everyone or just for its author.
+                is_resolved:
+                  type: boolean
+                  description: Is this note resolved and should be hidden.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1NotesId
+      summary: PATCH /elementor/v1/notes/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  description: The content of the note.
+                mentioned_usernames:
+                  type: array
+                  items:
+                    type: string
+                  description: List of user names that have been mentioned in the note's content.
+                status:
+                  type: string
+                  enum:
+                  - publish
+                  - draft
+                  description: Note status can be draft or publish.
+                is_public:
+                  type: boolean
+                  description: Should this note be visible for everyone or just for its author.
+                is_resolved:
+                  type: boolean
+                  description: Is this note resolved and should be hidden.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteElementorV1NotesId
+      summary: DELETE /elementor/v1/notes/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: force
+        in: query
+        schema:
+          type: boolean
+          default: false
+        description: Determine if it should be deleted permanently or change the status to trash.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/notes/read-status:
+    post:
+      operationId: createElementorV1NotesReadStatus
+      summary: POST /elementor/v1/notes/read-status
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/read-status` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: The id's of the notes.
+              required:
+              - ids
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteElementorV1NotesReadStatus
+      summary: DELETE /elementor/v1/notes/read-status
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/read-status` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+        description: The id's of the notes.
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/notes/summary:
+    get:
+      operationId: getElementorV1NotesSummary
+      summary: GET /elementor/v1/notes/summary
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/summary` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: route_url
+        in: query
+        schema:
+          type: string
+        description: The URL of the route where the note was created at.
+      - name: status
+        in: query
+        schema:
+          type: string
+          enum:
+          - publish
+          - draft
+          default: publish
+        description: The note status (e.g. "publish", "draft").
+      - name: is_resolved
+        in: query
+        schema:
+          type: boolean
+        description: Whether the note is resolved or not.
+      - name: parent_id
+        in: query
+        schema:
+          type: integer
+        description: The note's parent id (use 0 for top-level).
+      - name: post_id
+        in: query
+        schema:
+          type: integer
+        description: The ID of the post that the note is attached to.
+      - name: only_unread
+        in: query
+        schema:
+          type: boolean
+        description: Show only unread notes (represents an unread thread if one of its replies is unread).
+      - name: only_relevant
+        in: query
+        schema:
+          type: boolean
+        description: Show only notes that are relevant to the current user.
+      - name: order_by
+        in: query
+        schema:
+          type: string
+          enum:
+          - last_activity_at
+          - created_at
+          default: last_activity_at
+        description: A column to order the results by.
+      - name: order
+        in: query
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          default: desc
+        description: Results order direction.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/notes/users:
+    get:
+      operationId: getElementorV1NotesUsers
+      summary: GET /elementor/v1/notes/users
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/users` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+        description: Limit the results.
+      - name: order_by
+        in: query
+        schema:
+          type: string
+          enum:
+          - user_nicename
+          - display_name
+          - user_registered
+          default: display_name
+        description: A column to order the results by.
+      - name: order
+        in: query
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          default: asc
+        description: Results order direction.
+      - name: search
+        in: query
+        schema:
+          type: string
+        description: Filter users by a search term.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/onboarding:
+    get:
+      operationId: getElementorV1Onboarding
+      summary: GET /elementor/v1/onboarding
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 10
+          minimum: 1
+          maximum: 100
+        description: Maximum number of items to be returned in result set.
+      - name: search
+        in: query
+        schema:
+          type: string
+        description: Limit results to those matching a string.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/onboarding/install-pro:
+    get:
+      operationId: getElementorV1OnboardingInstallPro
+      summary: GET /elementor/v1/onboarding/install-pro
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/install-pro` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1OnboardingInstallPro
+      summary: POST /elementor/v1/onboarding/install-pro
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/install-pro` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/onboarding/install-theme:
+    get:
+      operationId: getElementorV1OnboardingInstallTheme
+      summary: GET /elementor/v1/onboarding/install-theme
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/install-theme` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1OnboardingInstallTheme
+      summary: POST /elementor/v1/onboarding/install-theme
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/install-theme` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/onboarding/pro-install-screen:
+    get:
+      operationId: getElementorV1OnboardingProInstallScreen
+      summary: GET /elementor/v1/onboarding/pro-install-screen
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/pro-install-screen` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/onboarding/user-choices:
+    get:
+      operationId: getElementorV1OnboardingUserChoices
+      summary: GET /elementor/v1/onboarding/user-choices
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-choices` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1OnboardingUserChoices
+      summary: POST /elementor/v1/onboarding/user-choices
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-choices` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1OnboardingUserChoices
+      summary: PUT /elementor/v1/onboarding/user-choices
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-choices` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1OnboardingUserChoices
+      summary: PATCH /elementor/v1/onboarding/user-choices
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-choices` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/onboarding/user-progress:
+    get:
+      operationId: getElementorV1OnboardingUserProgress
+      summary: GET /elementor/v1/onboarding/user-progress
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-progress` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1OnboardingUserProgress
+      summary: POST /elementor/v1/onboarding/user-progress
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-progress` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1OnboardingUserProgress
+      summary: PUT /elementor/v1/onboarding/user-progress
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-progress` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1OnboardingUserProgress
+      summary: PATCH /elementor/v1/onboarding/user-progress
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/onboarding/user-progress` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/operations/opt-in-v4:
+    post:
+      operationId: createElementorV1OperationsOptInV4
+      summary: POST /elementor/v1/operations/opt-in-v4
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/operations/opt-in-v4` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/post:
+    get:
+      operationId: getElementorV1Post
+      summary: GET /elementor/v1/post
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/post` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: included_types
+        in: query
+        schema:
+          type: array
+          default: null
+        description: Included post types
+      - name: excluded_types
+        in: query
+        schema:
+          type: array
+          default:
+          - e-floating-buttons
+          - e-landing-page
+          - elementor_library
+          - attachment
+          - revision
+          - nav_menu_item
+          - custom_css
+          - customize_changeset
+        description: Post type to exclude
+      - name: term
+        in: query
+        schema:
+          type: string
+          default: ''
+        description: Posts to search
+      - name: keys_conversion_map
+        in: query
+        schema:
+          type: array
+          default:
+            ID: id
+            post_title: label
+            post_type: groupLabel
+        description: Specify keys to extract and convert, i.e. ["key_1" => "new_key_1"].
+      - name: items_count
+        in: query
+        schema:
+          type: integer
+          default: 100
+        description: Posts per page
+      - name: is_public
+        in: query
+        schema:
+          type: boolean
+          default: true
+        description: Whether to include only public post types
+      - name: meta_query
+        in: query
+        schema:
+          type: array
+          default: null
+        description: WP_Query meta_query array
+      - name: tax_query
+        in: query
+        schema:
+          type: array
+          default: null
+        description: WP_Query tax_query array
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/send-event:
+    get:
+      operationId: getElementorV1SendEvent
+      summary: GET /elementor/v1/send-event
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/send-event` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 10
+          minimum: 1
+          maximum: 100
+        description: Maximum number of items to be returned in result set.
+      - name: search
+        in: query
+        schema:
+          type: string
+        description: Limit results to those matching a string.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1SendEvent
+      summary: POST /elementor/v1/send-event
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/send-event` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                event_data:
+                  type: object
+                  description: All the recorded event data in JSON format
+              required:
+              - event_data
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/settings/{key}:
+    parameters:
+    - name: key
+      in: path
+      required: true
+      description: Path segment `key` from the WordPress route pattern `/elementor/v1/settings/(?P<key>[\w_-]+)`.
+      schema:
+        type: string
+    get:
+      operationId: getElementorV1SettingsKey
+      summary: GET /elementor/v1/settings/{key}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\w_-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1SettingsKey
+      summary: POST /elementor/v1/settings/{key}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\w_-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1SettingsKey
+      summary: PUT /elementor/v1/settings/{key}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\w_-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1SettingsKey
+      summary: PATCH /elementor/v1/settings/{key}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\w_-]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/site-editor:
+    get:
+      operationId: getElementorV1SiteEditor
+      summary: GET /elementor/v1/site-editor
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/site-editor/conditions-config:
+    get:
+      operationId: getElementorV1SiteEditorConditionsConfig
+      summary: GET /elementor/v1/site-editor/conditions-config
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/conditions-config` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/site-editor/templates:
+    get:
+      operationId: getElementorV1SiteEditorTemplates
+      summary: GET /elementor/v1/site-editor/templates
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1SiteEditorTemplates
+      summary: POST /elementor/v1/site-editor/templates
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/site-editor/templates-conditions-conflicts:
+    get:
+      operationId: getElementorV1SiteEditorTemplatesConditionsConflicts
+      summary: GET /elementor/v1/site-editor/templates-conditions-conflicts
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions-conflicts` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/site-editor/templates-conditions/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates-conditions/(?P<id>[\w]+)`.
+      schema:
+        type: string
+    get:
+      operationId: getElementorV1SiteEditorTemplatesConditionsId
+      summary: GET /elementor/v1/site-editor/templates-conditions/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1SiteEditorTemplatesConditionsId
+      summary: POST /elementor/v1/site-editor/templates-conditions/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1SiteEditorTemplatesConditionsId
+      summary: PUT /elementor/v1/site-editor/templates-conditions/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1SiteEditorTemplatesConditionsId
+      summary: PATCH /elementor/v1/site-editor/templates-conditions/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/site-editor/templates/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Path segment `id` from the WordPress route pattern `/elementor/v1/site-editor/templates/(?P<id>[\w]+)`.
+      schema:
+        type: string
+    delete:
+      operationId: deleteElementorV1SiteEditorTemplatesId
+      summary: DELETE /elementor/v1/site-editor/templates/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1SiteEditorTemplatesId
+      summary: POST /elementor/v1/site-editor/templates/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateElementorV1SiteEditorTemplatesId
+      summary: PUT /elementor/v1/site-editor/templates/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1SiteEditorTemplatesId
+      summary: PATCH /elementor/v1/site-editor/templates/{id}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/site-navigation/add-new-post:
+    post:
+      operationId: createElementorV1SiteNavigationAddNewPost
+      summary: POST /elementor/v1/site-navigation/add-new-post
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-navigation/add-new-post` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                post_type:
+                  type: string
+                  default: post
+                  description: Post type to create
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/site-navigation/recent-posts:
+    get:
+      operationId: getElementorV1SiteNavigationRecentPosts
+      summary: GET /elementor/v1/site-navigation/recent-posts
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-navigation/recent-posts` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: posts_per_page
+        in: query
+        schema:
+          type: integer
+        description: Number of posts to return
+        required: true
+      - name: post_type
+        in: query
+        schema:
+          type: array
+          default:
+          - page
+          - post
+          - elementor_library
+        description: Post types to retrieve
+      - name: post__not_in
+        in: query
+        schema:
+          type: array
+        description: Post id`s to exclude
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/template-library/templates:
+    get:
+      operationId: getElementorV1TemplateLibraryTemplates
+      summary: GET /elementor/v1/template-library/templates
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/template-library/templates` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createElementorV1TemplateLibraryTemplates
+      summary: POST /elementor/v1/template-library/templates
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/template-library/templates` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: The title of the document
+                type:
+                  type: string
+                  enum:
+                  - loop
+                  - custom_grid
+                  - page
+                  - section
+                  - container
+                  - floating-buttons
+                  - ecs_custom_layout
+                  - popup
+                  - header
+                  - footer
+                  - single
+                  - single-post
+                  - single-page
+                  - archive
+                  - search-results
+                  - error-404
+                  - loop-item
+                  description: The document type.
+                content:
+                  type: object
+                  description: Elementor data object
+              required:
+              - type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/term:
+    get:
+      operationId: getElementorV1Term
+      summary: GET /elementor/v1/term
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/term` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: included_types
+        in: query
+        schema:
+          type: array
+          default: null
+        description: Included taxonomy containing terms (categories, tags, etc...)
+      - name: excluded_types
+        in: query
+        schema:
+          type: array
+          default: null
+        description: Excluded taxonomy containing terms (categories, tags, etc...)
+      - name: term
+        in: query
+        schema:
+          type: string
+          default: ''
+        description: Terms to search
+      - name: keys_conversion_map
+        in: query
+        schema:
+          type: array
+          default:
+            term_id: id
+            name: label
+            taxonomy: groupLabel
+        description: Specify keys to extract and convert, i.e. ["key_1" => "new_key_1"].
+      - name: items_count
+        in: query
+        schema:
+          type: integer
+          default: 100
+        description: Terms per request
+      - name: hide_empty
+        in: query
+        schema:
+          type: boolean
+          default: false
+        description: Whether to include only public terms
+      - name: meta_query
+        in: query
+        schema:
+          type: array
+          default: null
+        description: WP_Query meta_query array
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/user:
+    get:
+      operationId: getElementorV1User
+      summary: GET /elementor/v1/user
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/user` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      parameters:
+      - name: term
+        in: query
+        schema:
+          type: string
+          default: ''
+        description: Users to search
+      - name: keys_conversion_map
+        in: query
+        schema:
+          type:
+          - array
+          - string
+          default:
+            ID: id
+            display_name: label
+            role: groupLabel
+        description: Specify keys to extract and convert, i.e. ["key_1" => "new_key_1"].
+      - name: items_count
+        in: query
+        schema:
+          type: integer
+          default: 100
+        description: Number of users to return
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /elementor/v1/user-data/current-user:
+    get:
+      operationId: getElementorV1UserDataCurrentUser
+      summary: GET /elementor/v1/user-data/current-user
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/user-data/current-user` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchElementorV1UserDataCurrentUser
+      summary: PATCH /elementor/v1/user-data/current-user
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/user-data/current-user` in the `elementor/v1` namespace.
+      tags:
+      - elementor/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                suppressedMessages:
+                  type: array
+                  items:
+                    type: string
+                  description: Array of suppressed message keys
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+components:
+  schemas:
+    RestError:
+      type: object
+      description: The WordPress REST API error envelope, observed live on this host (GET /wp-json/wp-abilities/v1/abilities returns rest_forbidden with status 401; GET /wp-json/wp/v2/menus returns rest_cannot_view with status 401).
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden, rest_cannot_view, rest_no_route.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: HTTP status code.
+      required:
+      - code
+      - message
+  securitySchemes:
+    applicationPassword:
+      type: http
+      scheme: basic
+      description: WordPress Application Passwords, advertised by the live route index at https://ascendelements.com/wp-json/ under authentication.application-passwords. Username + application password presented as HTTP Basic on the Authorization header. Issued at https://ascendelements.com/wp-admin/authorize-application.php.
+    cookieNonce:
+      type: apiKey
+      in: header
+      name: X-WP-Nonce
+      description: WordPress cookie authentication paired with a nonce on the X-WP-Nonce header, for same-origin first-party callers. Advertised via the access-control-allow-headers response header observed live on this host.

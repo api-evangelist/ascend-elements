@@ -1,0 +1,1053 @@
+openapi: 3.2.0
+info:
+  title: Ascend Elements WordPress REST Ea11y/v1 API
+  version: wp/v2
+  summary: The machine-readable REST surface published at ascendelements.com/wp-json.
+  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  contact:
+    email: info@ascendelements.com
+    url: https://ascendelements.com/
+  x-derived-from: https://ascendelements.com/wp-json/
+  x-derived-on: '2026-08-02'
+  x-derived-by: API Evangelist enrichment pipeline (local-v1)
+servers:
+- url: https://ascendelements.com/wp-json
+  description: Ascend Elements WordPress REST API
+security:
+- {}
+- applicationPassword: []
+- cookieNonce: []
+tags:
+- name: ea11y/v1
+paths:
+  /ea11y/v1:
+    get:
+      operationId: getEa11yV1
+      summary: GET /ea11y/v1
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      parameters:
+      - name: namespace
+        in: query
+        schema:
+          default: ea11y/v1
+      - name: context
+        in: query
+        schema:
+          default: view
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/analytics/statistic:
+    get:
+      operationId: getEa11yV1AnalyticsStatistic
+      summary: GET /ea11y/v1/analytics/statistic
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/analytics/statistic` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/connect/authorize:
+    post:
+      operationId: createEa11yV1ConnectAuthorize
+      summary: POST /ea11y/v1/connect/authorize
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/connect/authorize` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clearSession:
+                  type: boolean
+                  default: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/connect/deactivate:
+    post:
+      operationId: createEa11yV1ConnectDeactivate
+      summary: POST /ea11y/v1/connect/deactivate
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/connect/deactivate` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/connect/disconnect:
+    post:
+      operationId: createEa11yV1ConnectDisconnect
+      summary: POST /ea11y/v1/connect/disconnect
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/connect/disconnect` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/connect/switch-domain:
+    post:
+      operationId: createEa11yV1ConnectSwitchDomain
+      summary: POST /ea11y/v1/connect/switch-domain
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/connect/switch-domain` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/clear-cache:
+    delete:
+      operationId: deleteEa11yV1RemediationClearCache
+      summary: DELETE /ea11y/v1/remediation/clear-cache
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/clear-cache` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/dismiss-heading-issue:
+    post:
+      operationId: createEa11yV1RemediationDismissHeadingIssue
+      summary: POST /ea11y/v1/remediation/dismiss-heading-issue
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/dismiss-heading-issue` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/global-item:
+    post:
+      operationId: createEa11yV1RemediationGlobalItem
+      summary: POST /ea11y/v1/remediation/global-item
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-item` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateEa11yV1RemediationGlobalItem
+      summary: PUT /ea11y/v1/remediation/global-item
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-item` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchEa11yV1RemediationGlobalItem
+      summary: PATCH /ea11y/v1/remediation/global-item
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-item` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteEa11yV1RemediationGlobalItem
+      summary: DELETE /ea11y/v1/remediation/global-item
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-item` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/global-items:
+    put:
+      operationId: updateEa11yV1RemediationGlobalItems
+      summary: PUT /ea11y/v1/remediation/global-items
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchEa11yV1RemediationGlobalItems
+      summary: PATCH /ea11y/v1/remediation/global-items
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteEa11yV1RemediationGlobalItems
+      summary: DELETE /ea11y/v1/remediation/global-items
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/global-items-group:
+    put:
+      operationId: updateEa11yV1RemediationGlobalItemsGroup
+      summary: PUT /ea11y/v1/remediation/global-items-group
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items-group` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchEa11yV1RemediationGlobalItemsGroup
+      summary: PATCH /ea11y/v1/remediation/global-items-group
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/global-items-group` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/heading-level:
+    post:
+      operationId: createEa11yV1RemediationHeadingLevel
+      summary: POST /ea11y/v1/remediation/heading-level
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/heading-level` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/item:
+    post:
+      operationId: createEa11yV1RemediationItem
+      summary: POST /ea11y/v1/remediation/item
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/item` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    put:
+      operationId: updateEa11yV1RemediationItem
+      summary: PUT /ea11y/v1/remediation/item
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/item` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchEa11yV1RemediationItem
+      summary: PATCH /ea11y/v1/remediation/item
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/item` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteEa11yV1RemediationItem
+      summary: DELETE /ea11y/v1/remediation/item
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/item` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/items:
+    get:
+      operationId: getEa11yV1RemediationItems
+      summary: GET /ea11y/v1/remediation/items
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/items` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    patch:
+      operationId: patchEa11yV1RemediationItems
+      summary: PATCH /ea11y/v1/remediation/items
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/items` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    delete:
+      operationId: deleteEa11yV1RemediationItems
+      summary: DELETE /ea11y/v1/remediation/items
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/items` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/register:
+    post:
+      operationId: createEa11yV1RemediationRegister
+      summary: POST /ea11y/v1/remediation/register
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/register` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/set-alt-text:
+    post:
+      operationId: createEa11yV1RemediationSetAltText
+      summary: POST /ea11y/v1/remediation/set-alt-text
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/set-alt-text` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/remediation/trigger-save:
+    post:
+      operationId: createEa11yV1RemediationTriggerSave
+      summary: POST /ea11y/v1/remediation/trigger-save
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/remediation/trigger-save` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/reviews/review:
+    post:
+      operationId: createEa11yV1ReviewsReview
+      summary: POST /ea11y/v1/reviews/review
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/reviews/review` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/settings/get-media:
+    post:
+      operationId: createEa11yV1SettingsGetMedia
+      summary: POST /ea11y/v1/settings/get-media
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/settings/get-media` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /ea11y/v1/settings/get-settings:
+    get:
+      operationId: getEa11yV1SettingsGetSettings
+      summary: GET /ea11y/v1/settings/get-settings
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/ea11y/v1/settings/get-settings` in the `ea11y/v1` namespace.
+      tags:
+      - ea11y/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+components:
+  schemas:
+    RestError:
+      type: object
+      description: The WordPress REST API error envelope, observed live on this host (GET /wp-json/wp-abilities/v1/abilities returns rest_forbidden with status 401; GET /wp-json/wp/v2/menus returns rest_cannot_view with status 401).
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden, rest_cannot_view, rest_no_route.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: HTTP status code.
+      required:
+      - code
+      - message
+  securitySchemes:
+    applicationPassword:
+      type: http
+      scheme: basic
+      description: WordPress Application Passwords, advertised by the live route index at https://ascendelements.com/wp-json/ under authentication.application-passwords. Username + application password presented as HTTP Basic on the Authorization header. Issued at https://ascendelements.com/wp-admin/authorize-application.php.
+    cookieNonce:
+      type: apiKey
+      in: header
+      name: X-WP-Nonce
+      description: WordPress cookie authentication paired with a nonce on the X-WP-Nonce header, for same-origin first-party callers. Advertised via the access-control-allow-headers response header observed live on this host.

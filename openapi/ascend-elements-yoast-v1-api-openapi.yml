@@ -1,0 +1,1969 @@
+openapi: 3.2.0
+info:
+  title: Ascend Elements WordPress REST Yoast/v1 API
+  version: wp/v2
+  summary: The machine-readable REST surface published at ascendelements.com/wp-json.
+  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  contact:
+    email: info@ascendelements.com
+    url: https://ascendelements.com/
+  x-derived-from: https://ascendelements.com/wp-json/
+  x-derived-on: '2026-08-02'
+  x-derived-by: API Evangelist enrichment pipeline (local-v1)
+servers:
+- url: https://ascendelements.com/wp-json
+  description: Ascend Elements WordPress REST API
+security:
+- {}
+- applicationPassword: []
+- cookieNonce: []
+tags:
+- name: yoast/v1
+paths:
+  /yoast/v1:
+    get:
+      operationId: getYoastV1
+      summary: GET /yoast/v1
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      parameters:
+      - name: namespace
+        in: query
+        schema:
+          default: yoast/v1
+      - name: context
+        in: query
+        schema:
+          default: view
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/action_tracking:
+    post:
+      operationId: createYoastV1ActionTracking
+      summary: POST /yoast/v1/action_tracking
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/action_tracking` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+              required:
+              - action
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/alerts/dismiss:
+    post:
+      operationId: createYoastV1AlertsDismiss
+      summary: POST /yoast/v1/alerts/dismiss
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/alerts/dismiss` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                key:
+                  type: string
+              required:
+              - key
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/available_posts:
+    get:
+      operationId: getYoastV1AvailablePosts
+      summary: GET /yoast/v1/available_posts
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/available_posts` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      parameters:
+      - name: search
+        in: query
+        schema:
+          type: string
+          default: ''
+      - name: postType
+        in: query
+        schema:
+          type: string
+          default: page
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/complete_task:
+    post:
+      operationId: createYoastV1CompleteTask
+      summary: POST /yoast/v1/complete_task
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/complete_task` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                options:
+                  type: object
+                  properties:
+                    task:
+                      type: string
+              required:
+              - options
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/configuration/check_capability:
+    get:
+      operationId: getYoastV1ConfigurationCheckCapability
+      summary: GET /yoast/v1/configuration/check_capability
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/check_capability` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      parameters:
+      - name: user_id
+        in: query
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/configuration/enable_tracking:
+    post:
+      operationId: createYoastV1ConfigurationEnableTracking
+      summary: POST /yoast/v1/configuration/enable_tracking
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/enable_tracking` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tracking:
+                  type: boolean
+              required:
+              - tracking
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/configuration/get_configuration_state:
+    get:
+      operationId: getYoastV1ConfigurationGetConfigurationState
+      summary: GET /yoast/v1/configuration/get_configuration_state
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/get_configuration_state` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/configuration/save_configuration_state:
+    post:
+      operationId: createYoastV1ConfigurationSaveConfigurationState
+      summary: POST /yoast/v1/configuration/save_configuration_state
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/save_configuration_state` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                finishedSteps:
+                  type: array
+              required:
+              - finishedSteps
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/configuration/site_representation:
+    post:
+      operationId: createYoastV1ConfigurationSiteRepresentation
+      summary: POST /yoast/v1/configuration/site_representation
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/site_representation` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company_or_person:
+                  type: string
+                  enum:
+                  - company
+                  - person
+                company_name:
+                  type: string
+                company_logo:
+                  type: string
+                company_logo_id:
+                  type: integer
+                person_logo:
+                  type: string
+                person_logo_id:
+                  type: integer
+                company_or_person_user_id:
+                  type: integer
+                description:
+                  type: string
+              required:
+              - company_or_person
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/configuration/social_profiles:
+    post:
+      operationId: createYoastV1ConfigurationSocialProfiles
+      summary: POST /yoast/v1/configuration/social_profiles
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/social_profiles` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                facebook_site:
+                  type: string
+                twitter_site:
+                  type: string
+                other_social_urls:
+                  type: array
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/file_size:
+    get:
+      operationId: getYoastV1FileSize
+      summary: GET /yoast/v1/file_size
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/file_size` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      parameters:
+      - name: url
+        in: query
+        schema:
+          type: string
+        description: The url to retrieve
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/get_head:
+    get:
+      operationId: getYoastV1GetHead
+      summary: GET /yoast/v1/get_head
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/get_head` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      parameters:
+      - name: url
+        in: query
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/get_tasks:
+    get:
+      operationId: getYoastV1GetTasks
+      summary: GET /yoast/v1/get_tasks
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/get_tasks` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      parameters:
+      - name: options
+        in: query
+        schema:
+          type: object
+          properties:
+            filter:
+              type: string
+            limit:
+              type: int
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/import/{plugin}/{type}:
+    parameters:
+    - name: plugin
+      in: path
+      required: true
+      description: Path segment `plugin` from the WordPress route pattern `/yoast/v1/import/(?P<plugin>[\w-]+)/(?P<type>[\w-]+)`.
+      schema:
+        type: string
+    - name: type
+      in: path
+      required: true
+      description: Path segment `type` from the WordPress route pattern `/yoast/v1/import/(?P<plugin>[\w-]+)/(?P<type>[\w-]+)`.
+      schema:
+        type: string
+    post:
+      operationId: createYoastV1ImportPluginType
+      summary: POST /yoast/v1/import/{plugin}/{type}
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/import/(?P<plugin>[\w-]+)/(?P<type>[\w-]+)` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/indexing/complete:
+    post:
+      operationId: createYoastV1IndexingComplete
+      summary: POST /yoast/v1/indexing/complete
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/complete` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/indexing/general:
+    post:
+      operationId: createYoastV1IndexingGeneral
+      summary: POST /yoast/v1/indexing/general
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/general` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/indexing/indexables-complete:
+    post:
+      operationId: createYoastV1IndexingIndexablesComplete
+      summary: POST /yoast/v1/indexing/indexables-complete
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/indexables-complete` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/indexing/post-type-archives:
+    post:
+      operationId: createYoastV1IndexingPostTypeArchives
+      summary: POST /yoast/v1/indexing/post-type-archives
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/post-type-archives` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/indexing/posts:
+    post:
+      operationId: createYoastV1IndexingPosts
+      summary: POST /yoast/v1/indexing/posts
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/posts` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/indexing/prepare:
+    post:
+      operationId: createYoastV1IndexingPrepare
+      summary: POST /yoast/v1/indexing/prepare
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/prepare` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/indexing/terms:
+    post:
+      operationId: createYoastV1IndexingTerms
+      summary: POST /yoast/v1/indexing/terms
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/terms` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/integrations/set_active:
+    post:
+      operationId: createYoastV1IntegrationsSetActive
+      summary: POST /yoast/v1/integrations/set_active
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/integrations/set_active` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                active:
+                  type: boolean
+                integration:
+                  type: string
+              required:
+              - active
+              - integration
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/introductions/{introduction_id}/seen:
+    parameters:
+    - name: introduction_id
+      in: path
+      required: true
+      description: Path segment `introduction_id` from the WordPress route pattern `/yoast/v1/introductions/(?P<introduction_id>[\w-]+)/seen`.
+      schema:
+        type: string
+    post:
+      operationId: createYoastV1IntroductionsIntroductionIdSeen
+      summary: POST /yoast/v1/introductions/{introduction_id}/seen
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/introductions/(?P<introduction_id>[\w-]+)/seen` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_seen:
+                  type: bool
+                  default: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/link-indexing/posts:
+    post:
+      operationId: createYoastV1LinkIndexingPosts
+      summary: POST /yoast/v1/link-indexing/posts
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/link-indexing/posts` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/link-indexing/terms:
+    post:
+      operationId: createYoastV1LinkIndexingTerms
+      summary: POST /yoast/v1/link-indexing/terms
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/link-indexing/terms` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/meta/search:
+    get:
+      operationId: getYoastV1MetaSearch
+      summary: GET /yoast/v1/meta/search
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/meta/search` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/new-content-type-visibility/dismiss-post-type:
+    post:
+      operationId: createYoastV1NewContentTypeVisibilityDismissPostType
+      summary: POST /yoast/v1/new-content-type-visibility/dismiss-post-type
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/new-content-type-visibility/dismiss-post-type` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postTypeName:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/new-content-type-visibility/dismiss-taxonomy:
+    post:
+      operationId: createYoastV1NewContentTypeVisibilityDismissTaxonomy
+      summary: POST /yoast/v1/new-content-type-visibility/dismiss-taxonomy
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/new-content-type-visibility/dismiss-taxonomy` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                taxonomyName:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/readability_scores:
+    get:
+      operationId: getYoastV1ReadabilityScores
+      summary: GET /yoast/v1/readability_scores
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/readability_scores` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      parameters:
+      - name: contentType
+        in: query
+        schema:
+          type: string
+        required: true
+      - name: taxonomy
+        in: query
+        schema:
+          type: string
+          default: ''
+      - name: term
+        in: query
+        schema:
+          type: integer
+          default: null
+      - name: troubleshooting
+        in: query
+        schema:
+          type: bool
+          default: null
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/semrush/authenticate:
+    post:
+      operationId: createYoastV1SemrushAuthenticate
+      summary: POST /yoast/v1/semrush/authenticate
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/semrush/authenticate` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+              required:
+              - code
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/semrush/country_code:
+    post:
+      operationId: createYoastV1SemrushCountryCode
+      summary: POST /yoast/v1/semrush/country_code
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/semrush/country_code` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                country_code:
+                  type: string
+              required:
+              - country_code
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/semrush/related_keyphrases:
+    get:
+      operationId: getYoastV1SemrushRelatedKeyphrases
+      summary: GET /yoast/v1/semrush/related_keyphrases
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/semrush/related_keyphrases` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      parameters:
+      - name: keyphrase
+        in: query
+        schema:
+          type: string
+        required: true
+      - name: country_code
+        in: query
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/seo_scores:
+    get:
+      operationId: getYoastV1SeoScores
+      summary: GET /yoast/v1/seo_scores
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/seo_scores` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      parameters:
+      - name: contentType
+        in: query
+        schema:
+          type: string
+        required: true
+      - name: taxonomy
+        in: query
+        schema:
+          type: string
+          default: ''
+      - name: term
+        in: query
+        schema:
+          type: integer
+          default: null
+      - name: troubleshooting
+        in: query
+        schema:
+          type: bool
+          default: null
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/setup_steps_tracking:
+    post:
+      operationId: createYoastV1SetupStepsTracking
+      summary: POST /yoast/v1/setup_steps_tracking
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/setup_steps_tracking` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                setup_widget_loaded:
+                  type: string
+                  enum:
+                  - 'yes'
+                  - 'no'
+                first_interaction_stage:
+                  type: string
+                  enum:
+                  - install
+                  - activate
+                  - setup
+                  - grantConsent
+                  - successfullyConnected
+                last_interaction_stage:
+                  type: string
+                  enum:
+                  - install
+                  - activate
+                  - setup
+                  - grantConsent
+                  - successfullyConnected
+                setup_widget_temporarily_dismissed:
+                  type: string
+                  enum:
+                  - 'yes'
+                  - 'no'
+                setup_widget_permanently_dismissed:
+                  type: string
+                  enum:
+                  - 'yes'
+                  - 'no'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/site_kit_configuration_permanent_dismissal:
+    post:
+      operationId: createYoastV1SiteKitConfigurationPermanentDismissal
+      summary: POST /yoast/v1/site_kit_configuration_permanent_dismissal
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/site_kit_configuration_permanent_dismissal` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_dismissed:
+                  type: bool
+              required:
+              - is_dismissed
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/statistics:
+    get:
+      operationId: getYoastV1Statistics
+      summary: GET /yoast/v1/statistics
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/statistics` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/wincher/account/limit:
+    get:
+      operationId: getYoastV1WincherAccountLimit
+      summary: GET /yoast/v1/wincher/account/limit
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/account/limit` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/wincher/account/upgrade-campaign:
+    get:
+      operationId: getYoastV1WincherAccountUpgradeCampaign
+      summary: GET /yoast/v1/wincher/account/upgrade-campaign
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/account/upgrade-campaign` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/wincher/authenticate:
+    post:
+      operationId: createYoastV1WincherAuthenticate
+      summary: POST /yoast/v1/wincher/authenticate
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/authenticate` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                websiteId:
+                  type: string
+              required:
+              - code
+              - websiteId
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/wincher/authorization-url:
+    get:
+      operationId: getYoastV1WincherAuthorizationUrl
+      summary: GET /yoast/v1/wincher/authorization-url
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/authorization-url` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/wincher/keyphrases:
+    post:
+      operationId: createYoastV1WincherKeyphrases
+      summary: POST /yoast/v1/wincher/keyphrases
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/keyphrases` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keyphrases:
+                  type: string
+                permalink:
+                  type: string
+                startAt:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/wincher/keyphrases/track:
+    post:
+      operationId: createYoastV1WincherKeyphrasesTrack
+      summary: POST /yoast/v1/wincher/keyphrases/track
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/keyphrases/track` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keyphrases:
+                  type: string
+              required:
+              - keyphrases
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/wincher/keyphrases/untrack:
+    delete:
+      operationId: deleteYoastV1WincherKeyphrasesUntrack
+      summary: DELETE /yoast/v1/wincher/keyphrases/untrack
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/keyphrases/untrack` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/wistia_embed_permission:
+    get:
+      operationId: getYoastV1WistiaEmbedPermission
+      summary: GET /yoast/v1/wistia_embed_permission
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wistia_embed_permission` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createYoastV1WistiaEmbedPermission
+      summary: POST /yoast/v1/wistia_embed_permission
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wistia_embed_permission` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: bool
+                  default: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+  /yoast/v1/workouts:
+    get:
+      operationId: getYoastV1Workouts
+      summary: GET /yoast/v1/workouts
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/workouts` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+    post:
+      operationId: createYoastV1Workouts
+      summary: POST /yoast/v1/workouts
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/workouts` in the `yoast/v1` namespace.
+      tags:
+      - yoast/v1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication required or insufficient capability (rest_forbidden / rest_cannot_view). Observed live on wp-abilities/v1 and wp/v2/menus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        '404':
+          description: No route or resource matched (rest_no_route).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+        default:
+          description: WordPress REST error envelope.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestError'
+components:
+  schemas:
+    RestError:
+      type: object
+      description: The WordPress REST API error envelope, observed live on this host (GET /wp-json/wp-abilities/v1/abilities returns rest_forbidden with status 401; GET /wp-json/wp/v2/menus returns rest_cannot_view with status 401).
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden, rest_cannot_view, rest_no_route.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: HTTP status code.
+      required:
+      - code
+      - message
+  securitySchemes:
+    applicationPassword:
+      type: http
+      scheme: basic
+      description: WordPress Application Passwords, advertised by the live route index at https://ascendelements.com/wp-json/ under authentication.application-passwords. Username + application password presented as HTTP Basic on the Authorization header. Issued at https://ascendelements.com/wp-admin/authorize-application.php.
+    cookieNonce:
+      type: apiKey
+      in: header
+      name: X-WP-Nonce
+      description: WordPress cookie authentication paired with a nonce on the X-WP-Nonce header, for same-origin first-party callers. Advertised via the access-control-allow-headers response header observed live on this host.

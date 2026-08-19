@@ -1,0 +1,753 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Yoast/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "yoast/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /yoast/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/action_tracking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/action_tracking",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/action_tracking` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/alerts/dismiss",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/alerts/dismiss",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/alerts/dismiss` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/available_posts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/available_posts",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "postType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/available_posts` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/complete_task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/complete_task",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/complete_task` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/configuration/check_capability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/configuration/check_capability",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/check_capability` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/configuration/enable_tracking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/configuration/enable_tracking",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/enable_tracking` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/configuration/get_configuration_state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/configuration/get_configuration_state"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/get_configuration_state` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/configuration/save_configuration_state",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/configuration/save_configuration_state",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/save_configuration_state` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/configuration/site_representation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/configuration/site_representation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/site_representation` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/configuration/social_profiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/configuration/social_profiles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/configuration/social_profiles` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/file_size",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/file_size",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The url to retrieve"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/file_size` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/get_head",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/get_head",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/get_head` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/get_tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/get_tasks",
+            "params": [
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/get_tasks` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/import/{plugin}/{type}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/import/:plugin/:type",
+            "params": [
+              {
+                "name": "plugin",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `plugin` from the WordPress route pattern `/yoast/v1/import/(?P<plugin>[\\w-]+)/(?P<type>[\\w-]+)`."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `type` from the WordPress route pattern `/yoast/v1/import/(?P<plugin>[\\w-]+)/(?P<type>[\\w-]+)`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/import/(?P<plugin>[\\w-]+)/(?P<type>[\\w-]+)` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/indexing/complete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/indexing/complete"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/complete` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/indexing/general",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/indexing/general"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/general` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/indexing/indexables-complete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/indexing/indexables-complete"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/indexables-complete` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/indexing/post-type-archives",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/indexing/post-type-archives"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/post-type-archives` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/indexing/posts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/indexing/posts"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/posts` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/indexing/prepare",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/indexing/prepare"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/prepare` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/indexing/terms",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/indexing/terms"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/indexing/terms` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/integrations/set_active",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/integrations/set_active",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/integrations/set_active` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/introductions/{introduction_id}/seen",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/introductions/:introduction_id/seen",
+            "params": [
+              {
+                "name": "introduction_id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `introduction_id` from the WordPress route pattern `/yoast/v1/introductions/(?P<introduction_id>[\\w-]+)/seen`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/introductions/(?P<introduction_id>[\\w-]+)/seen` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/link-indexing/posts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/link-indexing/posts"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/link-indexing/posts` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/link-indexing/terms",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/link-indexing/terms"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/link-indexing/terms` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/meta/search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/meta/search"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/meta/search` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/new-content-type-visibility/dismiss-post-type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/new-content-type-visibility/dismiss-post-type",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/new-content-type-visibility/dismiss-post-type` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/new-content-type-visibility/dismiss-taxonomy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/new-content-type-visibility/dismiss-taxonomy",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/new-content-type-visibility/dismiss-taxonomy` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/readability_scores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/readability_scores",
+            "params": [
+              {
+                "name": "contentType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "taxonomy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "term",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "troubleshooting",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/readability_scores` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/semrush/authenticate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/semrush/authenticate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/semrush/authenticate` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/semrush/country_code",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/semrush/country_code",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/semrush/country_code` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/semrush/related_keyphrases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/semrush/related_keyphrases",
+            "params": [
+              {
+                "name": "keyphrase",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/semrush/related_keyphrases` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/seo_scores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/seo_scores",
+            "params": [
+              {
+                "name": "contentType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "taxonomy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "term",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "troubleshooting",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/seo_scores` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/setup_steps_tracking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/setup_steps_tracking",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/setup_steps_tracking` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/site_kit_configuration_permanent_dismissal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/site_kit_configuration_permanent_dismissal",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/site_kit_configuration_permanent_dismissal` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/statistics"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/statistics` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/wincher/account/limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/wincher/account/limit"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/account/limit` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/wincher/account/upgrade-campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/wincher/account/upgrade-campaign"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/account/upgrade-campaign` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/wincher/authenticate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/wincher/authenticate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/authenticate` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/wincher/authorization-url",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/wincher/authorization-url"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/authorization-url` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/wincher/keyphrases",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/wincher/keyphrases",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/keyphrases` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/wincher/keyphrases/track",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/wincher/keyphrases/track",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/keyphrases/track` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "DELETE /yoast/v1/wincher/keyphrases/untrack",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/wincher/keyphrases/untrack"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wincher/keyphrases/untrack` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/wistia_embed_permission",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/wistia_embed_permission"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wistia_embed_permission` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/wistia_embed_permission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/wistia_embed_permission",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/wistia_embed_permission` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /yoast/v1/workouts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/workouts"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/workouts` in the `yoast/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /yoast/v1/workouts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/yoast/v1/workouts"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/yoast/v1/workouts` in the `yoast/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

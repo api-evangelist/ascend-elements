@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Elementor/v1/documents API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "elementor/v1/documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /elementor/v1/documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/documents",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/documents` in the `elementor/v1/documents` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /elementor/v1/documents/{id}/media/import",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/elementor/v1/documents/:id/media/import",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `id` from the WordPress route pattern `/elementor/v1/documents/(?P<id>\\d+)/media/import`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/documents/(?P<id>\\d+)/media/import` in the `elementor/v1/documents` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

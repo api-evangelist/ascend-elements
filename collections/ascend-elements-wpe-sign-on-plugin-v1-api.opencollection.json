@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Wpe Sign On Plugin/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wpe_sign_on_plugin/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /wpe_sign_on_plugin/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wpe_sign_on_plugin/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wpe_sign_on_plugin/v1` in the `wpe_sign_on_plugin/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /wpe_sign_on_plugin/v1/has_logged",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/wpe_sign_on_plugin/v1/has_logged"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wpe_sign_on_plugin/v1/has_logged` in the `wpe_sign_on_plugin/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wpe_sign_on_plugin/v1/is_user_logged_in",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wpe_sign_on_plugin/v1/is_user_logged_in"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wpe_sign_on_plugin/v1/is_user_logged_in` in the `wpe_sign_on_plugin/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /wpe_sign_on_plugin/v1/login",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/wpe_sign_on_plugin/v1/login"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wpe_sign_on_plugin/v1/login` in the `wpe_sign_on_plugin/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -10,17 +10,14 @@ published: false
 search_evidence:
   fetched: '2026-08-02'
   findings:
-  - >-
-    No `mcp` namespace is registered in the live WordPress route index at
-    https://ascendelements.com/wp-json/ (21 namespaces, none of them an MCP adapter).
-  - >-
-    No RFC 9728 protected-resource metadata: /.well-known/oauth-protected-resource returns the
-    host's 503 bot-protection HTML shell, not JSON.
-  - >-
-    The WordPress Abilities API IS installed (wp-abilities/v1, with /abilities, /abilities/{name},
-    /abilities/{name}/run and /categories routes). That is the substrate a WordPress MCP adapter
-    exposes as tools, so this site is one plugin away from a real MCP server. It is currently
-    401 rest_forbidden anonymously, so the ability list could not be enumerated.
+  - No `mcp` namespace is registered in the live WordPress route index at https://ascendelements.com/wp-json/
+    (21 namespaces, none of them an MCP adapter).
+  - 'No RFC 9728 protected-resource metadata: /.well-known/oauth-protected-resource returns the host''s
+    503 bot-protection HTML shell, not JSON.'
+  - The WordPress Abilities API IS installed (wp-abilities/v1, with /abilities, /abilities/{name}, /abilities/{name}/run
+    and /categories routes). That is the substrate a WordPress MCP adapter exposes as tools, so this site
+    is one plugin away from a real MCP server. It is currently 401 rest_forbidden anonymously, so the
+    ability list could not be enumerated.
   - No hosted MCP server for Ascend Elements exists in the public MCP registries or on npm.
 tools:
 - name: search_site
@@ -48,15 +45,15 @@ tools:
   description: List open positions on the careers board.
   source_operation: openapi/ascend-elements-wordpress-rest-openapi.yml#getWpV2Job
 - name: list_job_locations
-  description: List facility locations used by the careers board (Base 1 Covington GA, Apex 1
-    Hopkinsville KY, Novi MI, Westborough MA, Global).
+  description: List facility locations used by the careers board (Base 1 Covington GA, Apex 1 Hopkinsville
+    KY, Novi MI, Westborough MA, Global).
   source_operation: openapi/ascend-elements-wordpress-rest-openapi.yml#getWpV2JobLocation
 - name: list_job_categories
   description: List job function categories.
   source_operation: openapi/ascend-elements-wordpress-rest-openapi.yml#getWpV2JobCategory
 - name: list_pages
-  description: List the static site pages (About, Innovation, Products, Services, Recycling,
-    Become a Supplier, Corporate Policies).
+  description: List the static site pages (About, Innovation, Products, Services, Recycling, Become a
+    Supplier, Corporate Policies).
   source_operation: openapi/ascend-elements-wordpress-rest-openapi.yml#getWpV2Pages
 - name: get_page
   description: Retrieve a single page by id.
@@ -64,9 +61,14 @@ tools:
 - name: list_categories
   description: List news categories (Awards, Company, Coverage, Customers, News, Products).
   source_operation: openapi/ascend-elements-wordpress-rest-openapi.yml#getWpV2Categories
-x-notes: >-
-  CANDIDATE, NOT PUBLISHED. Ascend Elements does not operate an MCP server. The tools above are
-  a derived proposal, scoped deliberately to the thirteen read operations that are genuinely
-  readable anonymously — the write half of the REST surface is excluded because it is not
-  available without an administrator credential. Every source_operation is a real operationId
-  present verbatim in the derived OpenAPI.
+x-notes: CANDIDATE, NOT PUBLISHED. Ascend Elements does not operate an MCP server. The tools above are
+  a derived proposal, scoped deliberately to the thirteen read operations that are genuinely readable
+  anonymously — the write half of the REST surface is excluded because it is not available without an
+  administrator credential. Every source_operation is a real operationId present verbatim in the derived
+  OpenAPI.
+deployment:
+  mode: none
+  verified: derived
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census

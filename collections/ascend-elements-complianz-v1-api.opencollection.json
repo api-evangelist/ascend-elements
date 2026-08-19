@@ -1,0 +1,165 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ascend Elements WordPress REST Complianz/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "complianz/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /complianz/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/complianz/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /complianz/v1/banner",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/banner"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/banner` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /complianz/v1/consent-area/{post_id}/{block_id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/consent-area/:post_id/:block_id",
+            "params": [
+              {
+                "name": "post_id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `post_id` from the WordPress route pattern `/complianz/v1/consent-area/(?P<post_id>([0-9]+))/(?P<block_id>([a-z0-9-_]+))`."
+              },
+              {
+                "name": "block_id",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `block_id` from the WordPress route pattern `/complianz/v1/consent-area/(?P<post_id>([0-9]+))/(?P<block_id>([a-z0-9-_]+))`."
+              }
+            ]
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/consent-area/(?P<post_id>([0-9]+))/(?P<block_id>([a-z0-9-_]+))` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /complianz/v1/cookie_data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/cookie_data"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/cookie_data` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /complianz/v1/datarequests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/datarequests"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/datarequests` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /complianz/v1/documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/documents"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/documents` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "GET /complianz/v1/manage_consent_html",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/manage_consent_html"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/manage_consent_html` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /complianz/v1/store_cookies",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/store_cookies"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/store_cookies` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /complianz/v1/track",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/track"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/track` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /complianz/v1/wsc-checks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/wsc-checks"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/wsc-checks` in the `complianz/v1` namespace."
+        },
+        {
+          "info": {
+            "name": "POST /complianz/v1/wsc-scan",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ascendelements.com/wp-json/complianz/v1/wsc-scan"
+          },
+          "docs": "Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/complianz/v1/wsc-scan` in the `complianz/v1` namespace."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
