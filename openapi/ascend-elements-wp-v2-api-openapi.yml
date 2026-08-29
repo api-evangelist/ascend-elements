@@ -23578,185 +23578,156 @@ paths:
                 $ref: '#/components/schemas/RestError'
 components:
   schemas:
-    MediaItem:
-      title: attachment
+    User:
+      title: user
       type: object
       properties:
-        date:
-          description: The date the post was published, in the site's timezone.
-          type:
-          - string
-          - 'null'
-          format: date-time
-          context:
-          - view
-          - edit
-          - embed
-        date_gmt:
-          description: The date the post was published, as GMT.
-          type:
-          - string
-          - 'null'
-          format: date-time
-          context:
-          - view
-          - edit
-        guid:
-          description: The globally unique identifier for the post.
-          type: object
-          context:
-          - view
-          - edit
-          readonly: true
-          properties:
-            raw:
-              description: GUID for the post, as it exists in the database.
-              type: string
-              context:
-              - edit
-              readonly: true
-            rendered:
-              description: GUID for the post, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              readonly: true
         id:
-          description: Unique identifier for the post.
+          description: Unique identifier for the user.
           type: integer
           context:
+          - embed
           - view
           - edit
-          - embed
           readonly: true
-        link:
-          description: URL to the post.
+        username:
+          description: Login name for the user.
+          type: string
+          context:
+          - edit
+          required: true
+        name:
+          description: Display name for the user.
+          type: string
+          context:
+          - embed
+          - view
+          - edit
+        first_name:
+          description: First name for the user.
+          type: string
+          context:
+          - edit
+        last_name:
+          description: Last name for the user.
+          type: string
+          context:
+          - edit
+        email:
+          description: The email address for the user.
+          type: string
+          format: email
+          context:
+          - edit
+          required: true
+        url:
+          description: URL of the user.
           type: string
           format: uri
           context:
-          - view
-          - edit
           - embed
-          readonly: true
-        modified:
-          description: The date the post was last modified, in the site's timezone.
-          type: string
-          format: date-time
-          context:
           - view
           - edit
-          readonly: true
-        modified_gmt:
-          description: The date the post was last modified, as GMT.
-          type: string
-          format: date-time
-          context:
-          - view
-          - edit
-          readonly: true
-        slug:
-          description: An alphanumeric identifier for the post unique to its type.
+        description:
+          description: Description of the user.
           type: string
           context:
-          - view
-          - edit
           - embed
-        status:
-          description: A named status for the post.
+          - view
+          - edit
+        link:
+          description: Author URL of the user.
+          type: string
+          format: uri
+          context:
+          - embed
+          - view
+          - edit
+          readonly: true
+        locale:
+          description: Locale for the user.
           type: string
           enum:
-          - publish
-          - future
-          - draft
-          - pending
-          - private
-          - acf-disabled
+          - ''
+          - en_US
           context:
-          - view
           - edit
-        type:
-          description: Type of post.
+        nickname:
+          description: The nickname for the user.
           type: string
           context:
-          - view
           - edit
+        slug:
+          description: An alphanumeric identifier for the user.
+          type: string
+          context:
           - embed
-          readonly: true
-        permalink_template:
-          description: Permalink template for the post.
-          type: string
-          context:
-          - edit
-          readonly: true
-        generated_slug:
-          description: Slug automatically generated from the post title.
-          type: string
-          context:
-          - edit
-          readonly: true
-        class_list:
-          description: An array of the class names for the post container element.
-          type: array
-          context:
           - view
           - edit
+        registered_date:
+          description: Registration date for the user.
+          type: string
+          format: date-time
+          context:
+          - edit
           readonly: true
+        roles:
+          description: Roles assigned to the user.
+          type: array
           items:
             type: string
-        title:
-          description: The title for the post.
+          context:
+          - edit
+        password:
+          description: Password for the user (never included).
+          type: string
+          context: []
+          required: true
+        capabilities:
+          description: All capabilities assigned to the user.
           type: object
           context:
+          - edit
+          readonly: true
+        extra_capabilities:
+          description: Any extra capabilities assigned to the user.
+          type: object
+          context:
+          - edit
+          readonly: true
+        avatar_urls:
+          description: Avatar URLs for the user.
+          type: object
+          context:
+          - embed
           - view
           - edit
-          - embed
+          readonly: true
           properties:
-            raw:
-              description: Title for the post, as it exists in the database.
+            '24':
+              description: Avatar URL with image size of 24 pixels.
               type: string
+              format: uri
               context:
-              - edit
-            rendered:
-              description: HTML title for the post, transformed for display.
-              type: string
-              context:
+              - embed
               - view
               - edit
+            '48':
+              description: Avatar URL with image size of 48 pixels.
+              type: string
+              format: uri
+              context:
               - embed
-              readonly: true
-        author:
-          description: The ID for the author of the post.
-          type: integer
-          context:
-          - view
-          - edit
-          - embed
-        featured_media:
-          description: The ID of the featured media for the post.
-          type: integer
-          context:
-          - view
-          - edit
-          - embed
-        comment_status:
-          description: Whether or not comments are open on the post.
-          type: string
-          enum:
-          - open
-          - closed
-          context:
-          - view
-          - edit
-        ping_status:
-          description: Whether or not the post can be pinged.
-          type: string
-          enum:
-          - open
-          - closed
-          context:
-          - view
-          - edit
+              - view
+              - edit
+            '96':
+              description: Avatar URL with image size of 96 pixels.
+              type: string
+              format: uri
+              context:
+              - embed
+              - view
+              - edit
         meta:
           description: Meta fields.
           type: object
@@ -23764,158 +23735,36 @@ components:
           - view
           - edit
           properties:
-            _acf_changed:
-              type: boolean
+            persisted_preferences:
+              type: object
               title: ''
               description: ''
-              default: false
-        template:
-          description: The theme file to use to display the post.
-          type: string
-          context:
-          - view
-          - edit
+              default: []
+              context:
+              - edit
+              properties:
+                _modified:
+                  description: The date and time the preferences were updated.
+                  type: string
+                  format: date-time
+                  readonly: false
+              additionalProperties: true
         acf:
           description: ACF field data
           type: object
           properties: []
-        alt_text:
-          description: Alternative text to display when attachment is not displayed.
-          type: string
-          context:
-          - view
-          - edit
-          - embed
-        caption:
-          description: The attachment caption.
-          type: object
-          context:
-          - view
-          - edit
-          - embed
-          properties:
-            raw:
-              description: Caption for the attachment, as it exists in the database.
-              type: string
-              context:
-              - edit
-            rendered:
-              description: HTML caption for the attachment, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              - embed
-              readonly: true
-        description:
-          description: The attachment description.
-          type: object
-          context:
-          - view
-          - edit
-          properties:
-            raw:
-              description: Description for the attachment, as it exists in the database.
-              type: string
-              context:
-              - edit
-            rendered:
-              description: HTML description for the attachment, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              readonly: true
-        media_type:
-          description: Attachment type.
-          type: string
-          enum:
-          - image
-          - file
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        mime_type:
-          description: The attachment MIME type.
-          type: string
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        media_details:
-          description: Details about the media file, specific to its type.
-          type: object
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        post:
-          description: The ID for the associated post of the attachment.
-          type: integer
-          context:
-          - view
-          - edit
-        source_url:
-          description: URL to the original attachment file.
-          type: string
-          format: uri
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        missing_image_sizes:
-          description: List of the missing image sizes of the attachment.
-          type: array
-          items:
-            type: string
-          context:
-          - edit
-          readonly: true
-        filename:
-          description: Original attachment file name.
-          type: string
-          context:
-          - view
-          - edit
-          readonly: true
-        filesize:
-          description: Attachment file size in bytes.
-          type: integer
-          context:
-          - view
-          - edit
-          readonly: true
-        exif_orientation:
-          description: EXIF orientation value. Values 1-8 follow the EXIF specification, where 1 means no rotation needed.
-          type: integer
-          context:
-          - edit
-          readonly: true
-      links:
-      - rel: https://api.w.org/action-unfiltered-html
-        title: The current user can post unfiltered HTML markup and JavaScript.
-        href: https://ascendelements.com/wp-json/wp/v2/media/{id}
-        targetSchema:
+        elementor_introduction:
+          description: Elementor user meta data
           type: object
           properties:
-            content:
-              raw:
-                type: string
-      - rel: https://api.w.org/action-assign-author
-        title: The current user can change the author on this post.
-        href: https://ascendelements.com/wp-json/wp/v2/media/{id}
-        targetSchema:
-          type: object
-          properties:
-            author:
-              type: integer
-    JobCategory:
-      title: job_category
+            ai_get_started:
+              type: boolean
+          additionalProperties: true
+          context:
+          - view
+          - edit
+    Category:
+      title: category
       type: object
       properties:
         id:
@@ -23967,12 +23816,18 @@ components:
           description: Type attribution for the term.
           type: string
           enum:
-          - job_category
+          - category
           context:
           - view
           - embed
           - edit
           readonly: true
+        parent:
+          description: The parent term ID.
+          type: integer
+          context:
+          - view
+          - edit
         meta:
           description: Meta fields.
           type: object
@@ -23984,25 +23839,6 @@ components:
           description: ACF field data
           type: object
           properties: []
-    RestError:
-      type: object
-      description: The WordPress REST API error envelope, observed live on this host (GET /wp-json/wp-abilities/v1/abilities returns rest_forbidden with status 401; GET /wp-json/wp/v2/menus returns rest_cannot_view with status 401).
-      properties:
-        code:
-          type: string
-          description: Machine-readable error code, e.g. rest_forbidden, rest_cannot_view, rest_no_route.
-        message:
-          type: string
-          description: Human-readable error message.
-        data:
-          type: object
-          properties:
-            status:
-              type: integer
-              description: HTTP status code.
-      required:
-      - code
-      - message
     SourcingEvent:
       title: sourcing-events
       type: object
@@ -24219,257 +24055,6 @@ components:
             content:
               raw:
                 type: string
-    User:
-      title: user
-      type: object
-      properties:
-        id:
-          description: Unique identifier for the user.
-          type: integer
-          context:
-          - embed
-          - view
-          - edit
-          readonly: true
-        username:
-          description: Login name for the user.
-          type: string
-          context:
-          - edit
-          required: true
-        name:
-          description: Display name for the user.
-          type: string
-          context:
-          - embed
-          - view
-          - edit
-        first_name:
-          description: First name for the user.
-          type: string
-          context:
-          - edit
-        last_name:
-          description: Last name for the user.
-          type: string
-          context:
-          - edit
-        email:
-          description: The email address for the user.
-          type: string
-          format: email
-          context:
-          - edit
-          required: true
-        url:
-          description: URL of the user.
-          type: string
-          format: uri
-          context:
-          - embed
-          - view
-          - edit
-        description:
-          description: Description of the user.
-          type: string
-          context:
-          - embed
-          - view
-          - edit
-        link:
-          description: Author URL of the user.
-          type: string
-          format: uri
-          context:
-          - embed
-          - view
-          - edit
-          readonly: true
-        locale:
-          description: Locale for the user.
-          type: string
-          enum:
-          - ''
-          - en_US
-          context:
-          - edit
-        nickname:
-          description: The nickname for the user.
-          type: string
-          context:
-          - edit
-        slug:
-          description: An alphanumeric identifier for the user.
-          type: string
-          context:
-          - embed
-          - view
-          - edit
-        registered_date:
-          description: Registration date for the user.
-          type: string
-          format: date-time
-          context:
-          - edit
-          readonly: true
-        roles:
-          description: Roles assigned to the user.
-          type: array
-          items:
-            type: string
-          context:
-          - edit
-        password:
-          description: Password for the user (never included).
-          type: string
-          context: []
-          required: true
-        capabilities:
-          description: All capabilities assigned to the user.
-          type: object
-          context:
-          - edit
-          readonly: true
-        extra_capabilities:
-          description: Any extra capabilities assigned to the user.
-          type: object
-          context:
-          - edit
-          readonly: true
-        avatar_urls:
-          description: Avatar URLs for the user.
-          type: object
-          context:
-          - embed
-          - view
-          - edit
-          readonly: true
-          properties:
-            '24':
-              description: Avatar URL with image size of 24 pixels.
-              type: string
-              format: uri
-              context:
-              - embed
-              - view
-              - edit
-            '48':
-              description: Avatar URL with image size of 48 pixels.
-              type: string
-              format: uri
-              context:
-              - embed
-              - view
-              - edit
-            '96':
-              description: Avatar URL with image size of 96 pixels.
-              type: string
-              format: uri
-              context:
-              - embed
-              - view
-              - edit
-        meta:
-          description: Meta fields.
-          type: object
-          context:
-          - view
-          - edit
-          properties:
-            persisted_preferences:
-              type: object
-              title: ''
-              description: ''
-              default: []
-              context:
-              - edit
-              properties:
-                _modified:
-                  description: The date and time the preferences were updated.
-                  type: string
-                  format: date-time
-                  readonly: false
-              additionalProperties: true
-        acf:
-          description: ACF field data
-          type: object
-          properties: []
-        elementor_introduction:
-          description: Elementor user meta data
-          type: object
-          properties:
-            ai_get_started:
-              type: boolean
-          additionalProperties: true
-          context:
-          - view
-          - edit
-    Tag:
-      title: tag
-      type: object
-      properties:
-        id:
-          description: Unique identifier for the term.
-          type: integer
-          context:
-          - view
-          - embed
-          - edit
-          readonly: true
-        count:
-          description: Number of published posts for the term.
-          type: integer
-          context:
-          - view
-          - edit
-          readonly: true
-        description:
-          description: HTML description of the term.
-          type: string
-          context:
-          - view
-          - edit
-        link:
-          description: URL of the term.
-          type: string
-          format: uri
-          context:
-          - view
-          - embed
-          - edit
-          readonly: true
-        name:
-          description: HTML title for the term.
-          type: string
-          context:
-          - view
-          - embed
-          - edit
-          required: true
-        slug:
-          description: An alphanumeric identifier for the term unique to its type.
-          type: string
-          context:
-          - view
-          - embed
-          - edit
-        taxonomy:
-          description: Type attribution for the term.
-          type: string
-          enum:
-          - post_tag
-          context:
-          - view
-          - embed
-          - edit
-          readonly: true
-        meta:
-          description: Meta fields.
-          type: object
-          context:
-          - view
-          - edit
-          properties: []
     Page:
       title: page
       type: object
@@ -24858,469 +24443,91 @@ components:
           properties:
             author:
               type: integer
-    Post:
-      title: post
+    Tag:
+      title: tag
       type: object
       properties:
-        date:
-          description: The date the post was published, in the site's timezone.
-          type:
-          - string
-          - 'null'
-          format: date-time
+        id:
+          description: Unique identifier for the term.
+          type: integer
           context:
           - view
-          - edit
           - embed
-        date_gmt:
-          description: The date the post was published, as GMT.
-          type:
-          - string
-          - 'null'
-          format: date-time
-          context:
-          - view
-          - edit
-        guid:
-          description: The globally unique identifier for the post.
-          type: object
-          context:
-          - view
           - edit
           readonly: true
-          properties:
-            raw:
-              description: GUID for the post, as it exists in the database.
-              type: string
-              context:
-              - edit
-              readonly: true
-            rendered:
-              description: GUID for the post, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              readonly: true
-        id:
-          description: Unique identifier for the post.
+        count:
+          description: Number of published posts for the term.
           type: integer
           context:
           - view
           - edit
-          - embed
           readonly: true
+        description:
+          description: HTML description of the term.
+          type: string
+          context:
+          - view
+          - edit
         link:
-          description: URL to the post.
+          description: URL of the term.
           type: string
           format: uri
           context:
           - view
-          - edit
           - embed
-          readonly: true
-        modified:
-          description: The date the post was last modified, in the site's timezone.
-          type: string
-          format: date-time
-          context:
-          - view
           - edit
           readonly: true
-        modified_gmt:
-          description: The date the post was last modified, as GMT.
+        name:
+          description: HTML title for the term.
           type: string
-          format: date-time
           context:
           - view
+          - embed
           - edit
-          readonly: true
+          required: true
         slug:
-          description: An alphanumeric identifier for the post unique to its type.
+          description: An alphanumeric identifier for the term unique to its type.
           type: string
           context:
           - view
-          - edit
           - embed
-        status:
-          description: A named status for the post.
+          - edit
+        taxonomy:
+          description: Type attribution for the term.
           type: string
           enum:
-          - publish
-          - future
-          - draft
-          - pending
-          - private
-          - acf-disabled
+          - post_tag
           context:
           - view
-          - edit
-        type:
-          description: Type of post.
-          type: string
-          context:
-          - view
-          - edit
           - embed
-          readonly: true
-        password:
-          description: A password to protect access to the content and excerpt.
-          type: string
-          context:
-          - edit
-        permalink_template:
-          description: Permalink template for the post.
-          type: string
-          context:
           - edit
           readonly: true
-        generated_slug:
-          description: Slug automatically generated from the post title.
-          type: string
-          context:
-          - edit
-          readonly: true
-        class_list:
-          description: An array of the class names for the post container element.
-          type: array
-          context:
-          - view
-          - edit
-          readonly: true
-          items:
-            type: string
-        title:
-          description: The title for the post.
-          type: object
-          context:
-          - view
-          - edit
-          - embed
-          properties:
-            raw:
-              description: Title for the post, as it exists in the database.
-              type: string
-              context:
-              - edit
-            rendered:
-              description: HTML title for the post, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              - embed
-              readonly: true
-        content:
-          description: The content for the post.
-          type: object
-          context:
-          - view
-          - edit
-          properties:
-            raw:
-              description: Content for the post, as it exists in the database.
-              type: string
-              context:
-              - edit
-            rendered:
-              description: HTML content for the post, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              readonly: true
-            block_version:
-              description: Version of the content block format used by the post.
-              type: integer
-              context:
-              - edit
-              readonly: true
-            protected:
-              description: Whether the content is protected with a password.
-              type: boolean
-              context:
-              - view
-              - edit
-              - embed
-              readonly: true
-        author:
-          description: The ID for the author of the post.
-          type: integer
-          context:
-          - view
-          - edit
-          - embed
-        excerpt:
-          description: The excerpt for the post.
-          type: object
-          context:
-          - view
-          - edit
-          - embed
-          properties:
-            raw:
-              description: Excerpt for the post, as it exists in the database.
-              type: string
-              context:
-              - edit
-            rendered:
-              description: HTML excerpt for the post, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              - embed
-              readonly: true
-            protected:
-              description: Whether the excerpt is protected with a password.
-              type: boolean
-              context:
-              - view
-              - edit
-              - embed
-              readonly: true
-        featured_media:
-          description: The ID of the featured media for the post.
-          type: integer
-          context:
-          - view
-          - edit
-          - embed
-        comment_status:
-          description: Whether or not comments are open on the post.
-          type: string
-          enum:
-          - open
-          - closed
-          context:
-          - view
-          - edit
-        ping_status:
-          description: Whether or not the post can be pinged.
-          type: string
-          enum:
-          - open
-          - closed
-          context:
-          - view
-          - edit
-        format:
-          description: The format for the post.
-          type: string
-          enum:
-          - standard
-          - aside
-          - chat
-          - gallery
-          - link
-          - image
-          - quote
-          - status
-          - video
-          - audio
-          context:
-          - view
-          - edit
         meta:
           description: Meta fields.
           type: object
           context:
           - view
           - edit
-          properties:
-            _acf_changed:
-              type: boolean
-              title: ''
-              description: ''
-              default: false
-            footnotes:
-              type: string
-              title: ''
-              description: ''
-              default: ''
-            _elementor_edit_mode:
-              type: string
-              title: Elementor edit mode
-              description: Elementor edit mode, `builder` is required for Elementor editing
-              default: ''
-              enum:
-              - ''
-              - builder
-              context:
-              - edit
-            _elementor_template_type:
-              type: string
-              title: Elementor template type
-              description: Elementor document type
-              default: ''
-              enum:
-              - loop
-              - custom_grid
-              - post
-              - wp-post
-              - wp-page
-              - kit
-              - not-supported
-              - page
-              - section
-              - container
-              - floating-buttons
-              - cloud-template-preview
-              - ecs_custom_layout
-              - widget
-              - popup
-              - header
-              - footer
-              - single
-              - single-post
-              - single-page
-              - archive
-              - search-results
-              - error-404
-              - code_snippet
-              - loop-item
-              - ''
-              context:
-              - edit
-            _elementor_data:
-              type: string
-              title: Elementor data
-              description: Elementor JSON as a string
-              default: ''
-              context:
-              - edit
-            _elementor_page_settings:
-              type: object
-              title: Elementor page settings
-              description: Elementor page level settings
-              default: '{}'
-              properties:
-                hide_title:
-                  type: string
-                  enum:
-                  - 'yes'
-                  - 'no'
-                  default: ''
-              additionalProperties: true
-              context:
-              - edit
-            _elementor_conditions:
-              type: array
-              title: ''
-              description: Elementor conditions
-              default: []
-              additionalProperties: true
-              context:
-              - edit
-        sticky:
-          description: Whether or not the post should be treated as sticky.
-          type: boolean
-          context:
-          - view
-          - edit
-        template:
-          description: The theme file to use to display the post.
-          type: string
-          context:
-          - view
-          - edit
-        categories:
-          description: The terms assigned to the post in the category taxonomy.
-          type: array
-          items:
-            type: integer
-          context:
-          - view
-          - edit
-        tags:
-          description: The terms assigned to the post in the post_tag taxonomy.
-          type: array
-          items:
-            type: integer
-          context:
-          - view
-          - edit
-        acf:
-          description: ACF field data
-          type: object
           properties: []
-      links:
-      - rel: https://api.w.org/action-publish
-        title: The current user can publish this post.
-        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
-        targetSchema:
+    RestError:
+      type: object
+      description: The WordPress REST API error envelope, observed live on this host (GET /wp-json/wp-abilities/v1/abilities returns rest_forbidden with status 401; GET /wp-json/wp/v2/menus returns rest_cannot_view with status 401).
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden, rest_cannot_view, rest_no_route.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
           type: object
           properties:
             status:
-              type: string
-              enum:
-              - publish
-              - future
-      - rel: https://api.w.org/action-unfiltered-html
-        title: The current user can post unfiltered HTML markup and JavaScript.
-        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
-        targetSchema:
-          type: object
-          properties:
-            content:
-              raw:
-                type: string
-      - rel: https://api.w.org/action-sticky
-        title: The current user can sticky this post.
-        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
-        targetSchema:
-          type: object
-          properties:
-            sticky:
-              type: boolean
-      - rel: https://api.w.org/action-assign-author
-        title: The current user can change the author on this post.
-        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
-        targetSchema:
-          type: object
-          properties:
-            author:
               type: integer
-      - rel: https://api.w.org/action-assign-categories
-        title: The current user can assign terms in the category taxonomy.
-        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
-        targetSchema:
-          type: object
-          properties:
-            categories:
-              type: array
-              items:
-                type: integer
-      - rel: https://api.w.org/action-create-categories
-        title: The current user can create terms in the category taxonomy.
-        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
-        targetSchema:
-          type: object
-          properties:
-            categories:
-              type: array
-              items:
-                type: integer
-      - rel: https://api.w.org/action-assign-tags
-        title: The current user can assign terms in the post_tag taxonomy.
-        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
-        targetSchema:
-          type: object
-          properties:
-            tags:
-              type: array
-              items:
-                type: integer
-      - rel: https://api.w.org/action-create-tags
-        title: The current user can create terms in the post_tag taxonomy.
-        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
-        targetSchema:
-          type: object
-          properties:
-            tags:
-              type: array
-              items:
-                type: integer
+              description: HTTP status code.
+      required:
+      - code
+      - message
     JobLocation:
       title: job_location
       type: object
@@ -25799,6 +25006,539 @@ components:
             content:
               raw:
                 type: string
+    Post:
+      title: post
+      type: object
+      properties:
+        date:
+          description: The date the post was published, in the site's timezone.
+          type:
+          - string
+          - 'null'
+          format: date-time
+          context:
+          - view
+          - edit
+          - embed
+        date_gmt:
+          description: The date the post was published, as GMT.
+          type:
+          - string
+          - 'null'
+          format: date-time
+          context:
+          - view
+          - edit
+        guid:
+          description: The globally unique identifier for the post.
+          type: object
+          context:
+          - view
+          - edit
+          readonly: true
+          properties:
+            raw:
+              description: GUID for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+              readonly: true
+            rendered:
+              description: GUID for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              readonly: true
+        id:
+          description: Unique identifier for the post.
+          type: integer
+          context:
+          - view
+          - edit
+          - embed
+          readonly: true
+        link:
+          description: URL to the post.
+          type: string
+          format: uri
+          context:
+          - view
+          - edit
+          - embed
+          readonly: true
+        modified:
+          description: The date the post was last modified, in the site's timezone.
+          type: string
+          format: date-time
+          context:
+          - view
+          - edit
+          readonly: true
+        modified_gmt:
+          description: The date the post was last modified, as GMT.
+          type: string
+          format: date-time
+          context:
+          - view
+          - edit
+          readonly: true
+        slug:
+          description: An alphanumeric identifier for the post unique to its type.
+          type: string
+          context:
+          - view
+          - edit
+          - embed
+        status:
+          description: A named status for the post.
+          type: string
+          enum:
+          - publish
+          - future
+          - draft
+          - pending
+          - private
+          - acf-disabled
+          context:
+          - view
+          - edit
+        type:
+          description: Type of post.
+          type: string
+          context:
+          - view
+          - edit
+          - embed
+          readonly: true
+        password:
+          description: A password to protect access to the content and excerpt.
+          type: string
+          context:
+          - edit
+        permalink_template:
+          description: Permalink template for the post.
+          type: string
+          context:
+          - edit
+          readonly: true
+        generated_slug:
+          description: Slug automatically generated from the post title.
+          type: string
+          context:
+          - edit
+          readonly: true
+        class_list:
+          description: An array of the class names for the post container element.
+          type: array
+          context:
+          - view
+          - edit
+          readonly: true
+          items:
+            type: string
+        title:
+          description: The title for the post.
+          type: object
+          context:
+          - view
+          - edit
+          - embed
+          properties:
+            raw:
+              description: Title for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+            rendered:
+              description: HTML title for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              - embed
+              readonly: true
+        content:
+          description: The content for the post.
+          type: object
+          context:
+          - view
+          - edit
+          properties:
+            raw:
+              description: Content for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+            rendered:
+              description: HTML content for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              readonly: true
+            block_version:
+              description: Version of the content block format used by the post.
+              type: integer
+              context:
+              - edit
+              readonly: true
+            protected:
+              description: Whether the content is protected with a password.
+              type: boolean
+              context:
+              - view
+              - edit
+              - embed
+              readonly: true
+        author:
+          description: The ID for the author of the post.
+          type: integer
+          context:
+          - view
+          - edit
+          - embed
+        excerpt:
+          description: The excerpt for the post.
+          type: object
+          context:
+          - view
+          - edit
+          - embed
+          properties:
+            raw:
+              description: Excerpt for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+            rendered:
+              description: HTML excerpt for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              - embed
+              readonly: true
+            protected:
+              description: Whether the excerpt is protected with a password.
+              type: boolean
+              context:
+              - view
+              - edit
+              - embed
+              readonly: true
+        featured_media:
+          description: The ID of the featured media for the post.
+          type: integer
+          context:
+          - view
+          - edit
+          - embed
+        comment_status:
+          description: Whether or not comments are open on the post.
+          type: string
+          enum:
+          - open
+          - closed
+          context:
+          - view
+          - edit
+        ping_status:
+          description: Whether or not the post can be pinged.
+          type: string
+          enum:
+          - open
+          - closed
+          context:
+          - view
+          - edit
+        format:
+          description: The format for the post.
+          type: string
+          enum:
+          - standard
+          - aside
+          - chat
+          - gallery
+          - link
+          - image
+          - quote
+          - status
+          - video
+          - audio
+          context:
+          - view
+          - edit
+        meta:
+          description: Meta fields.
+          type: object
+          context:
+          - view
+          - edit
+          properties:
+            _acf_changed:
+              type: boolean
+              title: ''
+              description: ''
+              default: false
+            footnotes:
+              type: string
+              title: ''
+              description: ''
+              default: ''
+            _elementor_edit_mode:
+              type: string
+              title: Elementor edit mode
+              description: Elementor edit mode, `builder` is required for Elementor editing
+              default: ''
+              enum:
+              - ''
+              - builder
+              context:
+              - edit
+            _elementor_template_type:
+              type: string
+              title: Elementor template type
+              description: Elementor document type
+              default: ''
+              enum:
+              - loop
+              - custom_grid
+              - post
+              - wp-post
+              - wp-page
+              - kit
+              - not-supported
+              - page
+              - section
+              - container
+              - floating-buttons
+              - cloud-template-preview
+              - ecs_custom_layout
+              - widget
+              - popup
+              - header
+              - footer
+              - single
+              - single-post
+              - single-page
+              - archive
+              - search-results
+              - error-404
+              - code_snippet
+              - loop-item
+              - ''
+              context:
+              - edit
+            _elementor_data:
+              type: string
+              title: Elementor data
+              description: Elementor JSON as a string
+              default: ''
+              context:
+              - edit
+            _elementor_page_settings:
+              type: object
+              title: Elementor page settings
+              description: Elementor page level settings
+              default: '{}'
+              properties:
+                hide_title:
+                  type: string
+                  enum:
+                  - 'yes'
+                  - 'no'
+                  default: ''
+              additionalProperties: true
+              context:
+              - edit
+            _elementor_conditions:
+              type: array
+              title: ''
+              description: Elementor conditions
+              default: []
+              additionalProperties: true
+              context:
+              - edit
+        sticky:
+          description: Whether or not the post should be treated as sticky.
+          type: boolean
+          context:
+          - view
+          - edit
+        template:
+          description: The theme file to use to display the post.
+          type: string
+          context:
+          - view
+          - edit
+        categories:
+          description: The terms assigned to the post in the category taxonomy.
+          type: array
+          items:
+            type: integer
+          context:
+          - view
+          - edit
+        tags:
+          description: The terms assigned to the post in the post_tag taxonomy.
+          type: array
+          items:
+            type: integer
+          context:
+          - view
+          - edit
+        acf:
+          description: ACF field data
+          type: object
+          properties: []
+      links:
+      - rel: https://api.w.org/action-publish
+        title: The current user can publish this post.
+        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            status:
+              type: string
+              enum:
+              - publish
+              - future
+      - rel: https://api.w.org/action-unfiltered-html
+        title: The current user can post unfiltered HTML markup and JavaScript.
+        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            content:
+              raw:
+                type: string
+      - rel: https://api.w.org/action-sticky
+        title: The current user can sticky this post.
+        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            sticky:
+              type: boolean
+      - rel: https://api.w.org/action-assign-author
+        title: The current user can change the author on this post.
+        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            author:
+              type: integer
+      - rel: https://api.w.org/action-assign-categories
+        title: The current user can assign terms in the category taxonomy.
+        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            categories:
+              type: array
+              items:
+                type: integer
+      - rel: https://api.w.org/action-create-categories
+        title: The current user can create terms in the category taxonomy.
+        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            categories:
+              type: array
+              items:
+                type: integer
+      - rel: https://api.w.org/action-assign-tags
+        title: The current user can assign terms in the post_tag taxonomy.
+        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            tags:
+              type: array
+              items:
+                type: integer
+      - rel: https://api.w.org/action-create-tags
+        title: The current user can create terms in the post_tag taxonomy.
+        href: https://ascendelements.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            tags:
+              type: array
+              items:
+                type: integer
+    JobCategory:
+      title: job_category
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the term.
+          type: integer
+          context:
+          - view
+          - embed
+          - edit
+          readonly: true
+        count:
+          description: Number of published posts for the term.
+          type: integer
+          context:
+          - view
+          - edit
+          readonly: true
+        description:
+          description: HTML description of the term.
+          type: string
+          context:
+          - view
+          - edit
+        link:
+          description: URL of the term.
+          type: string
+          format: uri
+          context:
+          - view
+          - embed
+          - edit
+          readonly: true
+        name:
+          description: HTML title for the term.
+          type: string
+          context:
+          - view
+          - embed
+          - edit
+          required: true
+        slug:
+          description: An alphanumeric identifier for the term unique to its type.
+          type: string
+          context:
+          - view
+          - embed
+          - edit
+        taxonomy:
+          description: Type attribution for the term.
+          type: string
+          enum:
+          - job_category
+          context:
+          - view
+          - embed
+          - edit
+          readonly: true
+        meta:
+          description: Meta fields.
+          type: object
+          context:
+          - view
+          - edit
+          properties: []
+        acf:
+          description: ACF field data
+          type: object
+          properties: []
     Comment:
       title: comment
       type: object
@@ -25977,68 +25717,182 @@ components:
           description: ACF field data
           type: object
           properties: []
-    Category:
-      title: category
+    MediaItem:
+      title: attachment
       type: object
       properties:
-        id:
-          description: Unique identifier for the term.
-          type: integer
+        date:
+          description: The date the post was published, in the site's timezone.
+          type:
+          - string
+          - 'null'
+          format: date-time
           context:
           - view
+          - edit
           - embed
+        date_gmt:
+          description: The date the post was published, as GMT.
+          type:
+          - string
+          - 'null'
+          format: date-time
+          context:
+          - view
+          - edit
+        guid:
+          description: The globally unique identifier for the post.
+          type: object
+          context:
+          - view
           - edit
           readonly: true
-        count:
-          description: Number of published posts for the term.
+          properties:
+            raw:
+              description: GUID for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+              readonly: true
+            rendered:
+              description: GUID for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              readonly: true
+        id:
+          description: Unique identifier for the post.
           type: integer
           context:
           - view
           - edit
+          - embed
           readonly: true
-        description:
-          description: HTML description of the term.
-          type: string
-          context:
-          - view
-          - edit
         link:
-          description: URL of the term.
+          description: URL to the post.
           type: string
           format: uri
           context:
           - view
+          - edit
           - embed
+          readonly: true
+        modified:
+          description: The date the post was last modified, in the site's timezone.
+          type: string
+          format: date-time
+          context:
+          - view
           - edit
           readonly: true
-        name:
-          description: HTML title for the term.
+        modified_gmt:
+          description: The date the post was last modified, as GMT.
           type: string
+          format: date-time
           context:
           - view
-          - embed
           - edit
-          required: true
+          readonly: true
         slug:
-          description: An alphanumeric identifier for the term unique to its type.
+          description: An alphanumeric identifier for the post unique to its type.
           type: string
           context:
           - view
-          - embed
           - edit
-        taxonomy:
-          description: Type attribution for the term.
+          - embed
+        status:
+          description: A named status for the post.
           type: string
           enum:
-          - category
+          - publish
+          - future
+          - draft
+          - pending
+          - private
+          - acf-disabled
           context:
           - view
+          - edit
+        type:
+          description: Type of post.
+          type: string
+          context:
+          - view
+          - edit
           - embed
+          readonly: true
+        permalink_template:
+          description: Permalink template for the post.
+          type: string
+          context:
           - edit
           readonly: true
-        parent:
-          description: The parent term ID.
+        generated_slug:
+          description: Slug automatically generated from the post title.
+          type: string
+          context:
+          - edit
+          readonly: true
+        class_list:
+          description: An array of the class names for the post container element.
+          type: array
+          context:
+          - view
+          - edit
+          readonly: true
+          items:
+            type: string
+        title:
+          description: The title for the post.
+          type: object
+          context:
+          - view
+          - edit
+          - embed
+          properties:
+            raw:
+              description: Title for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+            rendered:
+              description: HTML title for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              - embed
+              readonly: true
+        author:
+          description: The ID for the author of the post.
           type: integer
+          context:
+          - view
+          - edit
+          - embed
+        featured_media:
+          description: The ID of the featured media for the post.
+          type: integer
+          context:
+          - view
+          - edit
+          - embed
+        comment_status:
+          description: Whether or not comments are open on the post.
+          type: string
+          enum:
+          - open
+          - closed
+          context:
+          - view
+          - edit
+        ping_status:
+          description: Whether or not the post can be pinged.
+          type: string
+          enum:
+          - open
+          - closed
           context:
           - view
           - edit
@@ -26048,11 +25902,157 @@ components:
           context:
           - view
           - edit
-          properties: []
+          properties:
+            _acf_changed:
+              type: boolean
+              title: ''
+              description: ''
+              default: false
+        template:
+          description: The theme file to use to display the post.
+          type: string
+          context:
+          - view
+          - edit
         acf:
           description: ACF field data
           type: object
           properties: []
+        alt_text:
+          description: Alternative text to display when attachment is not displayed.
+          type: string
+          context:
+          - view
+          - edit
+          - embed
+        caption:
+          description: The attachment caption.
+          type: object
+          context:
+          - view
+          - edit
+          - embed
+          properties:
+            raw:
+              description: Caption for the attachment, as it exists in the database.
+              type: string
+              context:
+              - edit
+            rendered:
+              description: HTML caption for the attachment, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              - embed
+              readonly: true
+        description:
+          description: The attachment description.
+          type: object
+          context:
+          - view
+          - edit
+          properties:
+            raw:
+              description: Description for the attachment, as it exists in the database.
+              type: string
+              context:
+              - edit
+            rendered:
+              description: HTML description for the attachment, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              readonly: true
+        media_type:
+          description: Attachment type.
+          type: string
+          enum:
+          - image
+          - file
+          context:
+          - view
+          - edit
+          - embed
+          readonly: true
+        mime_type:
+          description: The attachment MIME type.
+          type: string
+          context:
+          - view
+          - edit
+          - embed
+          readonly: true
+        media_details:
+          description: Details about the media file, specific to its type.
+          type: object
+          context:
+          - view
+          - edit
+          - embed
+          readonly: true
+        post:
+          description: The ID for the associated post of the attachment.
+          type: integer
+          context:
+          - view
+          - edit
+        source_url:
+          description: URL to the original attachment file.
+          type: string
+          format: uri
+          context:
+          - view
+          - edit
+          - embed
+          readonly: true
+        missing_image_sizes:
+          description: List of the missing image sizes of the attachment.
+          type: array
+          items:
+            type: string
+          context:
+          - edit
+          readonly: true
+        filename:
+          description: Original attachment file name.
+          type: string
+          context:
+          - view
+          - edit
+          readonly: true
+        filesize:
+          description: Attachment file size in bytes.
+          type: integer
+          context:
+          - view
+          - edit
+          readonly: true
+        exif_orientation:
+          description: EXIF orientation value. Values 1-8 follow the EXIF specification, where 1 means no rotation needed.
+          type: integer
+          context:
+          - edit
+          readonly: true
+      links:
+      - rel: https://api.w.org/action-unfiltered-html
+        title: The current user can post unfiltered HTML markup and JavaScript.
+        href: https://ascendelements.com/wp-json/wp/v2/media/{id}
+        targetSchema:
+          type: object
+          properties:
+            content:
+              raw:
+                type: string
+      - rel: https://api.w.org/action-assign-author
+        title: The current user can change the author on this post.
+        href: https://ascendelements.com/wp-json/wp/v2/media/{id}
+        targetSchema:
+          type: object
+          properties:
+            author:
+              type: integer
     SearchResult:
       title: search-result
       type: object
