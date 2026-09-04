@@ -25,6 +25,19 @@ deliveryModel:
   - openapi
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
 image: https://ascendelements.com/wp-content/uploads/2022/01/cropped-AE_favicon.png
 x-type: company
 x-source: harvest:secondary-market
@@ -321,8 +334,9 @@ common:
   url: data-model/ascend-elements-data-model.yml
 - type: Packages
   url: packages/ascend-elements-packages.yml
-- type: MCPServer
+- type: X-MCPServerCandidate
   url: mcp/ascend-elements-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 - type: ToolCrosswalk
   url: mcp/ascend-elements-tool-crosswalk.yml
 - type: LLMsTxt
