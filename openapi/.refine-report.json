@@ -1,27 +1,7 @@
 {
   "provider": "ascend-elements",
   "sources": [
-    "ascend-elements-complianz-v1-api-openapi.yml",
-    "ascend-elements-core-api-openapi.yml",
-    "ascend-elements-cptui-v1-api-openapi.yml",
-    "ascend-elements-ea11y-v1-api-openapi.yml",
-    "ascend-elements-elementor-ai-v1-api-openapi.yml",
-    "ascend-elements-elementor-one-v1-api-openapi.yml",
-    "ascend-elements-elementor-pro-v1-api-openapi.yml",
-    "ascend-elements-elementor-v1-api-openapi.yml",
-    "ascend-elements-elementor-v1-documents-api-openapi.yml",
-    "ascend-elements-elementor-v1-feedback-api-openapi.yml",
-    "ascend-elements-facetwp-v1-api-openapi.yml",
-    "ascend-elements-image-optimizer-v1-api-openapi.yml",
-    "ascend-elements-oembed-1-0-api-openapi.yml",
-    "ascend-elements-site-mailer-v1-api-openapi.yml",
-    "ascend-elements-wp-abilities-v1-api-openapi.yml",
-    "ascend-elements-wp-block-editor-v1-api-openapi.yml",
-    "ascend-elements-wp-site-health-v1-api-openapi.yml",
-    "ascend-elements-wp-v2-api-openapi.yml",
-    "ascend-elements-wpe-cache-plugin-v1-api-openapi.yml",
-    "ascend-elements-wpe-sign-on-plugin-v1-api-openapi.yml",
-    "ascend-elements-yoast-v1-api-openapi.yml"
+    "_ae-authored/ascend-elements-wordpress-rest-openapi.yml"
   ],
   "outputs": [
     "ascend-elements-complianz-v1-api-openapi.yml",
@@ -50,7 +30,31 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ascend-elements-wordpress-rest-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "ascend-elements-complianz-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-core-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-cptui-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-ea11y-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-elementor-ai-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-elementor-one-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-elementor-pro-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-elementor-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-elementor-v1-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-elementor-v1-feedback-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-facetwp-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-image-optimizer-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-oembed-1-0-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-site-mailer-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-wp-abilities-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-wp-block-editor-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-wp-site-health-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-wp-v2-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-wpe-cache-plugin-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-wpe-sign-on-plugin-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ascend-elements-yoast-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

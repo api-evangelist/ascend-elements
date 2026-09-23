@@ -3,7 +3,7 @@ info:
   title: Ascend Elements WordPress REST Wp/v2 API
   version: wp/v2
   summary: The machine-readable REST surface published at ascendelements.com/wp-json.
-  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  description: The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/.
   contact:
     email: info@ascendelements.com
     url: https://ascendelements.com/
@@ -199,7 +199,7 @@ paths:
     get:
       operationId: getWpV2BlockRendererName
       summary: GET /wp/v2/block-renderer/{name}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/block-renderer/(?P<name>[a-z0-9-]+/[a-z0-9-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/block-renderer/(?P[a-z0-9-]+/[a-z0-9-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -250,7 +250,7 @@ paths:
     post:
       operationId: createWpV2BlockRendererName
       summary: POST /wp/v2/block-renderer/{name}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/block-renderer/(?P<name>[a-z0-9-]+/[a-z0-9-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/block-renderer/(?P[a-z0-9-]+/[a-z0-9-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -357,7 +357,7 @@ paths:
     get:
       operationId: getWpV2BlockTypesNamespace
       summary: GET /wp/v2/block-types/{namespace}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/block-types/(?P<namespace>[a-zA-Z0-9_-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/block-types/(?P[a-zA-Z0-9_-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -413,7 +413,7 @@ paths:
     get:
       operationId: getWpV2BlockTypesNamespaceName
       summary: GET /wp/v2/block-types/{namespace}/{name}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/block-types/(?P<namespace>[a-zA-Z0-9_-]+)/(?P<name>[a-zA-Z0-9_-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/block-types/(?P[a-zA-Z0-9_-]+)/(?P[a-zA-Z0-9_-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -780,7 +780,7 @@ paths:
     get:
       operationId: getWpV2BlocksId
       summary: GET /wp/v2/blocks/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -832,7 +832,7 @@ paths:
     post:
       operationId: createWpV2BlocksId
       summary: POST /wp/v2/blocks/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -944,7 +944,7 @@ paths:
     put:
       operationId: updateWpV2BlocksId
       summary: PUT /wp/v2/blocks/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -1056,7 +1056,7 @@ paths:
     patch:
       operationId: patchWpV2BlocksId
       summary: PATCH /wp/v2/blocks/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -1168,7 +1168,7 @@ paths:
     delete:
       operationId: deleteWpV2BlocksId
       summary: DELETE /wp/v2/blocks/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -1214,7 +1214,7 @@ paths:
     get:
       operationId: getWpV2BlocksIdAutosaves
       summary: GET /wp/v2/blocks/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -1261,7 +1261,7 @@ paths:
     post:
       operationId: createWpV2BlocksIdAutosaves
       summary: POST /wp/v2/blocks/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -1390,7 +1390,7 @@ paths:
     get:
       operationId: getWpV2BlocksParentAutosavesId
       summary: GET /wp/v2/blocks/{parent}/autosaves/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)/autosaves/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -1440,7 +1440,7 @@ paths:
     get:
       operationId: getWpV2BlocksParentRevisions
       summary: GET /wp/v2/blocks/{parent}/revisions
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<parent>[\d]+)/revisions` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)/revisions` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -1559,7 +1559,7 @@ paths:
     get:
       operationId: getWpV2BlocksParentRevisionsId
       summary: GET /wp/v2/blocks/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -1601,7 +1601,7 @@ paths:
     delete:
       operationId: deleteWpV2BlocksParentRevisionsId
       summary: DELETE /wp/v2/blocks/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/blocks/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -1831,7 +1831,7 @@ paths:
     get:
       operationId: getWpV2CategoriesId
       summary: GET /wp/v2/categories/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -1873,7 +1873,7 @@ paths:
     post:
       operationId: createWpV2CategoriesId
       summary: POST /wp/v2/categories/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -1926,7 +1926,7 @@ paths:
     put:
       operationId: updateWpV2CategoriesId
       summary: PUT /wp/v2/categories/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -1979,7 +1979,7 @@ paths:
     patch:
       operationId: patchWpV2CategoriesId
       summary: PATCH /wp/v2/categories/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -2032,7 +2032,7 @@ paths:
     delete:
       operationId: deleteWpV2CategoriesId
       summary: DELETE /wp/v2/categories/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/categories/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -2357,7 +2357,7 @@ paths:
     get:
       operationId: getWpV2CommentsId
       summary: GET /wp/v2/comments/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -2404,7 +2404,7 @@ paths:
     post:
       operationId: createWpV2CommentsId
       summary: POST /wp/v2/comments/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -2498,7 +2498,7 @@ paths:
     put:
       operationId: updateWpV2CommentsId
       summary: PUT /wp/v2/comments/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -2592,7 +2592,7 @@ paths:
     patch:
       operationId: patchWpV2CommentsId
       summary: PATCH /wp/v2/comments/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -2686,7 +2686,7 @@ paths:
     delete:
       operationId: deleteWpV2CommentsId
       summary: DELETE /wp/v2/comments/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/comments/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -3152,7 +3152,7 @@ paths:
     get:
       operationId: getWpV2EFloatingButtonsId
       summary: GET /wp/v2/e-floating-buttons/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -3204,7 +3204,7 @@ paths:
     post:
       operationId: createWpV2EFloatingButtonsId
       summary: POST /wp/v2/e-floating-buttons/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -3396,7 +3396,7 @@ paths:
     put:
       operationId: updateWpV2EFloatingButtonsId
       summary: PUT /wp/v2/e-floating-buttons/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -3588,7 +3588,7 @@ paths:
     patch:
       operationId: patchWpV2EFloatingButtonsId
       summary: PATCH /wp/v2/e-floating-buttons/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -3780,7 +3780,7 @@ paths:
     delete:
       operationId: deleteWpV2EFloatingButtonsId
       summary: DELETE /wp/v2/e-floating-buttons/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -3826,7 +3826,7 @@ paths:
     get:
       operationId: getWpV2EFloatingButtonsIdAutosaves
       summary: GET /wp/v2/e-floating-buttons/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -3873,7 +3873,7 @@ paths:
     post:
       operationId: createWpV2EFloatingButtonsIdAutosaves
       summary: POST /wp/v2/e-floating-buttons/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -4082,7 +4082,7 @@ paths:
     get:
       operationId: getWpV2EFloatingButtonsParentAutosavesId
       summary: GET /wp/v2/e-floating-buttons/{parent}/autosaves/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)/autosaves/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -4132,7 +4132,7 @@ paths:
     get:
       operationId: getWpV2EFloatingButtonsParentRevisions
       summary: GET /wp/v2/e-floating-buttons/{parent}/revisions
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<parent>[\d]+)/revisions` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)/revisions` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -4251,7 +4251,7 @@ paths:
     get:
       operationId: getWpV2EFloatingButtonsParentRevisionsId
       summary: GET /wp/v2/e-floating-buttons/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -4293,7 +4293,7 @@ paths:
     delete:
       operationId: deleteWpV2EFloatingButtonsParentRevisionsId
       summary: DELETE /wp/v2/e-floating-buttons/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/e-floating-buttons/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -4676,7 +4676,7 @@ paths:
     get:
       operationId: getWpV2ElementorLibraryId
       summary: GET /wp/v2/elementor_library/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -4723,7 +4723,7 @@ paths:
     post:
       operationId: createWpV2ElementorLibraryId
       summary: POST /wp/v2/elementor_library/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -4861,7 +4861,7 @@ paths:
     put:
       operationId: updateWpV2ElementorLibraryId
       summary: PUT /wp/v2/elementor_library/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -4999,7 +4999,7 @@ paths:
     patch:
       operationId: patchWpV2ElementorLibraryId
       summary: PATCH /wp/v2/elementor_library/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -5137,7 +5137,7 @@ paths:
     delete:
       operationId: deleteWpV2ElementorLibraryId
       summary: DELETE /wp/v2/elementor_library/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -5183,7 +5183,7 @@ paths:
     get:
       operationId: getWpV2ElementorLibraryParentRevisions
       summary: GET /wp/v2/elementor_library/{parent}/revisions
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P<parent>[\d]+)/revisions` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P[\d]+)/revisions` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -5302,7 +5302,7 @@ paths:
     get:
       operationId: getWpV2ElementorLibraryParentRevisionsId
       summary: GET /wp/v2/elementor_library/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -5344,7 +5344,7 @@ paths:
     delete:
       operationId: deleteWpV2ElementorLibraryParentRevisionsId
       summary: DELETE /wp/v2/elementor_library/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_library/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -5685,7 +5685,7 @@ paths:
     get:
       operationId: getWpV2ElementorSnippetId
       summary: GET /wp/v2/elementor_snippet/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -5732,7 +5732,7 @@ paths:
     post:
       operationId: createWpV2ElementorSnippetId
       summary: POST /wp/v2/elementor_snippet/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -5828,7 +5828,7 @@ paths:
     put:
       operationId: updateWpV2ElementorSnippetId
       summary: PUT /wp/v2/elementor_snippet/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -5924,7 +5924,7 @@ paths:
     patch:
       operationId: patchWpV2ElementorSnippetId
       summary: PATCH /wp/v2/elementor_snippet/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -6020,7 +6020,7 @@ paths:
     delete:
       operationId: deleteWpV2ElementorSnippetId
       summary: DELETE /wp/v2/elementor_snippet/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/elementor_snippet/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -6124,7 +6124,7 @@ paths:
     get:
       operationId: getWpV2FontCollectionsSlug
       summary: GET /wp/v2/font-collections/{slug}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-collections/(?P<slug>[\/\w-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-collections/(?P[\/\w-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -6334,7 +6334,7 @@ paths:
     get:
       operationId: getWpV2FontFamiliesFontFamilyIdFontFaces
       summary: GET /wp/v2/font-families/{font_family_id}/font-faces
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P[\d]+)/font-faces` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -6437,7 +6437,7 @@ paths:
     post:
       operationId: createWpV2FontFamiliesFontFamilyIdFontFaces
       summary: POST /wp/v2/font-families/{font_family_id}/font-faces
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P[\d]+)/font-faces` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -6500,7 +6500,7 @@ paths:
     get:
       operationId: getWpV2FontFamiliesFontFamilyIdFontFacesId
       summary: GET /wp/v2/font-families/{font_family_id}/font-faces/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P[\d]+)/font-faces/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -6542,7 +6542,7 @@ paths:
     delete:
       operationId: deleteWpV2FontFamiliesFontFamilyIdFontFacesId
       summary: DELETE /wp/v2/font-families/{font_family_id}/font-faces/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P[\d]+)/font-faces/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -6588,7 +6588,7 @@ paths:
     get:
       operationId: getWpV2FontFamiliesId
       summary: GET /wp/v2/font-families/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -6630,7 +6630,7 @@ paths:
     post:
       operationId: createWpV2FontFamiliesId
       summary: POST /wp/v2/font-families/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -6679,7 +6679,7 @@ paths:
     put:
       operationId: updateWpV2FontFamiliesId
       summary: PUT /wp/v2/font-families/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -6728,7 +6728,7 @@ paths:
     patch:
       operationId: patchWpV2FontFamiliesId
       summary: PATCH /wp/v2/font-families/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -6777,7 +6777,7 @@ paths:
     delete:
       operationId: deleteWpV2FontFamiliesId
       summary: DELETE /wp/v2/font-families/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/font-families/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -6823,7 +6823,7 @@ paths:
     get:
       operationId: getWpV2GlobalStylesId
       summary: GET /wp/v2/global-styles/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P<id>[\/\d+]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P[\/\d+]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       responses:
@@ -6854,7 +6854,7 @@ paths:
     post:
       operationId: createWpV2GlobalStylesId
       summary: POST /wp/v2/global-styles/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P<id>[\/\d+]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P[\/\d+]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -6908,7 +6908,7 @@ paths:
     put:
       operationId: updateWpV2GlobalStylesId
       summary: PUT /wp/v2/global-styles/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P<id>[\/\d+]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P[\/\d+]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -6962,7 +6962,7 @@ paths:
     patch:
       operationId: patchWpV2GlobalStylesId
       summary: PATCH /wp/v2/global-styles/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P<id>[\/\d+]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P[\/\d+]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -7024,7 +7024,7 @@ paths:
     get:
       operationId: getWpV2GlobalStylesParentRevisions
       summary: GET /wp/v2/global-styles/{parent}/revisions
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P<parent>[\d]+)/revisions` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P[\d]+)/revisions` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -7099,7 +7099,7 @@ paths:
     get:
       operationId: getWpV2GlobalStylesParentRevisionsId
       summary: GET /wp/v2/global-styles/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -7149,7 +7149,7 @@ paths:
     get:
       operationId: getWpV2GlobalStylesThemesStylesheetVariations
       summary: GET /wp/v2/global-styles/themes/{stylesheet}/variations
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/themes/(?P<stylesheet>[\/\s%\w\.\(\)\[\]\@_\-]+)/variations` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/themes/(?P[\/\s%\w\.\(\)\[\]\@_\-]+)/variations` in the `wp/v2` namespace.
       tags:
       - wp/v2
       responses:
@@ -7188,7 +7188,7 @@ paths:
     get:
       operationId: getWpV2GlobalStylesThemesStylesheet
       summary: GET /wp/v2/global-styles/themes/{stylesheet}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/global-styles/themes/(?P[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       responses:
@@ -7290,7 +7290,7 @@ paths:
     get:
       operationId: getWpV2IconsName
       summary: GET /wp/v2/icons/{name}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/icons/(?P<name>[a-z][a-z0-9-]*/[a-z][a-z0-9-]*)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/icons/(?P[a-z][a-z0-9-]*/[a-z][a-z0-9-]*)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -7644,7 +7644,7 @@ paths:
     get:
       operationId: getWpV2JobId
       summary: GET /wp/v2/job/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -7691,7 +7691,7 @@ paths:
     post:
       operationId: createWpV2JobId
       summary: POST /wp/v2/job/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -7774,7 +7774,7 @@ paths:
     put:
       operationId: updateWpV2JobId
       summary: PUT /wp/v2/job/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -7857,7 +7857,7 @@ paths:
     patch:
       operationId: patchWpV2JobId
       summary: PATCH /wp/v2/job/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -7940,7 +7940,7 @@ paths:
     delete:
       operationId: deleteWpV2JobId
       summary: DELETE /wp/v2/job/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -8167,7 +8167,7 @@ paths:
     get:
       operationId: getWpV2JobCategoryId
       summary: GET /wp/v2/job_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -8209,7 +8209,7 @@ paths:
     post:
       operationId: createWpV2JobCategoryId
       summary: POST /wp/v2/job_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -8259,7 +8259,7 @@ paths:
     put:
       operationId: updateWpV2JobCategoryId
       summary: PUT /wp/v2/job_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -8309,7 +8309,7 @@ paths:
     patch:
       operationId: patchWpV2JobCategoryId
       summary: PATCH /wp/v2/job_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -8359,7 +8359,7 @@ paths:
     delete:
       operationId: deleteWpV2JobCategoryId
       summary: DELETE /wp/v2/job_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -8586,7 +8586,7 @@ paths:
     get:
       operationId: getWpV2JobLocationId
       summary: GET /wp/v2/job_location/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -8628,7 +8628,7 @@ paths:
     post:
       operationId: createWpV2JobLocationId
       summary: POST /wp/v2/job_location/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -8678,7 +8678,7 @@ paths:
     put:
       operationId: updateWpV2JobLocationId
       summary: PUT /wp/v2/job_location/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -8728,7 +8728,7 @@ paths:
     patch:
       operationId: patchWpV2JobLocationId
       summary: PATCH /wp/v2/job_location/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -8778,7 +8778,7 @@ paths:
     delete:
       operationId: deleteWpV2JobLocationId
       summary: DELETE /wp/v2/job_location/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/job_location/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -9169,7 +9169,7 @@ paths:
     get:
       operationId: getWpV2MediaId
       summary: GET /wp/v2/media/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -9211,7 +9211,7 @@ paths:
     post:
       operationId: createWpV2MediaId
       summary: POST /wp/v2/media/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -9328,7 +9328,7 @@ paths:
     put:
       operationId: updateWpV2MediaId
       summary: PUT /wp/v2/media/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -9445,7 +9445,7 @@ paths:
     patch:
       operationId: patchWpV2MediaId
       summary: PATCH /wp/v2/media/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -9562,7 +9562,7 @@ paths:
     delete:
       operationId: deleteWpV2MediaId
       summary: DELETE /wp/v2/media/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -9608,7 +9608,7 @@ paths:
     post:
       operationId: createWpV2MediaIdEdit
       summary: POST /wp/v2/media/{id}/edit
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P<id>[\d]+)/edit` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P[\d]+)/edit` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -9720,7 +9720,7 @@ paths:
     post:
       operationId: createWpV2MediaIdPostProcess
       summary: POST /wp/v2/media/{id}/post-process
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P<id>[\d]+)/post-process` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media/(?P[\d]+)/post-process` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -10033,7 +10033,7 @@ paths:
     get:
       operationId: getWpV2MediaCoverageId
       summary: GET /wp/v2/media_coverage/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -10080,7 +10080,7 @@ paths:
     post:
       operationId: createWpV2MediaCoverageId
       summary: POST /wp/v2/media_coverage/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -10156,7 +10156,7 @@ paths:
     put:
       operationId: updateWpV2MediaCoverageId
       summary: PUT /wp/v2/media_coverage/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -10232,7 +10232,7 @@ paths:
     patch:
       operationId: patchWpV2MediaCoverageId
       summary: PATCH /wp/v2/media_coverage/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -10308,7 +10308,7 @@ paths:
     delete:
       operationId: deleteWpV2MediaCoverageId
       summary: DELETE /wp/v2/media_coverage/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/media_coverage/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -10687,7 +10687,7 @@ paths:
     get:
       operationId: getWpV2MenuItemsId
       summary: GET /wp/v2/menu-items/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -10729,7 +10729,7 @@ paths:
     post:
       operationId: createWpV2MenuItemsId
       summary: POST /wp/v2/menu-items/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -10846,7 +10846,7 @@ paths:
     put:
       operationId: updateWpV2MenuItemsId
       summary: PUT /wp/v2/menu-items/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -10963,7 +10963,7 @@ paths:
     patch:
       operationId: patchWpV2MenuItemsId
       summary: PATCH /wp/v2/menu-items/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -11080,7 +11080,7 @@ paths:
     delete:
       operationId: deleteWpV2MenuItemsId
       summary: DELETE /wp/v2/menu-items/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -11126,7 +11126,7 @@ paths:
     get:
       operationId: getWpV2MenuItemsIdAutosaves
       summary: GET /wp/v2/menu-items/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -11173,7 +11173,7 @@ paths:
     post:
       operationId: createWpV2MenuItemsIdAutosaves
       summary: POST /wp/v2/menu-items/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -11304,7 +11304,7 @@ paths:
     get:
       operationId: getWpV2MenuItemsParentAutosavesId
       summary: GET /wp/v2/menu-items/{parent}/autosaves/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-items/(?P[\d]+)/autosaves/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -11397,7 +11397,7 @@ paths:
     get:
       operationId: getWpV2MenuLocationsLocation
       summary: GET /wp/v2/menu-locations/{location}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-locations/(?P<location>[\w-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menu-locations/(?P[\w-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -11634,7 +11634,7 @@ paths:
     get:
       operationId: getWpV2MenusId
       summary: GET /wp/v2/menus/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -11676,7 +11676,7 @@ paths:
     post:
       operationId: createWpV2MenusId
       summary: POST /wp/v2/menus/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -11734,7 +11734,7 @@ paths:
     put:
       operationId: updateWpV2MenusId
       summary: PUT /wp/v2/menus/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -11792,7 +11792,7 @@ paths:
     patch:
       operationId: patchWpV2MenusId
       summary: PATCH /wp/v2/menus/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -11850,7 +11850,7 @@ paths:
     delete:
       operationId: deleteWpV2MenusId
       summary: DELETE /wp/v2/menus/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/menus/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -12164,7 +12164,7 @@ paths:
     get:
       operationId: getWpV2NavigationId
       summary: GET /wp/v2/navigation/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -12211,7 +12211,7 @@ paths:
     post:
       operationId: createWpV2NavigationId
       summary: POST /wp/v2/navigation/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -12296,7 +12296,7 @@ paths:
     put:
       operationId: updateWpV2NavigationId
       summary: PUT /wp/v2/navigation/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -12381,7 +12381,7 @@ paths:
     patch:
       operationId: patchWpV2NavigationId
       summary: PATCH /wp/v2/navigation/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -12466,7 +12466,7 @@ paths:
     delete:
       operationId: deleteWpV2NavigationId
       summary: DELETE /wp/v2/navigation/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -12512,7 +12512,7 @@ paths:
     get:
       operationId: getWpV2NavigationIdAutosaves
       summary: GET /wp/v2/navigation/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -12559,7 +12559,7 @@ paths:
     post:
       operationId: createWpV2NavigationIdAutosaves
       summary: POST /wp/v2/navigation/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -12661,7 +12661,7 @@ paths:
     get:
       operationId: getWpV2NavigationParentAutosavesId
       summary: GET /wp/v2/navigation/{parent}/autosaves/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)/autosaves/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -12711,7 +12711,7 @@ paths:
     get:
       operationId: getWpV2NavigationParentRevisions
       summary: GET /wp/v2/navigation/{parent}/revisions
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<parent>[\d]+)/revisions` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)/revisions` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -12830,7 +12830,7 @@ paths:
     get:
       operationId: getWpV2NavigationParentRevisionsId
       summary: GET /wp/v2/navigation/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -12872,7 +12872,7 @@ paths:
     delete:
       operationId: deleteWpV2NavigationParentRevisionsId
       summary: DELETE /wp/v2/navigation/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/navigation/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -13322,7 +13322,7 @@ paths:
     get:
       operationId: getWpV2PagesId
       summary: GET /wp/v2/pages/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -13374,7 +13374,7 @@ paths:
     post:
       operationId: createWpV2PagesId
       summary: POST /wp/v2/pages/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -13555,7 +13555,7 @@ paths:
     put:
       operationId: updateWpV2PagesId
       summary: PUT /wp/v2/pages/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -13736,7 +13736,7 @@ paths:
     patch:
       operationId: patchWpV2PagesId
       summary: PATCH /wp/v2/pages/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -13917,7 +13917,7 @@ paths:
     delete:
       operationId: deleteWpV2PagesId
       summary: DELETE /wp/v2/pages/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -13963,7 +13963,7 @@ paths:
     get:
       operationId: getWpV2PagesIdAutosaves
       summary: GET /wp/v2/pages/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -14010,7 +14010,7 @@ paths:
     post:
       operationId: createWpV2PagesIdAutosaves
       summary: POST /wp/v2/pages/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -14205,7 +14205,7 @@ paths:
     get:
       operationId: getWpV2PagesParentAutosavesId
       summary: GET /wp/v2/pages/{parent}/autosaves/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)/autosaves/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -14255,7 +14255,7 @@ paths:
     get:
       operationId: getWpV2PagesParentRevisions
       summary: GET /wp/v2/pages/{parent}/revisions
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<parent>[\d]+)/revisions` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)/revisions` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -14374,7 +14374,7 @@ paths:
     get:
       operationId: getWpV2PagesParentRevisionsId
       summary: GET /wp/v2/pages/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -14416,7 +14416,7 @@ paths:
     delete:
       operationId: deleteWpV2PagesParentRevisionsId
       summary: DELETE /wp/v2/pages/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/pages/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -14683,7 +14683,7 @@ paths:
     get:
       operationId: getWpV2PluginsPlugin
       summary: GET /wp/v2/plugins/{plugin}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -14725,7 +14725,7 @@ paths:
     post:
       operationId: createWpV2PluginsPlugin
       summary: POST /wp/v2/plugins/{plugin}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -14777,7 +14777,7 @@ paths:
     put:
       operationId: updateWpV2PluginsPlugin
       summary: PUT /wp/v2/plugins/{plugin}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -14829,7 +14829,7 @@ paths:
     patch:
       operationId: patchWpV2PluginsPlugin
       summary: PATCH /wp/v2/plugins/{plugin}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -14881,7 +14881,7 @@ paths:
     delete:
       operationId: deleteWpV2PluginsPlugin
       summary: DELETE /wp/v2/plugins/{plugin}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -15399,7 +15399,7 @@ paths:
     get:
       operationId: getWpV2PostsId
       summary: GET /wp/v2/posts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -15451,7 +15451,7 @@ paths:
     post:
       operationId: createWpV2PostsId
       summary: POST /wp/v2/posts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -15653,7 +15653,7 @@ paths:
     put:
       operationId: updateWpV2PostsId
       summary: PUT /wp/v2/posts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -15855,7 +15855,7 @@ paths:
     patch:
       operationId: patchWpV2PostsId
       summary: PATCH /wp/v2/posts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -16057,7 +16057,7 @@ paths:
     delete:
       operationId: deleteWpV2PostsId
       summary: DELETE /wp/v2/posts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -16103,7 +16103,7 @@ paths:
     get:
       operationId: getWpV2PostsIdAutosaves
       summary: GET /wp/v2/posts/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -16150,7 +16150,7 @@ paths:
     post:
       operationId: createWpV2PostsIdAutosaves
       summary: POST /wp/v2/posts/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -16369,7 +16369,7 @@ paths:
     get:
       operationId: getWpV2PostsParentAutosavesId
       summary: GET /wp/v2/posts/{parent}/autosaves/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)/autosaves/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -16419,7 +16419,7 @@ paths:
     get:
       operationId: getWpV2PostsParentRevisions
       summary: GET /wp/v2/posts/{parent}/revisions
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<parent>[\d]+)/revisions` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)/revisions` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -16538,7 +16538,7 @@ paths:
     get:
       operationId: getWpV2PostsParentRevisionsId
       summary: GET /wp/v2/posts/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -16580,7 +16580,7 @@ paths:
     delete:
       operationId: deleteWpV2PostsParentRevisionsId
       summary: DELETE /wp/v2/posts/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/posts/(?P[\d]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -17487,7 +17487,7 @@ paths:
     get:
       operationId: getWpV2SidebarsId
       summary: GET /wp/v2/sidebars/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sidebars/(?P<id>[\w-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sidebars/(?P[\w-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -17529,7 +17529,7 @@ paths:
     post:
       operationId: createWpV2SidebarsId
       summary: POST /wp/v2/sidebars/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sidebars/(?P<id>[\w-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sidebars/(?P[\w-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -17574,7 +17574,7 @@ paths:
     put:
       operationId: updateWpV2SidebarsId
       summary: PUT /wp/v2/sidebars/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sidebars/(?P<id>[\w-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sidebars/(?P[\w-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -17619,7 +17619,7 @@ paths:
     patch:
       operationId: patchWpV2SidebarsId
       summary: PATCH /wp/v2/sidebars/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sidebars/(?P<id>[\w-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sidebars/(?P[\w-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -17942,7 +17942,7 @@ paths:
     get:
       operationId: getWpV2SourcingEventsId
       summary: GET /wp/v2/sourcing-events/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -17989,7 +17989,7 @@ paths:
     post:
       operationId: createWpV2SourcingEventsId
       summary: POST /wp/v2/sourcing-events/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -18074,7 +18074,7 @@ paths:
     put:
       operationId: updateWpV2SourcingEventsId
       summary: PUT /wp/v2/sourcing-events/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -18159,7 +18159,7 @@ paths:
     patch:
       operationId: patchWpV2SourcingEventsId
       summary: PATCH /wp/v2/sourcing-events/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -18244,7 +18244,7 @@ paths:
     delete:
       operationId: deleteWpV2SourcingEventsId
       summary: DELETE /wp/v2/sourcing-events/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -18290,7 +18290,7 @@ paths:
     get:
       operationId: getWpV2SourcingEventsIdAutosaves
       summary: GET /wp/v2/sourcing-events/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -18337,7 +18337,7 @@ paths:
     post:
       operationId: createWpV2SourcingEventsIdAutosaves
       summary: POST /wp/v2/sourcing-events/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P<id>[\d]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P[\d]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -18439,7 +18439,7 @@ paths:
     get:
       operationId: getWpV2SourcingEventsParentAutosavesId
       summary: GET /wp/v2/sourcing-events/{parent}/autosaves/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/sourcing-events/(?P[\d]+)/autosaves/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -18532,7 +18532,7 @@ paths:
     get:
       operationId: getWpV2StatusesStatus
       summary: GET /wp/v2/statuses/{status}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/statuses/(?P<status>[\w-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/statuses/(?P[\w-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -18763,7 +18763,7 @@ paths:
     get:
       operationId: getWpV2TagsId
       summary: GET /wp/v2/tags/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -18805,7 +18805,7 @@ paths:
     post:
       operationId: createWpV2TagsId
       summary: POST /wp/v2/tags/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -18855,7 +18855,7 @@ paths:
     put:
       operationId: updateWpV2TagsId
       summary: PUT /wp/v2/tags/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -18905,7 +18905,7 @@ paths:
     patch:
       operationId: patchWpV2TagsId
       summary: PATCH /wp/v2/tags/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -18955,7 +18955,7 @@ paths:
     delete:
       operationId: deleteWpV2TagsId
       summary: DELETE /wp/v2/tags/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/tags/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -19049,7 +19049,7 @@ paths:
     get:
       operationId: getWpV2TaxonomiesTaxonomy
       summary: GET /wp/v2/taxonomies/{taxonomy}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/taxonomies/(?P<taxonomy>[\w-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/taxonomies/(?P[\w-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -19250,7 +19250,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsId
       summary: GET /wp/v2/template-parts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -19292,7 +19292,7 @@ paths:
     post:
       operationId: createWpV2TemplatePartsId
       summary: POST /wp/v2/template-parts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -19379,7 +19379,7 @@ paths:
     put:
       operationId: updateWpV2TemplatePartsId
       summary: PUT /wp/v2/template-parts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -19466,7 +19466,7 @@ paths:
     patch:
       operationId: patchWpV2TemplatePartsId
       summary: PATCH /wp/v2/template-parts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -19553,7 +19553,7 @@ paths:
     delete:
       operationId: deleteWpV2TemplatePartsId
       summary: DELETE /wp/v2/template-parts/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -19599,7 +19599,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsIdAutosaves
       summary: GET /wp/v2/template-parts/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -19641,7 +19641,7 @@ paths:
     post:
       operationId: createWpV2TemplatePartsIdAutosaves
       summary: POST /wp/v2/template-parts/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -19742,7 +19742,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsParentAutosavesId
       summary: GET /wp/v2/template-parts/{parent}/autosaves/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -19792,7 +19792,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsParentRevisions
       summary: GET /wp/v2/template-parts/{parent}/revisions
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -19911,7 +19911,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsParentRevisionsId
       summary: GET /wp/v2/template-parts/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -19953,7 +19953,7 @@ paths:
     delete:
       operationId: deleteWpV2TemplatePartsParentRevisionsId
       summary: DELETE /wp/v2/template-parts/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -20196,7 +20196,7 @@ paths:
     get:
       operationId: getWpV2TemplatesId
       summary: GET /wp/v2/templates/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -20238,7 +20238,7 @@ paths:
     post:
       operationId: createWpV2TemplatesId
       summary: POST /wp/v2/templates/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -20322,7 +20322,7 @@ paths:
     put:
       operationId: updateWpV2TemplatesId
       summary: PUT /wp/v2/templates/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -20406,7 +20406,7 @@ paths:
     patch:
       operationId: patchWpV2TemplatesId
       summary: PATCH /wp/v2/templates/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -20490,7 +20490,7 @@ paths:
     delete:
       operationId: deleteWpV2TemplatesId
       summary: DELETE /wp/v2/templates/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -20536,7 +20536,7 @@ paths:
     get:
       operationId: getWpV2TemplatesIdAutosaves
       summary: GET /wp/v2/templates/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -20578,7 +20578,7 @@ paths:
     post:
       operationId: createWpV2TemplatesIdAutosaves
       summary: POST /wp/v2/templates/{id}/autosaves
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -20676,7 +20676,7 @@ paths:
     get:
       operationId: getWpV2TemplatesParentAutosavesId
       summary: GET /wp/v2/templates/{parent}/autosaves/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -20726,7 +20726,7 @@ paths:
     get:
       operationId: getWpV2TemplatesParentRevisions
       summary: GET /wp/v2/templates/{parent}/revisions
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -20845,7 +20845,7 @@ paths:
     get:
       operationId: getWpV2TemplatesParentRevisionsId
       summary: GET /wp/v2/templates/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -20887,7 +20887,7 @@ paths:
     delete:
       operationId: deleteWpV2TemplatesParentRevisionsId
       summary: DELETE /wp/v2/templates/{parent}/revisions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -21025,7 +21025,7 @@ paths:
     get:
       operationId: getWpV2ThemesStylesheet
       summary: GET /wp/v2/themes/{stylesheet}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/themes/(?P[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       responses:
@@ -21107,7 +21107,7 @@ paths:
     get:
       operationId: getWpV2TypesType
       summary: GET /wp/v2/types/{type}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/types/(?P<type>[\w-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/types/(?P[\w-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -21438,7 +21438,7 @@ paths:
     get:
       operationId: getWpV2UsersId
       summary: GET /wp/v2/users/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -21480,7 +21480,7 @@ paths:
     post:
       operationId: createWpV2UsersId
       summary: POST /wp/v2/users/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -21578,7 +21578,7 @@ paths:
     put:
       operationId: updateWpV2UsersId
       summary: PUT /wp/v2/users/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -21676,7 +21676,7 @@ paths:
     patch:
       operationId: patchWpV2UsersId
       summary: PATCH /wp/v2/users/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -21774,7 +21774,7 @@ paths:
     delete:
       operationId: deleteWpV2UsersId
       summary: DELETE /wp/v2/users/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -21826,7 +21826,7 @@ paths:
     get:
       operationId: getWpV2UsersUserIdApplicationPasswords
       summary: GET /wp/v2/users/{user_id}/application-passwords
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -21868,7 +21868,7 @@ paths:
     post:
       operationId: createWpV2UsersUserIdApplicationPasswords
       summary: POST /wp/v2/users/{user_id}/application-passwords
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -21915,7 +21915,7 @@ paths:
     delete:
       operationId: deleteWpV2UsersUserIdApplicationPasswords
       summary: DELETE /wp/v2/users/{user_id}/application-passwords
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords` in the `wp/v2` namespace.
       tags:
       - wp/v2
       responses:
@@ -21960,7 +21960,7 @@ paths:
     get:
       operationId: getWpV2UsersUserIdApplicationPasswordsUuid
       summary: GET /wp/v2/users/{user_id}/application-passwords/{uuid}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -22002,7 +22002,7 @@ paths:
     post:
       operationId: createWpV2UsersUserIdApplicationPasswordsUuid
       summary: POST /wp/v2/users/{user_id}/application-passwords/{uuid}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -22047,7 +22047,7 @@ paths:
     put:
       operationId: updateWpV2UsersUserIdApplicationPasswordsUuid
       summary: PUT /wp/v2/users/{user_id}/application-passwords/{uuid}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -22092,7 +22092,7 @@ paths:
     patch:
       operationId: patchWpV2UsersUserIdApplicationPasswordsUuid
       summary: PATCH /wp/v2/users/{user_id}/application-passwords/{uuid}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -22137,7 +22137,7 @@ paths:
     delete:
       operationId: deleteWpV2UsersUserIdApplicationPasswordsUuid
       summary: DELETE /wp/v2/users/{user_id}/application-passwords/{uuid}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       responses:
@@ -22176,7 +22176,7 @@ paths:
     get:
       operationId: getWpV2UsersUserIdApplicationPasswordsIntrospect
       summary: GET /wp/v2/users/{user_id}/application-passwords/introspect
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/introspect` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/introspect` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -22650,7 +22650,7 @@ paths:
     get:
       operationId: getWpV2WidgetTypesId
       summary: GET /wp/v2/widget-types/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widget-types/(?P[a-zA-Z0-9_-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -22700,7 +22700,7 @@ paths:
     post:
       operationId: createWpV2WidgetTypesIdEncode
       summary: POST /wp/v2/widget-types/{id}/encode
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)/encode` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widget-types/(?P[a-zA-Z0-9_-]+)/encode` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -22752,7 +22752,7 @@ paths:
     post:
       operationId: createWpV2WidgetTypesIdRender
       summary: POST /wp/v2/widget-types/{id}/render
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)/render` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widget-types/(?P[a-zA-Z0-9_-]+)/render` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -22912,7 +22912,7 @@ paths:
     get:
       operationId: getWpV2WidgetsId
       summary: GET /wp/v2/widgets/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P<id>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -22954,7 +22954,7 @@ paths:
     post:
       operationId: createWpV2WidgetsId
       summary: POST /wp/v2/widgets/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P<id>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -23011,7 +23011,7 @@ paths:
     put:
       operationId: updateWpV2WidgetsId
       summary: PUT /wp/v2/widgets/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P<id>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -23068,7 +23068,7 @@ paths:
     patch:
       operationId: patchWpV2WidgetsId
       summary: PATCH /wp/v2/widgets/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P<id>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -23125,7 +23125,7 @@ paths:
     delete:
       operationId: deleteWpV2WidgetsId
       summary: DELETE /wp/v2/widgets/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P<id>[\w\-]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/widgets/(?P[\w\-]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -23349,7 +23349,7 @@ paths:
     get:
       operationId: getWpV2WpPatternCategoryId
       summary: GET /wp/v2/wp_pattern_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -23391,7 +23391,7 @@ paths:
     post:
       operationId: createWpV2WpPatternCategoryId
       summary: POST /wp/v2/wp_pattern_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -23441,7 +23441,7 @@ paths:
     put:
       operationId: updateWpV2WpPatternCategoryId
       summary: PUT /wp/v2/wp_pattern_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -23491,7 +23491,7 @@ paths:
     patch:
       operationId: patchWpV2WpPatternCategoryId
       summary: PATCH /wp/v2/wp_pattern_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       requestBody:
@@ -23541,7 +23541,7 @@ paths:
     delete:
       operationId: deleteWpV2WpPatternCategoryId
       summary: DELETE /wp/v2/wp_pattern_category/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in the `wp/v2` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp/v2/wp_pattern_category/(?P[\d]+)` in the `wp/v2` namespace.
       tags:
       - wp/v2
       parameters:
@@ -23763,8 +23763,8 @@ components:
           context:
           - view
           - edit
-    Category:
-      title: category
+    JobCategory:
+      title: job_category
       type: object
       properties:
         id:
@@ -23816,18 +23816,12 @@ components:
           description: Type attribution for the term.
           type: string
           enum:
-          - category
+          - job_category
           context:
           - view
           - embed
           - edit
           readonly: true
-        parent:
-          description: The parent term ID.
-          type: integer
-          context:
-          - view
-          - edit
         meta:
           description: Meta fields.
           type: object
@@ -23838,6 +23832,72 @@ components:
         acf:
           description: ACF field data
           type: object
+          properties: []
+    Tag:
+      title: tag
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the term.
+          type: integer
+          context:
+          - view
+          - embed
+          - edit
+          readonly: true
+        count:
+          description: Number of published posts for the term.
+          type: integer
+          context:
+          - view
+          - edit
+          readonly: true
+        description:
+          description: HTML description of the term.
+          type: string
+          context:
+          - view
+          - edit
+        link:
+          description: URL of the term.
+          type: string
+          format: uri
+          context:
+          - view
+          - embed
+          - edit
+          readonly: true
+        name:
+          description: HTML title for the term.
+          type: string
+          context:
+          - view
+          - embed
+          - edit
+          required: true
+        slug:
+          description: An alphanumeric identifier for the term unique to its type.
+          type: string
+          context:
+          - view
+          - embed
+          - edit
+        taxonomy:
+          description: Type attribution for the term.
+          type: string
+          enum:
+          - post_tag
+          context:
+          - view
+          - embed
+          - edit
+          readonly: true
+        meta:
+          description: Meta fields.
+          type: object
+          context:
+          - view
+          - edit
           properties: []
     SourcingEvent:
       title: sourcing-events
@@ -24055,6 +24115,64 @@ components:
             content:
               raw:
                 type: string
+    SearchResult:
+      title: search-result
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the object.
+          type:
+          - integer
+          - string
+          context:
+          - view
+          - embed
+          readonly: true
+        title:
+          description: The title for the object.
+          type: string
+          context:
+          - view
+          - embed
+          readonly: true
+        url:
+          description: URL to the object.
+          type: string
+          format: uri
+          context:
+          - view
+          - embed
+          readonly: true
+        type:
+          description: Object type.
+          type: string
+          enum:
+          - post
+          - term
+          - post-format
+          context:
+          - view
+          - embed
+          readonly: true
+        subtype:
+          description: Object subtype.
+          type: string
+          enum:
+          - post
+          - page
+          - e-floating-buttons
+          - elementor_library
+          - job
+          - sourcing-events
+          - media_coverage
+          - category
+          - post_tag
+          - job_category
+          - job_location
+          context:
+          - view
+          - embed
+          readonly: true
     Page:
       title: page
       type: object
@@ -24443,569 +24561,6 @@ components:
           properties:
             author:
               type: integer
-    Tag:
-      title: tag
-      type: object
-      properties:
-        id:
-          description: Unique identifier for the term.
-          type: integer
-          context:
-          - view
-          - embed
-          - edit
-          readonly: true
-        count:
-          description: Number of published posts for the term.
-          type: integer
-          context:
-          - view
-          - edit
-          readonly: true
-        description:
-          description: HTML description of the term.
-          type: string
-          context:
-          - view
-          - edit
-        link:
-          description: URL of the term.
-          type: string
-          format: uri
-          context:
-          - view
-          - embed
-          - edit
-          readonly: true
-        name:
-          description: HTML title for the term.
-          type: string
-          context:
-          - view
-          - embed
-          - edit
-          required: true
-        slug:
-          description: An alphanumeric identifier for the term unique to its type.
-          type: string
-          context:
-          - view
-          - embed
-          - edit
-        taxonomy:
-          description: Type attribution for the term.
-          type: string
-          enum:
-          - post_tag
-          context:
-          - view
-          - embed
-          - edit
-          readonly: true
-        meta:
-          description: Meta fields.
-          type: object
-          context:
-          - view
-          - edit
-          properties: []
-    RestError:
-      type: object
-      description: The WordPress REST API error envelope, observed live on this host (GET /wp-json/wp-abilities/v1/abilities returns rest_forbidden with status 401; GET /wp-json/wp/v2/menus returns rest_cannot_view with status 401).
-      properties:
-        code:
-          type: string
-          description: Machine-readable error code, e.g. rest_forbidden, rest_cannot_view, rest_no_route.
-        message:
-          type: string
-          description: Human-readable error message.
-        data:
-          type: object
-          properties:
-            status:
-              type: integer
-              description: HTTP status code.
-      required:
-      - code
-      - message
-    JobLocation:
-      title: job_location
-      type: object
-      properties:
-        id:
-          description: Unique identifier for the term.
-          type: integer
-          context:
-          - view
-          - embed
-          - edit
-          readonly: true
-        count:
-          description: Number of published posts for the term.
-          type: integer
-          context:
-          - view
-          - edit
-          readonly: true
-        description:
-          description: HTML description of the term.
-          type: string
-          context:
-          - view
-          - edit
-        link:
-          description: URL of the term.
-          type: string
-          format: uri
-          context:
-          - view
-          - embed
-          - edit
-          readonly: true
-        name:
-          description: HTML title for the term.
-          type: string
-          context:
-          - view
-          - embed
-          - edit
-          required: true
-        slug:
-          description: An alphanumeric identifier for the term unique to its type.
-          type: string
-          context:
-          - view
-          - embed
-          - edit
-        taxonomy:
-          description: Type attribution for the term.
-          type: string
-          enum:
-          - job_location
-          context:
-          - view
-          - embed
-          - edit
-          readonly: true
-        meta:
-          description: Meta fields.
-          type: object
-          context:
-          - view
-          - edit
-          properties: []
-        acf:
-          description: ACF field data
-          type: object
-          properties: []
-    Job:
-      title: job
-      type: object
-      properties:
-        date:
-          description: The date the post was published, in the site's timezone.
-          type:
-          - string
-          - 'null'
-          format: date-time
-          context:
-          - view
-          - edit
-          - embed
-        date_gmt:
-          description: The date the post was published, as GMT.
-          type:
-          - string
-          - 'null'
-          format: date-time
-          context:
-          - view
-          - edit
-        guid:
-          description: The globally unique identifier for the post.
-          type: object
-          context:
-          - view
-          - edit
-          readonly: true
-          properties:
-            raw:
-              description: GUID for the post, as it exists in the database.
-              type: string
-              context:
-              - edit
-              readonly: true
-            rendered:
-              description: GUID for the post, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              readonly: true
-        id:
-          description: Unique identifier for the post.
-          type: integer
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        link:
-          description: URL to the post.
-          type: string
-          format: uri
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        modified:
-          description: The date the post was last modified, in the site's timezone.
-          type: string
-          format: date-time
-          context:
-          - view
-          - edit
-          readonly: true
-        modified_gmt:
-          description: The date the post was last modified, as GMT.
-          type: string
-          format: date-time
-          context:
-          - view
-          - edit
-          readonly: true
-        slug:
-          description: An alphanumeric identifier for the post unique to its type.
-          type: string
-          context:
-          - view
-          - edit
-          - embed
-        status:
-          description: A named status for the post.
-          type: string
-          enum:
-          - publish
-          - future
-          - draft
-          - pending
-          - private
-          - acf-disabled
-          context:
-          - view
-          - edit
-        type:
-          description: Type of post.
-          type: string
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        password:
-          description: A password to protect access to the content and excerpt.
-          type: string
-          context:
-          - edit
-        permalink_template:
-          description: Permalink template for the post.
-          type: string
-          context:
-          - edit
-          readonly: true
-        generated_slug:
-          description: Slug automatically generated from the post title.
-          type: string
-          context:
-          - edit
-          readonly: true
-        class_list:
-          description: An array of the class names for the post container element.
-          type: array
-          context:
-          - view
-          - edit
-          readonly: true
-          items:
-            type: string
-        title:
-          description: The title for the post.
-          type: object
-          context:
-          - view
-          - edit
-          - embed
-          properties:
-            raw:
-              description: Title for the post, as it exists in the database.
-              type: string
-              context:
-              - edit
-            rendered:
-              description: HTML title for the post, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              - embed
-              readonly: true
-        template:
-          description: The theme file to use to display the post.
-          type: string
-          context:
-          - view
-          - edit
-        job_category:
-          description: The terms assigned to the post in the job_category taxonomy.
-          type: array
-          items:
-            type: integer
-          context:
-          - view
-          - edit
-        job_location:
-          description: The terms assigned to the post in the job_location taxonomy.
-          type: array
-          items:
-            type: integer
-          context:
-          - view
-          - edit
-        acf:
-          description: ACF field data
-          type: object
-          properties: []
-      links:
-      - rel: https://api.w.org/action-publish
-        title: The current user can publish this post.
-        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
-        targetSchema:
-          type: object
-          properties:
-            status:
-              type: string
-              enum:
-              - publish
-              - future
-      - rel: https://api.w.org/action-unfiltered-html
-        title: The current user can post unfiltered HTML markup and JavaScript.
-        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
-        targetSchema:
-          type: object
-          properties:
-            content:
-              raw:
-                type: string
-      - rel: https://api.w.org/action-assign-job_category
-        title: The current user can assign terms in the job_category taxonomy.
-        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
-        targetSchema:
-          type: object
-          properties:
-            job_category:
-              type: array
-              items:
-                type: integer
-      - rel: https://api.w.org/action-create-job_category
-        title: The current user can create terms in the job_category taxonomy.
-        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
-        targetSchema:
-          type: object
-          properties:
-            job_category:
-              type: array
-              items:
-                type: integer
-      - rel: https://api.w.org/action-assign-job_location
-        title: The current user can assign terms in the job_location taxonomy.
-        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
-        targetSchema:
-          type: object
-          properties:
-            job_location:
-              type: array
-              items:
-                type: integer
-      - rel: https://api.w.org/action-create-job_location
-        title: The current user can create terms in the job_location taxonomy.
-        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
-        targetSchema:
-          type: object
-          properties:
-            job_location:
-              type: array
-              items:
-                type: integer
-    MediaCoverage:
-      title: media_coverage
-      type: object
-      properties:
-        date:
-          description: The date the post was published, in the site's timezone.
-          type:
-          - string
-          - 'null'
-          format: date-time
-          context:
-          - view
-          - edit
-          - embed
-        date_gmt:
-          description: The date the post was published, as GMT.
-          type:
-          - string
-          - 'null'
-          format: date-time
-          context:
-          - view
-          - edit
-        guid:
-          description: The globally unique identifier for the post.
-          type: object
-          context:
-          - view
-          - edit
-          readonly: true
-          properties:
-            raw:
-              description: GUID for the post, as it exists in the database.
-              type: string
-              context:
-              - edit
-              readonly: true
-            rendered:
-              description: GUID for the post, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              readonly: true
-        id:
-          description: Unique identifier for the post.
-          type: integer
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        link:
-          description: URL to the post.
-          type: string
-          format: uri
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        modified:
-          description: The date the post was last modified, in the site's timezone.
-          type: string
-          format: date-time
-          context:
-          - view
-          - edit
-          readonly: true
-        modified_gmt:
-          description: The date the post was last modified, as GMT.
-          type: string
-          format: date-time
-          context:
-          - view
-          - edit
-          readonly: true
-        slug:
-          description: An alphanumeric identifier for the post unique to its type.
-          type: string
-          context:
-          - view
-          - edit
-          - embed
-        status:
-          description: A named status for the post.
-          type: string
-          enum:
-          - publish
-          - future
-          - draft
-          - pending
-          - private
-          - acf-disabled
-          context:
-          - view
-          - edit
-        type:
-          description: Type of post.
-          type: string
-          context:
-          - view
-          - edit
-          - embed
-          readonly: true
-        password:
-          description: A password to protect access to the content and excerpt.
-          type: string
-          context:
-          - edit
-        title:
-          description: The title for the post.
-          type: object
-          context:
-          - view
-          - edit
-          - embed
-          properties:
-            raw:
-              description: Title for the post, as it exists in the database.
-              type: string
-              context:
-              - edit
-            rendered:
-              description: HTML title for the post, transformed for display.
-              type: string
-              context:
-              - view
-              - edit
-              - embed
-              readonly: true
-        featured_media:
-          description: The ID of the featured media for the post.
-          type: integer
-          context:
-          - view
-          - edit
-          - embed
-        template:
-          description: The theme file to use to display the post.
-          type: string
-          context:
-          - view
-          - edit
-        acf:
-          description: ACF field data
-          type: object
-          properties: []
-      links:
-      - rel: https://api.w.org/action-publish
-        title: The current user can publish this post.
-        href: https://ascendelements.com/wp-json/wp/v2/media_coverage/{id}
-        targetSchema:
-          type: object
-          properties:
-            status:
-              type: string
-              enum:
-              - publish
-              - future
-      - rel: https://api.w.org/action-unfiltered-html
-        title: The current user can post unfiltered HTML markup and JavaScript.
-        href: https://ascendelements.com/wp-json/wp/v2/media_coverage/{id}
-        targetSchema:
-          type: object
-          properties:
-            content:
-              raw:
-                type: string
     Post:
       title: post
       type: object
@@ -25469,8 +25024,8 @@ components:
               type: array
               items:
                 type: integer
-    JobCategory:
-      title: job_category
+    JobLocation:
+      title: job_location
       type: object
       properties:
         id:
@@ -25522,7 +25077,7 @@ components:
           description: Type attribution for the term.
           type: string
           enum:
-          - job_category
+          - job_location
           context:
           - view
           - embed
@@ -25713,6 +25268,101 @@ components:
               enum:
               - resolved
               - reopen
+        acf:
+          description: ACF field data
+          type: object
+          properties: []
+    RestError:
+      type: object
+      description: The WordPress REST API error envelope, observed live on this host (GET /wp-json/wp-abilities/v1/abilities returns rest_forbidden with status 401; GET /wp-json/wp/v2/menus returns rest_cannot_view with status 401).
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden, rest_cannot_view, rest_no_route.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: HTTP status code.
+      required:
+      - code
+      - message
+    Category:
+      title: category
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the term.
+          type: integer
+          context:
+          - view
+          - embed
+          - edit
+          readonly: true
+        count:
+          description: Number of published posts for the term.
+          type: integer
+          context:
+          - view
+          - edit
+          readonly: true
+        description:
+          description: HTML description of the term.
+          type: string
+          context:
+          - view
+          - edit
+        link:
+          description: URL of the term.
+          type: string
+          format: uri
+          context:
+          - view
+          - embed
+          - edit
+          readonly: true
+        name:
+          description: HTML title for the term.
+          type: string
+          context:
+          - view
+          - embed
+          - edit
+          required: true
+        slug:
+          description: An alphanumeric identifier for the term unique to its type.
+          type: string
+          context:
+          - view
+          - embed
+          - edit
+        taxonomy:
+          description: Type attribution for the term.
+          type: string
+          enum:
+          - category
+          context:
+          - view
+          - embed
+          - edit
+          readonly: true
+        parent:
+          description: The parent term ID.
+          type: integer
+          context:
+          - view
+          - edit
+        meta:
+          description: Meta fields.
+          type: object
+          context:
+          - view
+          - edit
+          properties: []
         acf:
           description: ACF field data
           type: object
@@ -26053,64 +25703,414 @@ components:
           properties:
             author:
               type: integer
-    SearchResult:
-      title: search-result
+    Job:
+      title: job
       type: object
       properties:
-        id:
-          description: Unique identifier for the object.
+        date:
+          description: The date the post was published, in the site's timezone.
           type:
-          - integer
           - string
+          - 'null'
+          format: date-time
           context:
           - view
+          - edit
           - embed
-          readonly: true
-        title:
-          description: The title for the object.
-          type: string
+        date_gmt:
+          description: The date the post was published, as GMT.
+          type:
+          - string
+          - 'null'
+          format: date-time
           context:
           - view
+          - edit
+        guid:
+          description: The globally unique identifier for the post.
+          type: object
+          context:
+          - view
+          - edit
+          readonly: true
+          properties:
+            raw:
+              description: GUID for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+              readonly: true
+            rendered:
+              description: GUID for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              readonly: true
+        id:
+          description: Unique identifier for the post.
+          type: integer
+          context:
+          - view
+          - edit
           - embed
           readonly: true
-        url:
-          description: URL to the object.
+        link:
+          description: URL to the post.
           type: string
           format: uri
           context:
           - view
+          - edit
           - embed
           readonly: true
+        modified:
+          description: The date the post was last modified, in the site's timezone.
+          type: string
+          format: date-time
+          context:
+          - view
+          - edit
+          readonly: true
+        modified_gmt:
+          description: The date the post was last modified, as GMT.
+          type: string
+          format: date-time
+          context:
+          - view
+          - edit
+          readonly: true
+        slug:
+          description: An alphanumeric identifier for the post unique to its type.
+          type: string
+          context:
+          - view
+          - edit
+          - embed
+        status:
+          description: A named status for the post.
+          type: string
+          enum:
+          - publish
+          - future
+          - draft
+          - pending
+          - private
+          - acf-disabled
+          context:
+          - view
+          - edit
         type:
-          description: Object type.
+          description: Type of post.
           type: string
-          enum:
-          - post
-          - term
-          - post-format
           context:
           - view
+          - edit
           - embed
           readonly: true
-        subtype:
-          description: Object subtype.
+        password:
+          description: A password to protect access to the content and excerpt.
           type: string
-          enum:
-          - post
-          - page
-          - e-floating-buttons
-          - elementor_library
-          - job
-          - sourcing-events
-          - media_coverage
-          - category
-          - post_tag
-          - job_category
-          - job_location
+          context:
+          - edit
+        permalink_template:
+          description: Permalink template for the post.
+          type: string
+          context:
+          - edit
+          readonly: true
+        generated_slug:
+          description: Slug automatically generated from the post title.
+          type: string
+          context:
+          - edit
+          readonly: true
+        class_list:
+          description: An array of the class names for the post container element.
+          type: array
           context:
           - view
+          - edit
+          readonly: true
+          items:
+            type: string
+        title:
+          description: The title for the post.
+          type: object
+          context:
+          - view
+          - edit
+          - embed
+          properties:
+            raw:
+              description: Title for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+            rendered:
+              description: HTML title for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              - embed
+              readonly: true
+        template:
+          description: The theme file to use to display the post.
+          type: string
+          context:
+          - view
+          - edit
+        job_category:
+          description: The terms assigned to the post in the job_category taxonomy.
+          type: array
+          items:
+            type: integer
+          context:
+          - view
+          - edit
+        job_location:
+          description: The terms assigned to the post in the job_location taxonomy.
+          type: array
+          items:
+            type: integer
+          context:
+          - view
+          - edit
+        acf:
+          description: ACF field data
+          type: object
+          properties: []
+      links:
+      - rel: https://api.w.org/action-publish
+        title: The current user can publish this post.
+        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
+        targetSchema:
+          type: object
+          properties:
+            status:
+              type: string
+              enum:
+              - publish
+              - future
+      - rel: https://api.w.org/action-unfiltered-html
+        title: The current user can post unfiltered HTML markup and JavaScript.
+        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
+        targetSchema:
+          type: object
+          properties:
+            content:
+              raw:
+                type: string
+      - rel: https://api.w.org/action-assign-job_category
+        title: The current user can assign terms in the job_category taxonomy.
+        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
+        targetSchema:
+          type: object
+          properties:
+            job_category:
+              type: array
+              items:
+                type: integer
+      - rel: https://api.w.org/action-create-job_category
+        title: The current user can create terms in the job_category taxonomy.
+        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
+        targetSchema:
+          type: object
+          properties:
+            job_category:
+              type: array
+              items:
+                type: integer
+      - rel: https://api.w.org/action-assign-job_location
+        title: The current user can assign terms in the job_location taxonomy.
+        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
+        targetSchema:
+          type: object
+          properties:
+            job_location:
+              type: array
+              items:
+                type: integer
+      - rel: https://api.w.org/action-create-job_location
+        title: The current user can create terms in the job_location taxonomy.
+        href: https://ascendelements.com/wp-json/wp/v2/job/{id}
+        targetSchema:
+          type: object
+          properties:
+            job_location:
+              type: array
+              items:
+                type: integer
+    MediaCoverage:
+      title: media_coverage
+      type: object
+      properties:
+        date:
+          description: The date the post was published, in the site's timezone.
+          type:
+          - string
+          - 'null'
+          format: date-time
+          context:
+          - view
+          - edit
+          - embed
+        date_gmt:
+          description: The date the post was published, as GMT.
+          type:
+          - string
+          - 'null'
+          format: date-time
+          context:
+          - view
+          - edit
+        guid:
+          description: The globally unique identifier for the post.
+          type: object
+          context:
+          - view
+          - edit
+          readonly: true
+          properties:
+            raw:
+              description: GUID for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+              readonly: true
+            rendered:
+              description: GUID for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              readonly: true
+        id:
+          description: Unique identifier for the post.
+          type: integer
+          context:
+          - view
+          - edit
           - embed
           readonly: true
+        link:
+          description: URL to the post.
+          type: string
+          format: uri
+          context:
+          - view
+          - edit
+          - embed
+          readonly: true
+        modified:
+          description: The date the post was last modified, in the site's timezone.
+          type: string
+          format: date-time
+          context:
+          - view
+          - edit
+          readonly: true
+        modified_gmt:
+          description: The date the post was last modified, as GMT.
+          type: string
+          format: date-time
+          context:
+          - view
+          - edit
+          readonly: true
+        slug:
+          description: An alphanumeric identifier for the post unique to its type.
+          type: string
+          context:
+          - view
+          - edit
+          - embed
+        status:
+          description: A named status for the post.
+          type: string
+          enum:
+          - publish
+          - future
+          - draft
+          - pending
+          - private
+          - acf-disabled
+          context:
+          - view
+          - edit
+        type:
+          description: Type of post.
+          type: string
+          context:
+          - view
+          - edit
+          - embed
+          readonly: true
+        password:
+          description: A password to protect access to the content and excerpt.
+          type: string
+          context:
+          - edit
+        title:
+          description: The title for the post.
+          type: object
+          context:
+          - view
+          - edit
+          - embed
+          properties:
+            raw:
+              description: Title for the post, as it exists in the database.
+              type: string
+              context:
+              - edit
+            rendered:
+              description: HTML title for the post, transformed for display.
+              type: string
+              context:
+              - view
+              - edit
+              - embed
+              readonly: true
+        featured_media:
+          description: The ID of the featured media for the post.
+          type: integer
+          context:
+          - view
+          - edit
+          - embed
+        template:
+          description: The theme file to use to display the post.
+          type: string
+          context:
+          - view
+          - edit
+        acf:
+          description: ACF field data
+          type: object
+          properties: []
+      links:
+      - rel: https://api.w.org/action-publish
+        title: The current user can publish this post.
+        href: https://ascendelements.com/wp-json/wp/v2/media_coverage/{id}
+        targetSchema:
+          type: object
+          properties:
+            status:
+              type: string
+              enum:
+              - publish
+              - future
+      - rel: https://api.w.org/action-unfiltered-html
+        title: The current user can post unfiltered HTML markup and JavaScript.
+        href: https://ascendelements.com/wp-json/wp/v2/media_coverage/{id}
+        targetSchema:
+          type: object
+          properties:
+            content:
+              raw:
+                type: string
   securitySchemes:
     applicationPassword:
       type: http

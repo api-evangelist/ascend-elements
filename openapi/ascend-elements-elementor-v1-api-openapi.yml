@@ -3,7 +3,7 @@ info:
   title: Ascend Elements WordPress REST Elementor/v1 API
   version: wp/v2
   summary: The machine-readable REST surface published at ascendelements.com/wp-json.
-  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  description: The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/.
   contact:
     email: info@ascendelements.com
     url: https://ascendelements.com/
@@ -162,7 +162,7 @@ paths:
     get:
       operationId: getElementorV1ChecklistId
       summary: GET /elementor/v1/checklist/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -233,7 +233,7 @@ paths:
     get:
       operationId: getElementorV1ChecklistStepsId
       summary: GET /elementor/v1/checklist/steps/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -264,7 +264,7 @@ paths:
     post:
       operationId: createElementorV1ChecklistStepsId
       summary: POST /elementor/v1/checklist/steps/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\w\-\_]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P[\w\-\_]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -295,7 +295,7 @@ paths:
     put:
       operationId: updateElementorV1ChecklistStepsId
       summary: PUT /elementor/v1/checklist/steps/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\w\-\_]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P[\w\-\_]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -326,7 +326,7 @@ paths:
     patch:
       operationId: patchElementorV1ChecklistStepsId
       summary: PATCH /elementor/v1/checklist/steps/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P<id>[\w\-\_]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/checklist/steps/(?P[\w\-\_]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -580,7 +580,7 @@ paths:
     post:
       operationId: createElementorV1FavoritesId
       summary: POST /elementor/v1/favorites/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -623,7 +623,7 @@ paths:
     delete:
       operationId: deleteElementorV1FavoritesId
       summary: DELETE /elementor/v1/favorites/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/favorites/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       parameters:
@@ -968,7 +968,7 @@ paths:
     get:
       operationId: getElementorV1FormSubmissionsId
       summary: GET /elementor/v1/form-submissions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -999,7 +999,7 @@ paths:
     delete:
       operationId: deleteElementorV1FormSubmissionsId
       summary: DELETE /elementor/v1/form-submissions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       parameters:
@@ -1036,7 +1036,7 @@ paths:
     post:
       operationId: createElementorV1FormSubmissionsId
       summary: POST /elementor/v1/form-submissions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -1080,7 +1080,7 @@ paths:
     put:
       operationId: updateElementorV1FormSubmissionsId
       summary: PUT /elementor/v1/form-submissions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -1124,7 +1124,7 @@ paths:
     patch:
       operationId: patchElementorV1FormSubmissionsId
       summary: PATCH /elementor/v1/form-submissions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -1487,7 +1487,7 @@ paths:
     post:
       operationId: createElementorV1FormSubmissionsRestoreId
       summary: POST /elementor/v1/form-submissions/restore/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -1518,7 +1518,7 @@ paths:
     put:
       operationId: updateElementorV1FormSubmissionsRestoreId
       summary: PUT /elementor/v1/form-submissions/restore/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -1549,7 +1549,7 @@ paths:
     patch:
       operationId: patchElementorV1FormSubmissionsRestoreId
       summary: PATCH /elementor/v1/form-submissions/restore/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/form-submissions/restore/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -1725,7 +1725,7 @@ paths:
     get:
       operationId: getElementorV1GlobalsColorsId
       summary: GET /elementor/v1/globals/colors/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P[\w-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -1756,7 +1756,7 @@ paths:
     post:
       operationId: createElementorV1GlobalsColorsId
       summary: POST /elementor/v1/globals/colors/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P[\w-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -1787,7 +1787,7 @@ paths:
     delete:
       operationId: deleteElementorV1GlobalsColorsId
       summary: DELETE /elementor/v1/globals/colors/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/colors/(?P[\w-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -1858,7 +1858,7 @@ paths:
     get:
       operationId: getElementorV1GlobalsTypographyId
       summary: GET /elementor/v1/globals/typography/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P[\w-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -1889,7 +1889,7 @@ paths:
     post:
       operationId: createElementorV1GlobalsTypographyId
       summary: POST /elementor/v1/globals/typography/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P[\w-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -1920,7 +1920,7 @@ paths:
     delete:
       operationId: deleteElementorV1GlobalsTypographyId
       summary: DELETE /elementor/v1/globals/typography/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P<id>[\w-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/globals/typography/(?P[\w-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -1991,7 +1991,7 @@ paths:
     post:
       operationId: createElementorV1KitElementsDefaultsType
       summary: POST /elementor/v1/kit-elements-defaults/{type}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\w\-\_]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P[\w\-\_]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -2034,7 +2034,7 @@ paths:
     put:
       operationId: updateElementorV1KitElementsDefaultsType
       summary: PUT /elementor/v1/kit-elements-defaults/{type}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\w\-\_]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P[\w\-\_]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -2077,7 +2077,7 @@ paths:
     patch:
       operationId: patchElementorV1KitElementsDefaultsType
       summary: PATCH /elementor/v1/kit-elements-defaults/{type}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\w\-\_]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P[\w\-\_]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -2120,7 +2120,7 @@ paths:
     delete:
       operationId: deleteElementorV1KitElementsDefaultsType
       summary: DELETE /elementor/v1/kit-elements-defaults/{type}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P<type>[\w\-\_]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/kit-elements-defaults/(?P[\w\-\_]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -2406,7 +2406,7 @@ paths:
     get:
       operationId: getElementorV1NotesId
       summary: GET /elementor/v1/notes/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -2437,7 +2437,7 @@ paths:
     post:
       operationId: createElementorV1NotesId
       summary: POST /elementor/v1/notes/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -2495,7 +2495,7 @@ paths:
     put:
       operationId: updateElementorV1NotesId
       summary: PUT /elementor/v1/notes/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -2553,7 +2553,7 @@ paths:
     patch:
       operationId: patchElementorV1NotesId
       summary: PATCH /elementor/v1/notes/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       requestBody:
@@ -2611,7 +2611,7 @@ paths:
     delete:
       operationId: deleteElementorV1NotesId
       summary: DELETE /elementor/v1/notes/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P<id>[\d]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/notes/(?P[\d]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       parameters:
@@ -3586,7 +3586,7 @@ paths:
     get:
       operationId: getElementorV1SettingsKey
       summary: GET /elementor/v1/settings/{key}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\w_-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P[\w_-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -3617,7 +3617,7 @@ paths:
     post:
       operationId: createElementorV1SettingsKey
       summary: POST /elementor/v1/settings/{key}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\w_-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P[\w_-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -3648,7 +3648,7 @@ paths:
     put:
       operationId: updateElementorV1SettingsKey
       summary: PUT /elementor/v1/settings/{key}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\w_-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P[\w_-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -3679,7 +3679,7 @@ paths:
     patch:
       operationId: patchElementorV1SettingsKey
       summary: PATCH /elementor/v1/settings/{key}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P<key>[\w_-]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/settings/(?P[\w_-]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -3877,7 +3877,7 @@ paths:
     get:
       operationId: getElementorV1SiteEditorTemplatesConditionsId
       summary: GET /elementor/v1/site-editor/templates-conditions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -3908,7 +3908,7 @@ paths:
     post:
       operationId: createElementorV1SiteEditorTemplatesConditionsId
       summary: POST /elementor/v1/site-editor/templates-conditions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -3939,7 +3939,7 @@ paths:
     put:
       operationId: updateElementorV1SiteEditorTemplatesConditionsId
       summary: PUT /elementor/v1/site-editor/templates-conditions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -3970,7 +3970,7 @@ paths:
     patch:
       operationId: patchElementorV1SiteEditorTemplatesConditionsId
       summary: PATCH /elementor/v1/site-editor/templates-conditions/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates-conditions/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -4009,7 +4009,7 @@ paths:
     delete:
       operationId: deleteElementorV1SiteEditorTemplatesId
       summary: DELETE /elementor/v1/site-editor/templates/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -4040,7 +4040,7 @@ paths:
     post:
       operationId: createElementorV1SiteEditorTemplatesId
       summary: POST /elementor/v1/site-editor/templates/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -4071,7 +4071,7 @@ paths:
     put:
       operationId: updateElementorV1SiteEditorTemplatesId
       summary: PUT /elementor/v1/site-editor/templates/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:
@@ -4102,7 +4102,7 @@ paths:
     patch:
       operationId: patchElementorV1SiteEditorTemplatesId
       summary: PATCH /elementor/v1/site-editor/templates/{id}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P<id>[\w]+)` in the `elementor/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor/v1/site-editor/templates/(?P[\w]+)` in the `elementor/v1` namespace.
       tags:
       - elementor/v1
       responses:

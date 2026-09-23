@@ -3,7 +3,7 @@ info:
   title: Ascend Elements WordPress REST Wp Abilities/v1 API
   version: wp/v2
   summary: The machine-readable REST surface published at ascendelements.com/wp-json.
-  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  description: The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/.
   contact:
     email: info@ascendelements.com
     url: https://ascendelements.com/
@@ -135,7 +135,7 @@ paths:
     get:
       operationId: getWpAbilitiesV1AbilitiesName
       summary: GET /wp-abilities/v1/abilities/{name}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+)` in the `wp-abilities/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+)` in the `wp-abilities/v1` namespace.
       tags:
       - wp-abilities/v1
       responses:
@@ -174,7 +174,7 @@ paths:
     get:
       operationId: getWpAbilitiesV1AbilitiesNameRun
       summary: GET /wp-abilities/v1/abilities/{name}/run
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
       tags:
       - wp-abilities/v1
       parameters:
@@ -218,7 +218,7 @@ paths:
     post:
       operationId: createWpAbilitiesV1AbilitiesNameRun
       summary: POST /wp-abilities/v1/abilities/{name}/run
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
       tags:
       - wp-abilities/v1
       requestBody:
@@ -266,7 +266,7 @@ paths:
     put:
       operationId: updateWpAbilitiesV1AbilitiesNameRun
       summary: PUT /wp-abilities/v1/abilities/{name}/run
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
       tags:
       - wp-abilities/v1
       requestBody:
@@ -314,7 +314,7 @@ paths:
     patch:
       operationId: patchWpAbilitiesV1AbilitiesNameRun
       summary: PATCH /wp-abilities/v1/abilities/{name}/run
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
       tags:
       - wp-abilities/v1
       requestBody:
@@ -362,7 +362,7 @@ paths:
     delete:
       operationId: deleteWpAbilitiesV1AbilitiesNameRun
       summary: DELETE /wp-abilities/v1/abilities/{name}/run
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in the `wp-abilities/v1` namespace.
       tags:
       - wp-abilities/v1
       parameters:
@@ -472,7 +472,7 @@ paths:
     get:
       operationId: getWpAbilitiesV1CategoriesSlug
       summary: GET /wp-abilities/v1/categories/{slug}
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)` in the `wp-abilities/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/wp-abilities/v1/categories/(?P[a-z0-9]+(?:-[a-z0-9]+)*)` in the `wp-abilities/v1` namespace.
       tags:
       - wp-abilities/v1
       responses:

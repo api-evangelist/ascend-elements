@@ -3,7 +3,7 @@ info:
   title: Ascend Elements WordPress REST Wp Block Editor/v1 API
   version: wp/v2
   summary: The machine-readable REST surface published at ascendelements.com/wp-json.
-  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  description: The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/.
   contact:
     email: info@ascendelements.com
     url: https://ascendelements.com/

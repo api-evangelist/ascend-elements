@@ -3,7 +3,7 @@ info:
   title: Ascend Elements WordPress REST Elementor One/v1 API
   version: wp/v2
   summary: The machine-readable REST surface published at ascendelements.com/wp-json.
-  description: 'The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/. This document was DERIVED mechanically from the live route index -- every path, method and parameter below appears in that index -- and component schemas were harvested from live HTTP OPTIONS responses on the anonymously readable wp/v2 collections. Alongside the WordPress core content collections it covers three company-specific custom post types: `media_coverage` (press coverage), `sourcing-events` (open supplier bid packages for the Apex 1 plant) and `job` (careers board), with the `job_category` and `job_location` taxonomies. It is NOT a product API for Ascend Elements'' battery materials, recycling or logistics business -- the company publishes no public developer API for those. Most non-wp/v2 namespaces (Elementor, Yoast, Site Mailer, Image Optimizer, WP Engine, Complianz admin routes) and the WordPress Abilities API require an authenticated administrative session and return rest_forbidden / 401 anonymously.'
+  description: The WordPress REST API surface published by Ascend Elements at https://ascendelements.com/wp-json/.
   contact:
     email: info@ascendelements.com
     url: https://ascendelements.com/
@@ -326,7 +326,7 @@ paths:
     post:
       operationId: createElementorOneV1PluginsSlugActivate
       summary: POST /elementor-one/v1/plugins/{slug}/activate
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P<slug>[\w\-]+)/activate` in the `elementor-one/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P[\w\-]+)/activate` in the `elementor-one/v1` namespace.
       tags:
       - elementor-one/v1
       responses:
@@ -365,7 +365,7 @@ paths:
     post:
       operationId: createElementorOneV1PluginsSlugDeactivate
       summary: POST /elementor-one/v1/plugins/{slug}/deactivate
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P<slug>[\w\-]+)/deactivate` in the `elementor-one/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P[\w\-]+)/deactivate` in the `elementor-one/v1` namespace.
       tags:
       - elementor-one/v1
       responses:
@@ -404,7 +404,7 @@ paths:
     post:
       operationId: createElementorOneV1PluginsSlugMigrationRollback
       summary: POST /elementor-one/v1/plugins/{slug}/migration/rollback
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P<slug>[\w\-]+)/migration/rollback` in the `elementor-one/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P[\w\-]+)/migration/rollback` in the `elementor-one/v1` namespace.
       tags:
       - elementor-one/v1
       responses:
@@ -443,7 +443,7 @@ paths:
     post:
       operationId: createElementorOneV1PluginsSlugMigrationRun
       summary: POST /elementor-one/v1/plugins/{slug}/migration/run
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P<slug>[\w\-]+)/migration/run` in the `elementor-one/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P[\w\-]+)/migration/run` in the `elementor-one/v1` namespace.
       tags:
       - elementor-one/v1
       requestBody:
@@ -493,7 +493,7 @@ paths:
     post:
       operationId: createElementorOneV1PluginsSlugUpgrade
       summary: POST /elementor-one/v1/plugins/{slug}/upgrade
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P<slug>[\w\-]+)/upgrade` in the `elementor-one/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/plugins/(?P[\w\-]+)/upgrade` in the `elementor-one/v1` namespace.
       tags:
       - elementor-one/v1
       requestBody:
@@ -720,7 +720,7 @@ paths:
     post:
       operationId: createElementorOneV1ThemesSlugActivate
       summary: POST /elementor-one/v1/themes/{slug}/activate
-      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/themes/(?P<slug>[\w\-]+)/activate` in the `elementor-one/v1` namespace.
+      description: Operation advertised by the WordPress REST route index at https://ascendelements.com/wp-json/ for route `/elementor-one/v1/themes/(?P[\w\-]+)/activate` in the `elementor-one/v1` namespace.
       tags:
       - elementor-one/v1
       responses:
